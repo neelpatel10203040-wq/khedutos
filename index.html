@@ -1072,5 +1072,371 @@ function backToResult(){
 
 function calculateDose(){
 
-    let crop =
+    lefunction calculateDose(){
+
+    let crop = document.getElementById("calcCrop").value;
+    let product = document.getElementById("productName").value.trim();
+    let type = document.getElementById("productType").value;
+    let rate = parseFloat(document.getElementById("rate").value);
+    let unit = document.getElementById("unit").value;
+    let area = parseFloat(document.getElementById("calcArea").value);
+
+    if(
+        crop === "" ||
+        product === "" ||
+        isNaN(rate) ||
+        isNaN(area) ||
+        rate <= 0 ||
+        area <= 0
+    ){
+        alert(
+            isGujarati
+            ? "કૃપા કરીને બધી માહિતી યોગ્ય રીતે भरो."
+            : "Please enter all details correctly."
+        );
+        return;
+    }
+
+    let total = rate * area;
+
+    document.getElementById("calcResult").style.display = "block";
+
+    document.getElementById("totalAmount").innerText =
+        total.toFixed(2) + " " + unit;
+
+    document.getElementById("calculationDetails").innerText =
+        (isGujarati
+        ? "પાક: " + crop + " | ઉત્પાદન: " + product +
+          " | પ્રકાર: " + type +
+          " | દર: " + rate + " " + unit + "/એકર" +
+          " | વિસ્તાર: " + area + " એકર"
+        : "Crop: " + crop + " | Product: " + product +
+          " | Type: " + type +
+          " | Rate: " + rate + " " + unit + "/acre" +
+          " | Area: " + area + " acres");
+}
+
+
+/* =========================
+   LANGUAGE TOGGLE
+========================= */
+
+function toggleLanguage(){
+
+    isGujarati = !isGujarati;
+
+    applyLanguage();
+
+    if(
+        document.getElementById("resultPage").style.display === "block"
+    ){
+        updateFarmInfo();
+    }
+}
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+function applyLanguage(){
+
+    let btn = document.getElementById("langBtn");
+
+    if(isGujarati){
+
+        btn.innerText = "English";
+
+        document.getElementById("tag").innerText =
+            "સ્માર્ટ ફાર્મ સહાયક";
+
+        document.getElementById("headline").innerText =
+            "આજે તમારા ખેતરમાં શું કરવું?";
+
+        document.getElementById("subtitle").innerText =
+            "KhedutOS ખેડૂતોને પાક સમજવામાં, ખેતરના જોખમો પર નજર રાખવામાં અને આજે શું તપાસવું તે નક્કી કરવામાં મદદ કરે છે.";
+
+        document.getElementById("startBtn").innerText =
+            "મારું ખેતર શરૂ કરો →";
+
+        document.getElementById("featureHeading").innerText =
+            "તમારું ખેતર, એક સરળ ડેશબોર્ડ";
+
+        document.getElementById("weatherTitle").innerText =
+            "હવામાનની જાણકારી";
+
+        document.getElementById("weatherText").innerText =
+            "સિંચાઈ અને ખેતરની કામગીરી પર હવામાનની અસર સમજો.";
+
+        document.getElementById("riskTitle").innerText =
+            "પાકનું જોખમ";
+
+        document.getElementById("riskText").innerText =
+            "તમારા પાક માટે સરળ નિરીક્ષણ યાદ અપાવતું માર્ગદર્શન મેળવો.";
+
+        document.getElementById("guideTitle").innerText =
+            "પાક માર્ગદર્શન";
+
+        document.getElementById("guideText").innerText =
+            "તમારા પાક માટે વ્યવહારુ દૈનિક કામગીરી મેળવો.";
+
+        document.getElementById("doseTitle").innerText =
+            "ડોઝ કેલ્ક્યુલેટર";
+
+        document.getElementById("doseText").innerText =
+            "ચકાસેલા દર પરથી કુલ જથ્થો ગણો.";
+
+        document.getElementById("missionTitle").innerText =
+            "ખેડૂતની ભાષામાં ટેકનોલોજી.";
+
+        document.getElementById("missionText").innerText =
+            "અમારો હેતુ સરળ છે: ખેતીના નિર્ણયો વધુ સરળ, સ્પષ્ટ અને ઉપયોગી બનાવવા.";
+
+        document.getElementById("setupTitle").innerText =
+            "🌱 તમારું ખેતર બનાવો";
+
+        document.getElementById("setupIntro").innerText =
+            "તમારા ખેતર વિશે થોડી માહિતી આપો.";
+
+        document.getElementById("cropLabel").innerText =
+            "🌾 પાક પસંદ કરો";
+
+        document.getElementById("locationLabel").innerText =
+            "📍 તમારું સ્થાન";
+
+        document.getElementById("dateLabel").innerText =
+            "📅 વાવણીની તારીખ";
+
+        document.getElementById("irrigationLabel").innerText =
+            "💧 સિંચાઈ પદ્ધતિ";
+
+        document.getElementById("areaLabel").innerText =
+            "📐 ખેતરનું ક્ષેત્રફળ (એકર)";
+
+        document.getElementById("createBtn").innerText =
+            "મારું ખેતર બનાવો →";
+
+        document.getElementById("resultTitle").innerText =
+            "🌱 તમારું ખેતર તૈયાર છે!";
+
+        document.getElementById("todayTitle").innerText =
+            "આજે તમારા ખેતરમાં શું કરવું?";
+
+        document.getElementById("irrigationActionTitle").innerText =
+            "💧 સિંચાઈ તપાસ";
+
+        document.getElementById("irrigationActionText").innerText =
+            "સિંચાઈની જરૂર છે કે નહીં તે નક્કી કરતા પહેલા જમીનની ભેજ તપાસો.";
+
+        document.getElementById("pestActionTitle").innerText =
+            "🐛 જીવાતનું નિરીક્ષણ";
+
+        document.getElementById("pestActionText").innerText =
+            "છોડ અને પાંદડાંને ધ્યાનથી તપાસો અને જીવાત અથવા નુકસાન જુઓ.";
+
+        document.getElementById("cropActionTitle").innerText =
+            "🌿 પાકનું નિરીક્ષણ";
+
+        document.getElementById("cropActionText").innerText =
+            "પીળાં પાંદડાં, ડાઘ, કરમાવું અથવા અસામાન્ય વૃદ્ધિ તપાસો.";
+
+        document.getElementById("importantTitle").innerText =
+            "⚠️ મહત્વપૂર્ણ";
+
+        document.getElementById("importantText").innerText =
+            "માત્ર શંકાના આધારે જંતુનાશકનો છંટકાવ ન કરો. સમસ્યાની ખાતરી કરો અથવા કૃષિ નિષ્ણાતની સલાહ લો.";
+
+        document.getElementById("homeBtn").innerText =
+            "← હોમ પર પાછા";
+
+        document.getElementById("doseBtn").innerText =
+            "🧮 ડોઝ કેલ્ક્યુલેટર";
+
+        document.getElementById("calculatorTitle").innerText =
+            "🧮 ડોઝ કેલ્ક્યુલેટર";
+
+        document.getElementById("calculatorIntro").innerText =
+            "માન્ય પ્રોડક્ટ લેબલ અથવા અધિકૃત કૃષિ નિષ્ણાત દ્વારા આપવામાં આવેલ દર દાખલ કરો.";
+
+        document.getElementById("warning").innerText =
+            "⚠️ KhedutOS પોતે જંતુનાશક અથવા ખાતરનો ડોઝ નક્કી કરતું નથી. ઉપયોગ કરતા પહેલા પ્રોડક્ટ લેબલ અને સ્થાનિક નિષ્ણાતની સલાહ ચકાસો.";
+
+        document.getElementById("calcCropLabel").innerText =
+            "🌾 પાક પસંદ કરો";
+
+        document.getElementById("productLabel").innerText =
+            "🧴 ઉત્પાદનનું નામ";
+
+        document.getElementById("typeLabel").innerText =
+            "ઉત્પાદનનો પ્રકાર";
+
+        document.getElementById("rateLabel").innerText =
+            "ચકાસેલો દર પ્રતિ એકર";
+
+        document.getElementById("unitLabel").innerText =
+            "એકમ";
+
+        document.getElementById("calcAreaLabel").innerText =
+            "📐 ખેતરનું ક્ષેત્રફળ (એકર)";
+
+        document.getElementById("calculateBtn").innerText =
+            "કુલ જથ્થો ગણો →";
+
+        document.getElementById("totalHeading").innerText =
+            "જરૂરી કુલ જથ્થો";
+
+        document.getElementById("calculatorBackBtn").innerText =
+            "← પાછા";
+
+    }else{
+
+        btn.innerText = "ગુજરાતી";
+
+        document.getElementById("tag").innerText =
+            "SMART FARM ASSISTANT";
+
+        document.getElementById("headline").innerText =
+            "Aaje tamara khetarma shu karvu?";
+
+        document.getElementById("subtitle").innerText =
+            "KhedutOS helps farmers understand their crop, monitor farm risks and decide what to check today.";
+
+        document.getElementById("startBtn").innerText =
+            "Start My Farm →";
+
+        document.getElementById("featureHeading").innerText =
+            "Your farm, one simple dashboard";
+
+        document.getElementById("weatherTitle").innerText =
+            "Weather Awareness";
+
+        document.getElementById("weatherText").innerText =
+            "Understand how weather can affect irrigation and field activities.";
+
+        document.getElementById("riskTitle").innerText =
+            "Crop Risk";
+
+        document.getElementById("riskText").innerText =
+            "Get simple monitoring reminders for your crop.";
+
+        document.getElementById("guideTitle").innerText =
+            "Crop Guidance";
+
+        document.getElementById("guideText").innerText =
+            "Receive practical daily actions for your crop.";
+
+        document.getElementById("doseTitle").innerText =
+            "Dose Calculator";
+
+        document.getElementById("doseText").innerText =
+            "Calculate total quantity from a verified rate.";
+
+        document.getElementById("missionTitle").innerText =
+            "Technology that speaks the farmer's language.";
+
+        document.getElementById("missionText").innerText =
+            "Our goal is simple: make farm decisions easier, clearer and more useful.";
+
+        document.getElementById("setupTitle").innerText =
+            "🌱 Create Your Farm";
+
+        document.getElementById("setupIntro").innerText =
+            "Tell us a few things about your farm.";
+
+        document.getElementById("cropLabel").innerText =
+            "🌾 Select Crop";
+
+        document.getElementById("locationLabel").innerText =
+            "📍 Your Location";
+
+        document.getElementById("dateLabel").innerText =
+            "📅 Sowing Date";
+
+        document.getElementById("irrigationLabel").innerText =
+            "💧 Irrigation Method";
+
+        document.getElementById("areaLabel").innerText =
+            "📐 Farm Area (acres)";
+
+        document.getElementById("createBtn").innerText =
+            "CREATE MY FARM →";
+
+        document.getElementById("resultTitle").innerText =
+            "🌱 Your Farm is Ready!";
+
+        document.getElementById("todayTitle").innerText =
+            "Aaje tamara khetarma shu karvu?";
+
+        document.getElementById("irrigationActionTitle").innerText =
+            "💧 Irrigation Check";
+
+        document.getElementById("irrigationActionText").innerText =
+            "Check soil moisture before deciding whether irrigation is needed.";
+
+        document.getElementById("pestActionTitle").innerText =
+            "🐛 Pest Monitoring";
+
+        document.getElementById("pestActionText").innerText =
+            "Inspect plants and leaves carefully for unusual insects or damage.";
+
+        document.getElementById("cropActionTitle").innerText =
+            "🌿 Crop Observation";
+
+        document.getElementById("cropActionText").innerText =
+            "Look for yellowing leaves, unusual spots, wilting or abnormal growth.";
+
+        document.getElementById("importantTitle").innerText =
+            "⚠️ Important";
+
+        document.getElementById("importantText").innerText =
+            "Do not spray pesticides only because a problem is suspected. Confirm the issue first or consult an agriculture professional.";
+
+        document.getElementById("homeBtn").innerText =
+            "← Back to Home";
+
+        document.getElementById("doseBtn").innerText =
+            "🧮 Dose Calculator";
+
+        document.getElementById("calculatorTitle").innerText =
+            "🧮 Dose Calculator";
+
+        document.getElementById("calculatorIntro").innerText =
+            "Enter the rate written on the approved product label or provided by an authorized agriculture expert.";
+
+        document.getElementById("warning").innerText =
+            "⚠️ KhedutOS does not decide pesticide or fertilizer dose. Always verify the product label and local expert guidance before use.";
+
+        document.getElementById("calcCropLabel").innerText =
+            "🌾 Select Crop";
+
+        document.getElementById("productLabel").innerText =
+            "🧴 Product Name";
+
+        document.getElementById("typeLabel").innerText =
+            "Product Type";
+
+        document.getElementById("rateLabel").innerText =
+            "Verified Rate Per Acre";
+
+        document.getElementById("unitLabel").innerText =
+            "Unit";
+
+        document.getElementById("calcAreaLabel").innerText =
+            "📐 Farm Area (acres)";
+
+        document.getElementById("calculateBtn").innerText =
+            "CALCULATE TOTAL →";
+
+        document.getElementById("totalHeading").innerText =
+            "Total Required";
+
+        document.getElementById("calculatorBackBtn").innerText =
+            "← Back";
+    }
+}
+
+</script>
+
+</body>
+</html>
    
