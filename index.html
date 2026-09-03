@@ -497,17 +497,17 @@ button{
 
             <select id="crop">
 
-                <option value="">
+                <option value="" id="cropDefaultOption">
                     Select your crop
                 </option>
 
-                <option value="Cotton">Cotton</option>
-                <option value="Maize">Maize</option>
-                <option value="Rice">Rice</option>
-                <option value="Groundnut">Groundnut</option>
-                <option value="Wheat">Wheat</option>
-                <option value="Tomato">Tomato</option>
-                <option value="Chilli">Chilli</option>
+                <option value="Cotton" id="cropCottonOption">Cotton</option>
+                <option value="Maize" id="cropMaizeOption">Maize</option>
+                <option value="Rice" id="cropRiceOption">Rice</option>
+                <option value="Groundnut" id="cropGroundnutOption">Groundnut</option>
+                <option value="Wheat" id="cropWheatOption">Wheat</option>
+                <option value="Tomato" id="cropTomatoOption">Tomato</option>
+                <option value="Chilli" id="cropChilliOption">Chilli</option>
 
             </select>
 
@@ -548,14 +548,14 @@ button{
 
             <select id="irrigation">
 
-                <option value="">
+                <option value="" id="irrigationDefaultOption">
                     Select method
                 </option>
 
-                <option value="Drip">Drip</option>
-                <option value="Sprinkler">Sprinkler</option>
-                <option value="Flood / Canal">Flood / Canal</option>
-                <option value="Rainfed">Rainfed</option>
+                <option value="Drip" id="irrigationDripOption">Drip</option>
+                <option value="Sprinkler" id="irrigationSprinklerOption">Sprinkler</option>
+                <option value="Flood / Canal" id="irrigationFloodOption">Flood / Canal</option>
+                <option value="Rainfed" id="irrigationRainfedOption">Rainfed</option>
 
             </select>
 
@@ -712,17 +712,17 @@ button{
 
             <select id="calcCrop">
 
-                <option value="">
+                <option value="" id="calcCropDefaultOption">
                     Select crop
                 </option>
 
-                <option value="Cotton">Cotton</option>
-                <option value="Maize">Maize</option>
-                <option value="Rice">Rice</option>
-                <option value="Groundnut">Groundnut</option>
-                <option value="Wheat">Wheat</option>
-                <option value="Tomato">Tomato</option>
-                <option value="Chilli">Chilli</option>
+                <option value="Cotton" id="calcCropCottonOption">Cotton</option>
+                <option value="Maize" id="calcCropMaizeOption">Maize</option>
+                <option value="Rice" id="calcCropRiceOption">Rice</option>
+                <option value="Groundnut" id="calcCropGroundnutOption">Groundnut</option>
+                <option value="Wheat" id="calcCropWheatOption">Wheat</option>
+                <option value="Tomato" id="calcCropTomatoOption">Tomato</option>
+                <option value="Chilli" id="calcCropChilliOption">Chilli</option>
 
             </select>
 
@@ -752,15 +752,15 @@ button{
 
             <select id="productType">
 
-                <option value="Pesticide">
+                <option value="Pesticide" id="typePesticideOption">
                     Pesticide
                 </option>
 
-                <option value="Fertilizer">
+                <option value="Fertilizer" id="typeFertilizerOption">
                     Fertilizer
                 </option>
 
-                <option value="Other">
+                <option value="Other" id="typeOtherOption">
                     Other Farm Input
                 </option>
 
@@ -794,10 +794,10 @@ button{
 
             <select id="unit">
 
-                <option value="ml">ml</option>
-                <option value="L">Litre</option>
-                <option value="g">gram</option>
-                <option value="kg">kg</option>
+                <option value="ml" id="unitMlOption">ml</option>
+                <option value="L" id="unitLOption">Litre</option>
+                <option value="g" id="unitGOption">gram</option>
+                <option value="kg" id="unitKgOption">kg</option>
 
             </select>
 
@@ -865,7 +865,7 @@ button{
 
 
 
-<footer>
+<footer id="footerText">
     © 2026 KhedutOS · Agriculture × Technology
 </footer>
 
@@ -888,555 +888,68 @@ let farm = {
     cropAge: 0
 };
 
-
-/* =========================
-   OPEN FARM PAGE
-========================= */
-
-function openFarm(){
-
-    document.getElementById("home").style.display = "none";
-    document.getElementById("features").style.display = "none";
-    document.getElementById("mission").style.display = "none";
-
-    document.getElementById("farmPage").style.display = "block";
-
-    window.scrollTo(0,0);
-}
+let lastCalc = null;
 
 
 /* =========================
-   CREATE FARM
+   TRANSLATIONS
 ========================= */
 
-function createFarm(){
-
-    let crop = document.getElementById("crop").value;
-    let location = document.getElementById("location").value.trim();
-    let sowingDate = document.getElementById("sowingDate").value;
-    let irrigation = document.getElementById("irrigation").value;
-    let area = document.getElementById("area").value;
-
-
-    if(
-        crop === "" ||
-        location === "" ||
-        sowingDate === "" ||
-        irrigation === "" ||
-        area === ""
-    ){
-
-        alert(
-            isGujarati
-            ? "કૃપા કરીને બધી માહિતી भरो."
-            : "Please complete all farm details."
-        );
-
-        return;
-    }
-
-
-    let sowing = new Date(sowingDate);
-    let today = new Date();
-
-    let difference = today.getTime() - sowing.getTime();
-
-    let cropAge = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-    );
-
-    if(cropAge < 0){
-        cropAge = 0;
-    }
-
-
-    farm.crop = crop;
-    farm.location = location;
-    farm.sowingDate = sowingDate;
-    farm.irrigation = irrigation;
-    farm.area = area;
-    farm.cropAge = cropAge;
-
-
-    updateFarmInfo();
-
-
-    document.getElementById("farmPage").style.display = "none";
-    document.getElementById("resultPage").style.display = "block";
-
-    window.scrollTo(0,0);
-}
-
-
-/* =========================
-   FARM INFORMATION
-========================= */
-
-function updateFarmInfo(){
-
-    let info = document.getElementById("farmInfo");
-
-    if(isGujarati){
-
-        info.innerHTML =
-        "<strong>🌾 પાક:</strong> " + farm.crop +
-        "<br>" +
-        "<strong>📍 સ્થાન:</strong> " + farm.location +
-        "<br>" +
-        "<strong>📅 પાકની ઉંમર:</strong> " +
-        farm.cropAge + " દિવસ" +
-        "<br>" +
-        "<strong>💧 સિંચાઈ:</strong> " +
-        farm.irrigation +
-        "<br>" +
-        "<strong>📐 ખેતર:</strong> " +
-        farm.area + " એકર";
-
-    }else{
-
-        info.innerHTML =
-        "<strong>🌾 Crop:</strong> " + farm.crop +
-        "<br>" +
-        "<strong>📍 Location:</strong> " +
-        farm.location +
-        "<br>" +
-        "<strong>📅 Crop Age:</strong> " +
-        farm.cropAge + " days" +
-        "<br>" +
-        "<strong>💧 Irrigation:</strong> " +
-        farm.irrigation +
-        "<br>" +
-        "<strong>📐 Farm Area:</strong> " +
-        farm.area + " acres";
-    }
-}
-
-
-/* =========================
-   HOME
-========================= */
-
-function goHome(){
-
-    document.getElementById("resultPage").style.display = "none";
-    document.getElementById("calculatorPage").style.display = "none";
-
-    document.getElementById("home").style.display = "block";
-    document.getElementById("features").style.display = "block";
-    document.getElementById("mission").style.display = "block";
-
-    window.scrollTo(0,0);
-}
-
-
-/* =========================
-   OPEN CALCULATOR
-========================= */
-
-function openCalculator(){
-
-    document.getElementById("resultPage").style.display = "none";
-    document.getElementById("calculatorPage").style.display = "block";
-
-
-    if(farm.crop !== ""){
-        document.getElementById("calcCrop").value = farm.crop;
-    }
-
-
-    if(farm.area !== ""){
-        document.getElementById("calcArea").value = farm.area;
-    }
-
-
-    window.scrollTo(0,0);
-}
-
-
-/* =========================
-   BACK TO RESULT
-========================= */
-
-function backToResult(){
-
-    document.getElementById("calculatorPage").style.display = "none";
-    document.getElementById("resultPage").style.display = "block";
-
-    window.scrollTo(0,0);
-}
-
-
-/* =========================
-   DOSE CALCULATOR
-========================= */
-
-function calculateDose(){
-
-    lefunction calculateDose(){
-
-    let crop = document.getElementById("calcCrop").value;
-    let product = document.getElementById("productName").value.trim();
-    let type = document.getElementById("productType").value;
-    let rate = parseFloat(document.getElementById("rate").value);
-    let unit = document.getElementById("unit").value;
-    let area = parseFloat(document.getElementById("calcArea").value);
-
-    if(
-        crop === "" ||
-        product === "" ||
-        isNaN(rate) ||
-        isNaN(area) ||
-        rate <= 0 ||
-        area <= 0
-    ){
-        alert(
-            isGujarati
-            ? "કૃપા કરીને બધી માહિતી યોગ્ય રીતે भरो."
-            : "Please enter all details correctly."
-        );
-        return;
-    }
-
-    let total = rate * area;
-
-    document.getElementById("calcResult").style.display = "block";
-
-    document.getElementById("totalAmount").innerText =
-        total.toFixed(2) + " " + unit;
-
-    document.getElementById("calculationDetails").innerText =
-        (isGujarati
-        ? "પાક: " + crop + " | ઉત્પાદન: " + product +
-          " | પ્રકાર: " + type +
-          " | દર: " + rate + " " + unit + "/એકર" +
-          " | વિસ્તાર: " + area + " એકર"
-        : "Crop: " + crop + " | Product: " + product +
-          " | Type: " + type +
-          " | Rate: " + rate + " " + unit + "/acre" +
-          " | Area: " + area + " acres");
-}
-
-
-/* =========================
-   LANGUAGE TOGGLE
-========================= */
-
-function toggleLanguage(){
-
-    isGujarati = !isGujarati;
-
-    applyLanguage();
-
-    if(
-        document.getElementById("resultPage").style.display === "block"
-    ){
-        updateFarmInfo();
-    }
-}
-
-
-/* =========================
-   LANGUAGE
-========================= */
-
-function applyLanguage(){
-
-    let btn = document.getElementById("langBtn");
-
-    if(isGujarati){
-
-        btn.innerText = "English";
-
-        document.getElementById("tag").innerText =
-            "સ્માર્ટ ફાર્મ સહાયક";
-
-        document.getElementById("headline").innerText =
-            "આજે તમારા ખેતરમાં શું કરવું?";
-
-        document.getElementById("subtitle").innerText =
-            "KhedutOS ખેડૂતોને પાક સમજવામાં, ખેતરના જોખમો પર નજર રાખવામાં અને આજે શું તપાસવું તે નક્કી કરવામાં મદદ કરે છે.";
-
-        document.getElementById("startBtn").innerText =
-            "મારું ખેતર શરૂ કરો →";
-
-        document.getElementById("featureHeading").innerText =
-            "તમારું ખેતર, એક સરળ ડેશબોર્ડ";
-
-        document.getElementById("weatherTitle").innerText =
-            "હવામાનની જાણકારી";
-
-        document.getElementById("weatherText").innerText =
-            "સિંચાઈ અને ખેતરની કામગીરી પર હવામાનની અસર સમજો.";
-
-        document.getElementById("riskTitle").innerText =
-            "પાકનું જોખમ";
-
-        document.getElementById("riskText").innerText =
-            "તમારા પાક માટે સરળ નિરીક્ષણ યાદ અપાવતું માર્ગદર્શન મેળવો.";
-
-        document.getElementById("guideTitle").innerText =
-            "પાક માર્ગદર્શન";
-
-        document.getElementById("guideText").innerText =
-            "તમારા પાક માટે વ્યવહારુ દૈનિક કામગીરી મેળવો.";
-
-        document.getElementById("doseTitle").innerText =
-            "ડોઝ કેલ્ક્યુલેટર";
-
-        document.getElementById("doseText").innerText =
-            "ચકાસેલા દર પરથી કુલ જથ્થો ગણો.";
-
-        document.getElementById("missionTitle").innerText =
-            "ખેડૂતની ભાષામાં ટેકનોલોજી.";
-
-        document.getElementById("missionText").innerText =
-            "અમારો હેતુ સરળ છે: ખેતીના નિર્ણયો વધુ સરળ, સ્પષ્ટ અને ઉપયોગી બનાવવા.";
-
-        document.getElementById("setupTitle").innerText =
-            "🌱 તમારું ખેતર બનાવો";
-
-        document.getElementById("setupIntro").innerText =
-            "તમારા ખેતર વિશે થોડી માહિતી આપો.";
-
-        document.getElementById("cropLabel").innerText =
-            "🌾 પાક પસંદ કરો";
-
-        document.getElementById("locationLabel").innerText =
-            "📍 તમારું સ્થાન";
-
-        document.getElementById("dateLabel").innerText =
-            "📅 વાવણીની તારીખ";
-
-        document.getElementById("irrigationLabel").innerText =
-            "💧 સિંચાઈ પદ્ધતિ";
-
-        document.getElementById("areaLabel").innerText =
-            "📐 ખેતરનું ક્ષેત્રફળ (એકર)";
-
-        document.getElementById("createBtn").innerText =
-            "મારું ખેતર બનાવો →";
-
-        document.getElementById("resultTitle").innerText =
-            "🌱 તમારું ખેતર તૈયાર છે!";
-
-        document.getElementById("todayTitle").innerText =
-            "આજે તમારા ખેતરમાં શું કરવું?";
-
-        document.getElementById("irrigationActionTitle").innerText =
-            "💧 સિંચાઈ તપાસ";
-
-        document.getElementById("irrigationActionText").innerText =
-            "સિંચાઈની જરૂર છે કે નહીં તે નક્કી કરતા પહેલા જમીનની ભેજ તપાસો.";
-
-        document.getElementById("pestActionTitle").innerText =
-            "🐛 જીવાતનું નિરીક્ષણ";
-
-        document.getElementById("pestActionText").innerText =
-            "છોડ અને પાંદડાંને ધ્યાનથી તપાસો અને જીવાત અથવા નુકસાન જુઓ.";
-
-        document.getElementById("cropActionTitle").innerText =
-            "🌿 પાકનું નિરીક્ષણ";
-
-        document.getElementById("cropActionText").innerText =
-            "પીળાં પાંદડાં, ડાઘ, કરમાવું અથવા અસામાન્ય વૃદ્ધિ તપાસો.";
-
-        document.getElementById("importantTitle").innerText =
-            "⚠️ મહત્વપૂર્ણ";
-
-        document.getElementById("importantText").innerText =
-            "માત્ર શંકાના આધારે જંતુનાશકનો છંટકાવ ન કરો. સમસ્યાની ખાતરી કરો અથવા કૃષિ નિષ્ણાતની સલાહ લો.";
-
-        document.getElementById("homeBtn").innerText =
-            "← હોમ પર પાછા";
-
-        document.getElementById("doseBtn").innerText =
-            "🧮 ડોઝ કેલ્ક્યુલેટર";
-
-        document.getElementById("calculatorTitle").innerText =
-            "🧮 ડોઝ કેલ્ક્યુલેટર";
-
-        document.getElementById("calculatorIntro").innerText =
-            "માન્ય પ્રોડક્ટ લેબલ અથવા અધિકૃત કૃષિ નિષ્ણાત દ્વારા આપવામાં આવેલ દર દાખલ કરો.";
-
-        document.getElementById("warning").innerText =
-            "⚠️ KhedutOS પોતે જંતુનાશક અથવા ખાતરનો ડોઝ નક્કી કરતું નથી. ઉપયોગ કરતા પહેલા પ્રોડક્ટ લેબલ અને સ્થાનિક નિષ્ણાતની સલાહ ચકાસો.";
-
-        document.getElementById("calcCropLabel").innerText =
-            "🌾 પાક પસંદ કરો";
-
-        document.getElementById("productLabel").innerText =
-            "🧴 ઉત્પાદનનું નામ";
-
-        document.getElementById("typeLabel").innerText =
-            "ઉત્પાદનનો પ્રકાર";
-
-        document.getElementById("rateLabel").innerText =
-            "ચકાસેલો દર પ્રતિ એકર";
-
-        document.getElementById("unitLabel").innerText =
-            "એકમ";
-
-        document.getElementById("calcAreaLabel").innerText =
-            "📐 ખેતરનું ક્ષેત્રફળ (એકર)";
-
-        document.getElementById("calculateBtn").innerText =
-            "કુલ જથ્થો ગણો →";
-
-        document.getElementById("totalHeading").innerText =
-            "જરૂરી કુલ જથ્થો";
-
-        document.getElementById("calculatorBackBtn").innerText =
-            "← પાછા";
-
-    }else{
-
-        btn.innerText = "ગુજરાતી";
-
-        document.getElementById("tag").innerText =
-            "SMART FARM ASSISTANT";
-
-        document.getElementById("headline").innerText =
-            "Aaje tamara khetarma shu karvu?";
-
-        document.getElementById("subtitle").innerText =
-            "KhedutOS helps farmers understand their crop, monitor farm risks and decide what to check today.";
-
-        document.getElementById("startBtn").innerText =
-            "Start My Farm →";
-
-        document.getElementById("featureHeading").innerText =
-            "Your farm, one simple dashboard";
-
-        document.getElementById("weatherTitle").innerText =
-            "Weather Awareness";
-
-        document.getElementById("weatherText").innerText =
-            "Understand how weather can affect irrigation and field activities.";
-
-        document.getElementById("riskTitle").innerText =
-            "Crop Risk";
-
-        document.getElementById("riskText").innerText =
-            "Get simple monitoring reminders for your crop.";
-
-        document.getElementById("guideTitle").innerText =
-            "Crop Guidance";
-
-        document.getElementById("guideText").innerText =
-            "Receive practical daily actions for your crop.";
-
-        document.getElementById("doseTitle").innerText =
-            "Dose Calculator";
-
-        document.getElementById("doseText").innerText =
-            "Calculate total quantity from a verified rate.";
-
-        document.getElementById("missionTitle").innerText =
-            "Technology that speaks the farmer's language.";
-
-        document.getElementById("missionText").innerText =
-            "Our goal is simple: make farm decisions easier, clearer and more useful.";
-
-        document.getElementById("setupTitle").innerText =
-            "🌱 Create Your Farm";
-
-        document.getElementById("setupIntro").innerText =
-            "Tell us a few things about your farm.";
-
-        document.getElementById("cropLabel").innerText =
-            "🌾 Select Crop";
-
-        document.getElementById("locationLabel").innerText =
-            "📍 Your Location";
-
-        document.getElementById("dateLabel").innerText =
-            "📅 Sowing Date";
-
-        document.getElementById("irrigationLabel").innerText =
-            "💧 Irrigation Method";
-
-        document.getElementById("areaLabel").innerText =
-            "📐 Farm Area (acres)";
-
-        document.getElementById("createBtn").innerText =
-            "CREATE MY FARM →";
-
-        document.getElementById("resultTitle").innerText =
-            "🌱 Your Farm is Ready!";
-
-        document.getElementById("todayTitle").innerText =
-            "Aaje tamara khetarma shu karvu?";
-
-        document.getElementById("irrigationActionTitle").innerText =
-            "💧 Irrigation Check";
-
-        document.getElementById("irrigationActionText").innerText =
-            "Check soil moisture before deciding whether irrigation is needed.";
-
-        document.getElementById("pestActionTitle").innerText =
-            "🐛 Pest Monitoring";
-
-        document.getElementById("pestActionText").innerText =
-            "Inspect plants and leaves carefully for unusual insects or damage.";
-
-        document.getElementById("cropActionTitle").innerText =
-            "🌿 Crop Observation";
-
-        document.getElementById("cropActionText").innerText =
-            "Look for yellowing leaves, unusual spots, wilting or abnormal growth.";
-
-        document.getElementById("importantTitle").innerText =
-            "⚠️ Important";
-
-        document.getElementById("importantText").innerText =
-            "Do not spray pesticides only because a problem is suspected. Confirm the issue first or consult an agriculture professional.";
-
-        document.getElementById("homeBtn").innerText =
-            "← Back to Home";
-
-        document.getElementById("doseBtn").innerText =
-            "🧮 Dose Calculator";
-
-        document.getElementById("calculatorTitle").innerText =
-            "🧮 Dose Calculator";
-
-        document.getElementById("calculatorIntro").innerText =
-            "Enter the rate written on the approved product label or provided by an authorized agriculture expert.";
-
-        document.getElementById("warning").innerText =
-            "⚠️ KhedutOS does not decide pesticide or fertilizer dose. Always verify the product label and local expert guidance before use.";
-
-        document.getElementById("calcCropLabel").innerText =
-            "🌾 Select Crop";
-
-        document.getElementById("productLabel").innerText =
-            "🧴 Product Name";
-
-        document.getElementById("typeLabel").innerText =
-            "Product Type";
-
-        document.getElementById("rateLabel").innerText =
-            "Verified Rate Per Acre";
-
-        document.getElementById("unitLabel").innerText =
-            "Unit";
-
-        document.getElementById("calcAreaLabel").innerText =
-            "📐 Farm Area (acres)";
-
-        document.getElementById("calculateBtn").innerText =
-            "CALCULATE TOTAL →";
-
-        document.getElementById("totalHeading").innerText =
-            "Total Required";
-
-        document.getElementById("calculatorBackBtn").innerText =
-            "← Back";
-    }
-}
-
-</script>
-
-</body>
-</html>
-   
+const translations = {
+
+    en: {
+        langBtn: "ગુજરાતી",
+        tag: "SMART FARM ASSISTANT",
+        headline: "Aaje tamara khetarma shu karvu?",
+        subtitle: "KhedutOS helps farmers understand their crop, monitor farm risks and decide what to check today.",
+        startBtn: "Start My Farm →",
+        featureHeading: "Your farm, one simple dashboard",
+        weatherTitle: "Weather Awareness",
+        weatherText: "Understand how weather can affect irrigation and field activities.",
+        riskTitle: "Crop Risk",
+        riskText: "Get simple monitoring reminders for your crop.",
+        guideTitle: "Crop Guidance",
+        guideText: "Receive practical daily actions for your crop.",
+        doseTitle: "Dose Calculator",
+        doseText: "Calculate total quantity from a verified rate.",
+        missionTitle: "Technology that speaks the farmer's language.",
+        missionText: "Our goal is simple: make farm decisions easier, clearer and more useful.",
+        setupTitle: "🌱 Create Your Farm",
+        setupIntro: "Tell us a few things about your farm.",
+        cropLabel: "🌾 Select Crop",
+        cropDefault: "Select your crop",
+        cropOptions: { Cotton:"Cotton", Maize:"Maize", Rice:"Rice", Groundnut:"Groundnut", Wheat:"Wheat", Tomato:"Tomato", Chilli:"Chilli" },
+        locationLabel: "📍 Your Location",
+        locationPlaceholder: "Example: Mahisagar",
+        dateLabel: "📅 Sowing Date",
+        irrigationLabel: "💧 Irrigation Method",
+        irrigationDefault: "Select method",
+        irrigationOptions: { "Drip":"Drip", "Sprinkler":"Sprinkler", "Flood / Canal":"Flood / Canal", "Rainfed":"Rainfed" },
+        areaLabel: "📐 Farm Area (acres)",
+        areaPlaceholder: "Example: 2",
+        createBtn: "CREATE MY FARM →",
+        resultTitle: "🌱 Your Farm is Ready!",
+        todayTitle: "Aaje tamara khetarma shu karvu?",
+        irrigationActionTitle: "💧 Irrigation Check",
+        irrigationActionText: "Check soil moisture before deciding whether irrigation is needed.",
+        pestActionTitle: "🐛 Pest Monitoring",
+        pestActionText: "Inspect plants and leaves carefully for unusual insects or damage.",
+        cropActionTitle: "🌿 Crop Observation",
+        cropActionText: "Look for yellowing leaves, unusual spots, wilting or abnormal growth.",
+        importantTitle: "⚠️ Important",
+        importantText: "Do not spray pesticides only because a problem is suspected. Confirm the issue first or consult an agriculture professional.",
+        homeBtn: "← Back to Home",
+        doseBtn: "🧮 Dose Calculator",
+        calculatorTitle: "🧮 Dose Calculator",
+        calculatorIntro: "Enter the rate written on the approved product label or provided by an authorized agriculture expert.",
+        warning: "⚠️ KhedutOS does not decide pesticide or fertilizer dose. Always verify the product label and local expert guidance before use.",
+        calcCropLabel: "🌾 Select Crop",
+        calcCropDefault: "Select crop",
+        productLabel: "🧴 Product Name",
+        productPlaceholder: "Example: Product name",
+        typeLabel: "Product Type",
+        typePesticide: "Pesticide",
+        typeFertilizer: "Fertilizer",
+        typeOther: "Other Farm Input",
+        rateLabel: "Verified Rate Per Acre",
+        ratePlaceho
