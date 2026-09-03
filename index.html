@@ -4,11 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KhedutOS | Smart Farm Assistant</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>KhedutOS - Smart Farm Assistant</title>
 
 <style>
 *{
@@ -18,22 +14,22 @@
 }
 
 body{
-    font-family:"Hind Vadodara",sans-serif;
-    background:#FAF6EC;
-    color:#20281F;
+    font-family:Arial, sans-serif;
+    background:#f5f8f2;
+    color:#26352b;
 }
 
 header{
-    background:#16301F;
+    background:#163d27;
     color:white;
-    padding:16px 20px;
+    padding:15px 18px;
     position:sticky;
     top:0;
     z-index:10;
 }
 
 .nav{
-    max-width:1000px;
+    max-width:900px;
     margin:auto;
     display:flex;
     justify-content:space-between;
@@ -41,81 +37,84 @@ header{
 }
 
 .logo{
-    font-size:25px;
-    font-weight:700;
+    font-size:24px;
+    font-weight:bold;
 }
 
 .logo span{
-    color:#E3A23C;
+    color:#f0b84b;
 }
 
 .lang-btn{
+    border:1px solid white;
     background:transparent;
-    border:1px solid #829588;
     color:white;
-    padding:7px 14px;
     border-radius:20px;
-    font-family:inherit;
+    padding:8px 15px;
+    font-weight:bold;
     cursor:pointer;
 }
 
 .hero{
-    max-width:1000px;
-    margin:auto;
-    padding:60px 20px;
     text-align:center;
+    padding:60px 20px 45px;
+    max-width:900px;
+    margin:auto;
 }
 
 .tag{
     display:inline-block;
-    background:#E3A23C;
-    color:#16301F;
-    padding:5px 13px;
+    background:#f0b84b;
+    color:#173c27;
+    padding:7px 14px;
     border-radius:20px;
     font-size:13px;
-    font-weight:700;
-    margin-bottom:18px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
 h1{
-    color:#16301F;
-    font-size:clamp(40px,8vw,65px);
-    line-height:1.1;
+    font-size:43px;
+    line-height:1.15;
+    color:#163d27;
     margin-bottom:15px;
 }
 
 .subtitle{
     max-width:650px;
     margin:auto;
-    color:#5D675E;
+    color:#617066;
     font-size:18px;
+    line-height:1.6;
 }
 
-.start-btn{
+.primary-btn{
     margin-top:28px;
-    background:#2F6B4A;
-    color:white;
+    padding:14px 25px;
     border:0;
-    padding:14px 26px;
-    border-radius:8px;
-    font-family:inherit;
-    font-size:18px;
-    font-weight:600;
-    box-shadow:5px 5px 0 #16301F;
+    border-radius:9px;
+    background:#2f754b;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
     cursor:pointer;
 }
 
+.primary-btn:hover{
+    opacity:.9;
+}
+
 .features{
-    max-width:1000px;
+    max-width:900px;
     margin:auto;
-    padding:20px 20px 60px;
+    padding:20px;
 }
 
 .section-title{
     text-align:center;
-    color:#16301F;
-    font-size:30px;
+    color:#163d27;
     margin-bottom:25px;
+    font-size:28px;
 }
 
 .cards{
@@ -126,81 +125,79 @@ h1{
 
 .card{
     background:white;
-    padding:22px;
+    padding:20px;
     border-radius:14px;
-    border:1px solid #DED6C7;
-    box-shadow:4px 4px 0 #D8CDB9;
+    border:1px solid #d9e0d8;
 }
 
-.icon{
-    font-size:35px;
+.card .icon{
+    font-size:32px;
 }
 
 .card h3{
-    color:#16301F;
     margin:8px 0;
+    color:#163d27;
 }
 
 .card p{
-    color:#657066;
+    color:#657269;
+    line-height:1.5;
 }
 
 .mission{
-    background:#16301F;
+    background:#163d27;
     color:white;
     text-align:center;
     padding:45px 20px;
+    margin-top:40px;
 }
 
 .mission h2{
+    margin-bottom:10px;
+}
+
+.mission p{
+    max-width:650px;
+    margin:auto;
+    color:#d9e4dc;
+    line-height:1.6;
+}
+
+footer{
+    background:#102a1b;
+    color:#b7c5bb;
+    text-align:center;
+    padding:18px;
+}
+
+
+/* COMMON PAGE */
+
+.page{
+    display:none;
+    max-width:650px;
+    margin:35px auto 70px;
+    padding:0 18px;
+}
+
+.box{
+    background:white;
+    border-radius:16px;
+    padding:24px;
+    border:1px solid #d9e0d8;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.box h2{
+    color:#163d27;
     font-size:28px;
     margin-bottom:8px;
 }
 
-.mission p{
-    color:#D5DED7;
-    max-width:650px;
-    margin:auto;
-}
-
-footer{
-    background:#0D2014;
-    color:#AAB8AD;
-    text-align:center;
-    padding:20px;
-}
-
-
-/* FARM SETUP */
-
-.setup,
-.result,
-.calculator{
-    display:none;
-    max-width:650px;
-    margin:30px auto 70px;
-    padding:0 20px;
-}
-
-.setup-box,
-.calculator-box{
-    background:white;
-    border:1px solid #DED6C7;
-    border-radius:16px;
-    padding:25px;
-    box-shadow:5px 5px 0 #D8CDB9;
-}
-
-.setup-box h2,
-.calculator-box h2{
-    color:#16301F;
-    font-size:30px;
-    margin-bottom:5px;
-}
-
 .intro{
-    color:#667066;
+    color:#68756b;
     margin-bottom:22px;
+    line-height:1.5;
 }
 
 .form-group{
@@ -209,34 +206,46 @@ footer{
 
 label{
     display:block;
-    font-weight:600;
-    color:#16301F;
-    margin-bottom:6px;
+    font-weight:bold;
+    color:#23442f;
+    margin-bottom:7px;
 }
 
 input,
 select{
     width:100%;
-    padding:12px;
-    border:1px solid #C9C2B5;
+    padding:13px;
+    border:1px solid #cbd5cc;
     border-radius:8px;
-    font-family:inherit;
     font-size:16px;
-    background:#FAF6EC;
+    background:#fafcf9;
 }
 
-.create-btn,
-.calculate-btn{
+button{
+    font-family:Arial,sans-serif;
+}
+
+.full-btn{
     width:100%;
-    background:#2F6B4A;
-    color:white;
-    border:0;
     padding:14px;
-    border-radius:8px;
-    font-family:inherit;
-    font-size:18px;
-    font-weight:600;
+    border:0;
+    border-radius:9px;
+    background:#2f754b;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
     margin-top:8px;
+}
+
+.back-btn{
+    margin-top:20px;
+    background:#f0b84b;
+    color:#173c27;
+    border:0;
+    border-radius:8px;
+    padding:11px 17px;
+    font-weight:bold;
     cursor:pointer;
 }
 
@@ -244,95 +253,84 @@ select{
 /* RESULT */
 
 .result-box{
-    background:#E9F1E9;
-    border:2px solid #2F6B4A;
+    background:#eaf3eb;
+    border:2px solid #2f754b;
     border-radius:16px;
-    padding:25px;
+    padding:24px;
 }
 
 .result-box h2{
-    color:#16301F;
-    margin-bottom:15px;
+    color:#163d27;
+    margin-bottom:18px;
 }
 
 .farm-info{
     background:white;
-    padding:15px;
-    border-radius:10px;
-    margin-bottom:20px;
-    line-height:1.8;
+    padding:17px;
+    border-radius:11px;
+    line-height:2;
+    margin-bottom:22px;
+}
+
+.today-title{
+    color:#163d27;
+    margin-bottom:12px;
 }
 
 .action{
     background:white;
-    padding:15px;
+    border-left:5px solid #2f754b;
+    padding:16px;
     border-radius:10px;
-    margin-top:10px;
-    border-left:5px solid #2F6B4A;
+    margin-top:11px;
 }
 
 .action strong{
-    color:#16301F;
+    color:#173c27;
+    font-size:17px;
 }
 
 .action p{
-    color:#596458;
-}
-
-.back-btn,
-.dose-btn{
-    margin-top:20px;
-    background:#E3A23C;
-    color:#16301F;
-    border:0;
-    padding:11px 18px;
-    border-radius:8px;
-    font-family:inherit;
-    font-weight:600;
-    cursor:pointer;
-}
-
-.dose-btn{
-    margin-left:8px;
+    color:#5f6c62;
+    margin-top:5px;
+    line-height:1.5;
 }
 
 
 /* CALCULATOR */
 
 .warning{
-    background:#FFF3D7;
-    border-left:5px solid #E3A23C;
-    padding:13px;
+    background:#fff3d6;
+    border-left:5px solid #e2a63d;
+    padding:14px;
     border-radius:8px;
-    margin-bottom:18px;
+    color:#5b4b2d;
+    line-height:1.5;
+    margin-bottom:20px;
     font-size:14px;
-    color:#55452B;
 }
 
 .calc-result{
     display:none;
     margin-top:20px;
-    background:#E9F1E9;
-    border:2px solid #2F6B4A;
+    background:#eaf3eb;
+    border:2px solid #2f754b;
+    border-radius:11px;
     padding:18px;
-    border-radius:12px;
 }
 
-.calc-result h3{
-    color:#16301F;
-    margin-bottom:8px;
-}
-
-.big-result{
+.total{
     font-size:30px;
-    font-weight:700;
-    color:#2F6B4A;
+    color:#2f754b;
+    font-weight:bold;
+    margin:8px 0;
 }
 
-.small-note{
-    margin-top:10px;
+.note{
+    color:#667269;
     font-size:13px;
-    color:#657066;
+    line-height:1.5;
+    margin-top:8px;
 }
 
 
@@ -340,48 +338,46 @@ select{
 
 @media(max-width:750px){
 
-    .hero{
-        padding:50px 20px;
-    }
-
     h1{
-        font-size:43px;
+        font-size:40px;
     }
 
     .cards{
         grid-template-columns:1fr;
     }
 
-    .setup-box,
-    .result-box,
-    .calculator-box{
+    .hero{
+        padding-top:50px;
+    }
+
+    .box,
+    .result-box{
         padding:20px;
     }
-
-    .dose-btn{
-        margin-left:0;
-        display:block;
-    }
 }
-
 </style>
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header>
     <div class="nav">
+
         <div class="logo">
             Khedut<span>OS</span> 🌱
         </div>
 
-        <button class="lang-btn"
-        onclick="changeLanguage()"
-        id="langButton">
+        <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">
             ગુજરાતી
         </button>
+
     </div>
 </header>
+
 
 
 <!-- HOME -->
@@ -397,24 +393,23 @@ select{
     </h1>
 
     <p class="subtitle" id="subtitle">
-        KhedutOS helps you understand your crop,
+        KhedutOS helps farmers understand their crop,
         monitor farm risks and decide what to check today.
     </p>
 
-    <button class="start-btn"
-    onclick="showSetup()"
-    id="startButton">
+    <button class="primary-btn" id="startBtn" onclick="openFarm()">
         Start My Farm →
     </button>
 
 </section>
 
 
+
 <!-- FEATURES -->
 
 <section class="features" id="features">
 
-    <h2 class="section-title" id="featureTitle">
+    <h2 class="section-title" id="featureHeading">
         Your farm, one simple dashboard
     </h2>
 
@@ -433,8 +428,8 @@ select{
             <div class="icon">🐛</div>
             <h3 id="riskTitle">Crop Risk</h3>
             <p id="riskText">
-                Get simple monitoring reminders based
-                on crop stage and field observations.
+                Get simple monitoring reminders
+                for your crop.
             </p>
         </div>
 
@@ -442,17 +437,17 @@ select{
             <div class="icon">🌱</div>
             <h3 id="guideTitle">Crop Guidance</h3>
             <p id="guideText">
-                Receive practical daily actions for
-                your crop.
+                Receive practical daily actions
+                for your crop.
             </p>
         </div>
 
         <div class="card">
             <div class="icon">🧮</div>
-            <h3 id="doseFeatureTitle">Dose Calculator</h3>
-            <p id="doseFeatureText">
-                Calculate total product quantity from
-                the approved label rate.
+            <h3 id="doseTitle">Dose Calculator</h3>
+            <p id="doseText">
+                Calculate total quantity from
+                a verified rate.
             </p>
         </div>
 
@@ -461,6 +456,9 @@ select{
 </section>
 
 
+
+<!-- MISSION -->
+
 <section class="mission" id="mission">
 
     <h2 id="missionTitle">
@@ -468,18 +466,19 @@ select{
     </h2>
 
     <p id="missionText">
-        Our goal is simple: make farm decisions easier,
-        clearer and more useful for everyday farmers.
+        Our goal is simple: make farm decisions
+        easier, clearer and more useful.
     </p>
 
 </section>
 
 
+
 <!-- FARM SETUP -->
 
-<section class="setup" id="setup">
+<section class="page" id="farmPage">
 
-    <div class="setup-box">
+    <div class="box">
 
         <h2 id="setupTitle">
             🌱 Create Your Farm
@@ -489,11 +488,19 @@ select{
             Tell us a few things about your farm.
         </p>
 
+
         <div class="form-group">
-            <label id="cropLabel">🌾 Select Crop</label>
+
+            <label id="cropLabel">
+                🌾 Select Crop
+            </label>
 
             <select id="crop">
-                <option value="">Select your crop</option>
+
+                <option value="">
+                    Select your crop
+                </option>
+
                 <option value="Cotton">Cotton</option>
                 <option value="Maize">Maize</option>
                 <option value="Rice">Rice</option>
@@ -501,52 +508,78 @@ select{
                 <option value="Wheat">Wheat</option>
                 <option value="Tomato">Tomato</option>
                 <option value="Chilli">Chilli</option>
+
             </select>
+
         </div>
 
-        <div class="form-group">
-            <label id="locationLabel">📍 Your Location</label>
 
-            <input type="text"
-            id="location"
-            placeholder="Example: Mahisagar">
+        <div class="form-group">
+
+            <label id="locationLabel">
+                📍 Your Location
+            </label>
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Example: Mahisagar"
+            >
+
         </div>
 
+
         <div class="form-group">
-            <label id="dateLabel">📅 Sowing Date</label>
+
+            <label id="dateLabel">
+                📅 Sowing Date
+            </label>
 
             <input type="date" id="sowingDate">
+
         </div>
 
+
         <div class="form-group">
+
             <label id="irrigationLabel">
                 💧 Irrigation Method
             </label>
 
             <select id="irrigation">
-                <option value="">Select method</option>
+
+                <option value="">
+                    Select method
+                </option>
+
                 <option value="Drip">Drip</option>
                 <option value="Sprinkler">Sprinkler</option>
                 <option value="Flood / Canal">Flood / Canal</option>
                 <option value="Rainfed">Rainfed</option>
+
             </select>
+
         </div>
 
+
         <div class="form-group">
+
             <label id="areaLabel">
                 📐 Farm Area (acres)
             </label>
 
-            <input type="number"
-            id="area"
-            placeholder="Example: 2"
-            min="0.1"
-            step="0.1">
+            <input
+                type="number"
+                id="area"
+                placeholder="Example: 2"
+                min="0.1"
+                step="0.1"
+            >
+
         </div>
 
-        <button class="create-btn"
-        onclick="createFarm()"
-        id="createButton">
+
+        <button class="full-btn" onclick="createFarm()" id="createBtn">
             CREATE MY FARM →
         </button>
 
@@ -555,9 +588,10 @@ select{
 </section>
 
 
+
 <!-- RESULT -->
 
-<section class="result" id="result">
+<section class="page" id="resultPage">
 
     <div class="result-box">
 
@@ -565,13 +599,17 @@ select{
             🌱 Your Farm is Ready!
         </h2>
 
-        <div class="farm-info" id="farmInfo"></div>
+        <div class="farm-info" id="farmInfo">
+        </div>
 
-        <h3 id="todayTitle">
+
+        <h3 class="today-title" id="todayTitle">
             Aaje tamara khetarma shu karvu?
         </h3>
 
+
         <div class="action">
+
             <strong id="irrigationActionTitle">
                 💧 Irrigation Check
             </strong>
@@ -580,21 +618,26 @@ select{
                 Check soil moisture before deciding
                 whether irrigation is needed.
             </p>
+
         </div>
 
+
         <div class="action">
+
             <strong id="pestActionTitle">
                 🐛 Pest Monitoring
             </strong>
 
             <p id="pestActionText">
-                Inspect at least 10 plants and check
-                leaves carefully for unusual insects
-                or damage.
+                Inspect plants and leaves carefully
+                for unusual insects or damage.
             </p>
+
         </div>
 
+
         <div class="action">
+
             <strong id="cropActionTitle">
                 🌿 Crop Observation
             </strong>
@@ -603,9 +646,12 @@ select{
                 Look for yellowing leaves, unusual
                 spots, wilting or abnormal growth.
             </p>
+
         </div>
 
+
         <div class="action">
+
             <strong id="importantTitle">
                 ⚠️ Important
             </strong>
@@ -616,17 +662,15 @@ select{
                 issue first or consult an agriculture
                 professional.
             </p>
+
         </div>
 
-        <button class="back-btn"
-        onclick="backHome()"
-        id="backButton">
+
+        <button class="back-btn" onclick="goHome()" id="homeBtn">
             ← Back to Home
         </button>
 
-        <button class="dose-btn"
-        onclick="showCalculator()"
-        id="doseButton">
+        <button class="back-btn" onclick="openCalculator()" id="doseBtn">
             🧮 Dose Calculator
         </button>
 
@@ -635,131 +679,183 @@ select{
 </section>
 
 
+
 <!-- DOSE CALCULATOR -->
 
-<section class="calculator" id="calculator">
+<section class="page" id="calculatorPage">
 
-    <div class="calculator-box">
+    <div class="box">
 
-        <h2 id="calcTitle">
+        <h2 id="calculatorTitle">
             🧮 Dose Calculator
         </h2>
 
-        <p class="intro" id="calcIntro">
-            Calculate total quantity using the rate
-            written on the product label or given by
-            an authorized agriculture expert.
+        <p class="intro" id="calculatorIntro">
+            Enter the rate written on the approved
+            product label or provided by an authorized
+            agriculture expert.
         </p>
 
-        <div class="warning" id="warningText">
-            ⚠️ Safety: KhedutOS does not decide pesticide
-            or fertilizer dose. Always use the approved
-            product label and local expert guidance.
+
+        <div class="warning" id="warning">
+            ⚠️ KhedutOS does not decide pesticide or
+            fertilizer dose. Always verify the product
+            label and local expert guidance before use.
         </div>
 
+
         <div class="form-group">
+
             <label id="calcCropLabel">
                 🌾 Select Crop
             </label>
 
             <select id="calcCrop">
-                <option value="">Select crop</option>
-                <option>Cotton</option>
-                <option>Maize</option>
-                <option>Rice</option>
-                <option>Groundnut</option>
-                <option>Wheat</option>
-                <option>Tomato</option>
-                <option>Chilli</option>
+
+                <option value="">
+                    Select crop
+                </option>
+
+                <option value="Cotton">Cotton</option>
+                <option value="Maize">Maize</option>
+                <option value="Rice">Rice</option>
+                <option value="Groundnut">Groundnut</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Tomato">Tomato</option>
+                <option value="Chilli">Chilli</option>
+
             </select>
+
         </div>
 
+
         <div class="form-group">
+
             <label id="productLabel">
                 🧴 Product Name
             </label>
 
-            <input type="text"
-            id="productName"
-            placeholder="Example: Product name">
+            <input
+                type="text"
+                id="productName"
+                placeholder="Example: Product name"
+            >
+
         </div>
 
+
         <div class="form-group">
+
             <label id="typeLabel">
                 Product Type
             </label>
 
             <select id="productType">
-                <option value="Pesticide">Pesticide</option>
-                <option value="Fertilizer">Fertilizer</option>
-                <option value="Other">Other farm input</option>
+
+                <option value="Pesticide">
+                    Pesticide
+                </option>
+
+                <option value="Fertilizer">
+                    Fertilizer
+                </option>
+
+                <option value="Other">
+                    Other Farm Input
+                </option>
+
             </select>
+
         </div>
 
+
         <div class="form-group">
+
             <label id="rateLabel">
-                Approved Rate Per Acre
+                Verified Rate Per Acre
             </label>
 
-            <input type="number"
-            id="rate"
-            placeholder="Example: 500"
-            min="0"
-            step="0.01">
+            <input
+                type="number"
+                id="rate"
+                placeholder="Example: 500"
+                min="0"
+                step="0.01"
+            >
+
         </div>
 
+
         <div class="form-group">
+
             <label id="unitLabel">
                 Unit
             </label>
 
             <select id="unit">
+
                 <option value="ml">ml</option>
-                <option value="Litre">Litre</option>
-                <option value="gram">gram</option>
+                <option value="L">Litre</option>
+                <option value="g">gram</option>
                 <option value="kg">kg</option>
+
             </select>
+
         </div>
 
+
         <div class="form-group">
+
             <label id="calcAreaLabel">
                 📐 Farm Area (acres)
             </label>
 
-            <input type="number"
-            id="calcArea"
-            placeholder="Example: 2"
-            min="0.1"
-            step="0.1">
+            <input
+                type="number"
+                id="calcArea"
+                placeholder="Example: 2"
+                min="0.1"
+                step="0.1"
+            >
+
         </div>
 
-        <button class="calculate-btn"
-        onclick="calculateDose()"
-        id="calculateButton">
+
+        <button
+            class="full-btn"
+            onclick="calculateDose()"
+            id="calculateBtn"
+        >
             CALCULATE TOTAL →
         </button>
 
-        <div class="calc-result" id="calcResult">
-            <h3 id="calcResultTitle">
-                Total Required
-            </h3>
 
-            <div class="big-result"
-            id="totalDose">
+        <div class="calc-result" id="calcResult">
+
+            <strong id="totalHeading">
+                Total Required
+            </strong>
+
+            <div class="total" id="totalAmount">
             </div>
 
-            <p id="calcDetails"></p>
+            <p id="calculationDetails">
+            </p>
 
-            <p class="small-note" id="calcNote">
+            <p class="note" id="calculationNote">
                 This is only a mathematical calculation
-                based on the rate you entered. Verify the
+                based on the rate entered. Verify the
                 rate before use.
             </p>
+
         </div>
 
-        <button class="back-btn"
-        onclick="backToResult()"
-        id="calcBackButton">
+
+        <button
+            class="back-btn"
+            onclick="backToResult()"
+            id="calculatorBackBtn"
+        >
             ← Back
         </button>
 
@@ -768,226 +864,213 @@ select{
 </section>
 
 
+
 <footer>
     © 2026 KhedutOS · Agriculture × Technology
 </footer>
 
 
+
 <script>
 
-let gujarati = false;
+/* =========================
+   GLOBAL VARIABLES
+========================= */
 
-let farmData = {
-    crop:"",
-    location:"",
-    sowingDate:"",
-    irrigation:"",
-    area:"",
-    cropAge:0
+let isGujarati = false;
+
+let farm = {
+    crop: "",
+    location: "",
+    sowingDate: "",
+    irrigation: "",
+    area: "",
+    cropAge: 0
 };
 
 
-/* SHOW SETUP */
+/* =========================
+   OPEN FARM PAGE
+========================= */
 
-function showSetup(){
+function openFarm(){
 
-    document.getElementById("home").style.display="none";
-    document.getElementById("features").style.display="none";
-    document.getElementById("mission").style.display="none";
+    document.getElementById("home").style.display = "none";
+    document.getElementById("features").style.display = "none";
+    document.getElementById("mission").style.display = "none";
 
-    document.getElementById("setup").style.display="block";
+    document.getElementById("farmPage").style.display = "block";
 
     window.scrollTo(0,0);
 }
 
 
-/* CREATE FARM */
+/* =========================
+   CREATE FARM
+========================= */
 
 function createFarm(){
 
-    const crop =
-        document.getElementById("crop").value;
-
-    const location =
-        document.getElementById("location").value.trim();
-
-    const sowingDate =
-        document.getElementById("sowingDate").value;
-
-    const irrigation =
-        document.getElementById("irrigation").value;
-
-    const area =
-        document.getElementById("area").value;
+    let crop = document.getElementById("crop").value;
+    let location = document.getElementById("location").value.trim();
+    let sowingDate = document.getElementById("sowingDate").value;
+    let irrigation = document.getElementById("irrigation").value;
+    let area = document.getElementById("area").value;
 
 
-    if(!crop || !location || !sowingDate ||
-       !irrigation || !area){
+    if(
+        crop === "" ||
+        location === "" ||
+        sowingDate === "" ||
+        irrigation === "" ||
+        area === ""
+    ){
 
         alert(
-            gujarati ?
-            "કૃપા કરીને બધી માહિતી भरो." :
-            "Please complete all farm details."
+            isGujarati
+            ? "કૃપા કરીને બધી માહિતી भरो."
+            : "Please complete all farm details."
         );
 
         return;
     }
 
 
-    const sowing = new Date(sowingDate);
-    const today = new Date();
+    let sowing = new Date(sowingDate);
+    let today = new Date();
 
-    const difference = today - sowing;
+    let difference = today.getTime() - sowing.getTime();
 
-    const cropAge = Math.max(
-        0,
-        Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        )
+    let cropAge = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
     );
 
+    if(cropAge < 0){
+        cropAge = 0;
+    }
 
-    farmData = {
-        crop:crop,
-        location:location,
-        sowingDate:sowingDate,
-        irrigation:irrigation,
-        area:area,
-        cropAge:cropAge
-    };
+
+    farm.crop = crop;
+    farm.location = location;
+    farm.sowingDate = sowingDate;
+    farm.irrigation = irrigation;
+    farm.area = area;
+    farm.cropAge = cropAge;
 
 
     updateFarmInfo();
 
-    document.getElementById("setup").style.display="none";
-    document.getElementById("result").style.display="block";
+
+    document.getElementById("farmPage").style.display = "none";
+    document.getElementById("resultPage").style.display = "block";
 
     window.scrollTo(0,0);
 }
 
 
-/* UPDATE FARM INFO */
+/* =========================
+   FARM INFORMATION
+========================= */
 
 function updateFarmInfo(){
 
-    if(!farmData.crop) return;
+    let info = document.getElementById("farmInfo");
 
-    if(gujarati){
+    if(isGujarati){
 
-        document.getElementById("farmInfo").innerHTML =
-        "<strong>🌾 પાક:</strong> " + farmData.crop +
-        "<br><strong>📍 સ્થાન:</strong> " + farmData.location +
-        "<br><strong>📅 પાકની ઉંમર:</strong> " +
-        farmData.cropAge + " દિવસ" +
-        "<br><strong>💧 સિંચાઈ:</strong> " +
-        farmData.irrigation +
-        "<br><strong>📐 ખેતર:</strong> " +
-        farmData.area + " એકર";
+        info.innerHTML =
+        "<strong>🌾 પાક:</strong> " + farm.crop +
+        "<br>" +
+        "<strong>📍 સ્થાન:</strong> " + farm.location +
+        "<br>" +
+        "<strong>📅 પાકની ઉંમર:</strong> " +
+        farm.cropAge + " દિવસ" +
+        "<br>" +
+        "<strong>💧 સિંચાઈ:</strong> " +
+        farm.irrigation +
+        "<br>" +
+        "<strong>📐 ખેતર:</strong> " +
+        farm.area + " એકર";
 
     }else{
 
-        document.getElementById("farmInfo").innerHTML =
-        "<strong>🌾 Crop:</strong> " + farmData.crop +
-        "<br><strong>📍 Location:</strong> " +
-        farmData.location +
-        "<br><strong>📅 Crop Age:</strong> " +
-        farmData.cropAge + " days" +
-        "<br><strong>💧 Irrigation:</strong> " +
-        farmData.irrigation +
-        "<br><strong>📐 Farm Area:</strong> " +
-        farmData.area + " acres";
+        info.innerHTML =
+        "<strong>🌾 Crop:</strong> " + farm.crop +
+        "<br>" +
+        "<strong>📍 Location:</strong> " +
+        farm.location +
+        "<br>" +
+        "<strong>📅 Crop Age:</strong> " +
+        farm.cropAge + " days" +
+        "<br>" +
+        "<strong>💧 Irrigation:</strong> " +
+        farm.irrigation +
+        "<br>" +
+        "<strong>📐 Farm Area:</strong> " +
+        farm.area + " acres";
     }
 }
 
 
-/* BACK HOME */
+/* =========================
+   HOME
+========================= */
 
-function backHome(){
+function goHome(){
 
-    document.getElementById("result").style.display="none";
+    document.getElementById("resultPage").style.display = "none";
+    document.getElementById("calculatorPage").style.display = "none";
 
-    document.getElementById("home").style.display="block";
-    document.getElementById("features").style.display="block";
-    document.getElementById("mission").style.display="block";
+    document.getElementById("home").style.display = "block";
+    document.getElementById("features").style.display = "block";
+    document.getElementById("mission").style.display = "block";
 
     window.scrollTo(0,0);
 }
 
 
-/* SHOW CALCULATOR */
+/* =========================
+   OPEN CALCULATOR
+========================= */
 
-function showCalculator(){
+function openCalculator(){
 
-    document.getElementById("result").style.display="none";
-    document.getElementById("calculator").style.display="block";
+    document.getElementById("resultPage").style.display = "none";
+    document.getElementById("calculatorPage").style.display = "block";
 
-    if(farmData.crop){
-        document.getElementById("calcCrop").value =
-        farmData.crop;
+
+    if(farm.crop !== ""){
+        document.getElementById("calcCrop").value = farm.crop;
     }
 
-    if(farmData.area){
-        document.getElementById("calcArea").value =
-        farmData.area;
+
+    if(farm.area !== ""){
+        document.getElementById("calcArea").value = farm.area;
     }
+
 
     window.scrollTo(0,0);
 }
 
 
-/* BACK TO RESULT */
+/* =========================
+   BACK TO RESULT
+========================= */
 
 function backToResult(){
 
-    document.getElementById("calculator").style.display="none";
-    document.getElementById("result").style.display="block";
+    document.getElementById("calculatorPage").style.display = "none";
+    document.getElementById("resultPage").style.display = "block";
 
     window.scrollTo(0,0);
 }
 
 
-/* CALCULATE DOSE */
+/* =========================
+   DOSE CALCULATOR
+========================= */
 
 function calculateDose(){
 
-    const crop =
-        document.getElementById("calcCrop").value;
-
-    const product =
-        document.getElementById("productName").value.trim();
-
-    const rate =
-        parseFloat(document.getElementById("rate").value);
-
-    const unit =
-        document.getElementById("unit").value;
-
-    const area =
-        parseFloat(document.getElementById("calcArea").value);
-
-
-    if(!crop || !product ||
-       isNaN(rate) || isNaN(area) ||
-       rate <= 0 || area <= 0){
-
-        alert(
-            gujarati ?
-            "કૃપા કરીને બધી સાચી માહિતી भरो." :
-            "Please enter all valid details."
-        );
-
-        return;
-    }
-
-
-    const total = rate * area;
-
-
-    document.getElementById("totalDose").innerText =
-        total.toFixed(2) + " " + unit;
-
-
-    if(gujarati){
-
-        document.getElementById("calcDetails").innerText =
-            product + " | "
+    let crop =
+   
