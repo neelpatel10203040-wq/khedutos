@@ -1,277 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KhedutOS | Smart Farm Assistant</title>
+<title>KhedutOS | Smart Farm Assistant</title>
 
-    <meta name="description"
-          content="KhedutOS helps farmers understand what to do on their farm today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+body{
+    font-family:"Hind Vadodara",sans-serif;
+    background:#FAF6EC;
+    color:#20281F;
+}
 
-    <style>
+header{
+    background:#16301F;
+    color:white;
+    padding:16px 20px;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+.nav{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        body {
-            font-family: "Hind Vadodara", sans-serif;
-            background: #FAF6EC;
-            color: #20281F;
-            line-height: 1.5;
-        }
+.logo{
+    font-size:25px;
+    font-weight:700;
+}
 
-        header {
-            background: #16301F;
-            color: white;
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+.logo span{
+    color:#E3A23C;
+}
 
-        .nav {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.lang-btn{
+    background:transparent;
+    border:1px solid #829588;
+    color:white;
+    padding:7px 14px;
+    border-radius:20px;
+    font-family:inherit;
+    cursor:pointer;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: 700;
-            letter-spacing: .3px;
-        }
+.hero{
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
+    text-align:center;
+}
 
-        .logo span {
-            color: #E3A23C;
-        }
+.tag{
+    display:inline-block;
+    background:#E3A23C;
+    color:#16301F;
+    padding:5px 13px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
+}
 
-        .language-btn {
-            border: 1px solid #78907E;
-            background: transparent;
-            color: white;
-            padding: 7px 13px;
-            border-radius: 20px;
-            font-family: inherit;
-            cursor: pointer;
-            font-size: 14px;
-        }
+h1{
+    color:#16301F;
+    font-size:clamp(40px,8vw,65px);
+    line-height:1.1;
+    margin-bottom:15px;
+}
 
-        .hero {
-            max-width: 1100px;
-            margin: auto;
-            padding: 65px 20px 50px;
-            display: grid;
-            grid-template-columns: 1.2fr .8fr;
-            gap: 40px;
-            align-items: center;
-        }
+.subtitle{
+    max-width:650px;
+    margin:auto;
+    color:#5D675E;
+    font-size:18px;
+}
 
-        .tag {
-            display: inline-block;
-            background: #E3A23C;
-            color: #16301F;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
+.start-btn{
+    margin-top:28px;
+    background:#2F6B4A;
+    color:white;
+    border:0;
+    padding:14px 26px;
+    border-radius:8px;
+    font-family:inherit;
+    font-size:18px;
+    font-weight:600;
+    box-shadow:5px 5px 0 #16301F;
+    cursor:pointer;
+}
 
-        h1 {
-            font-size: clamp(40px, 7vw, 68px);
-            line-height: 1.08;
-            margin-bottom: 15px;
-            color: #16301F;
-        }
+.features{
+    max-width:1000px;
+    margin:auto;
+    padding:20px 20px 60px;
+}
 
-        .hero-subtitle {
-            font-size: 19px;
-            color: #596458;
-            max-width: 600px;
-            margin-bottom: 28px;
-        }
+.section-title{
+    text-align:center;
+    color:#16301F;
+    font-size:30px;
+    margin-bottom:25px;
+}
 
-        .start-btn {
-            border: none;
-            background: #2F6B4A;
-            color: white;
-            font-family: inherit;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 13px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 5px 5px 0 #16301F;
-        }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
-        .start-btn:active {
-            transform: translate(3px, 3px);
-            box-shadow: 2px 2px 0 #16301F;
-        }
+.card{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    border:1px solid #DED6C7;
+    box-shadow:4px 4px 0 #D8CDB9;
+}
 
-        .hero-art {
-            background: #EDE5D3;
-            border: 2px solid #D7CCB5;
-            border-radius: 20px;
-            min-height: 290px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+.icon{
+    font-size:35px;
+}
 
-        .farm-icon {
-            font-size: 130px;
-        }
+.card h3{
+    color:#16301F;
+    margin:8px 0;
+}
 
-        .section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 35px 20px 70px;
-        }
+.card p{
+    color:#657066;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: #16301F;
-            margin-bottom: 30px;
-        }
+.mission{
+    background:#16301F;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.mission h2{
+    font-size:28px;
+    margin-bottom:8px;
+}
 
-        .card {
-            background: white;
-            border: 1px solid #DED6C7;
-            border-radius: 14px;
-            padding: 25px;
-            box-shadow: 4px 4px 0 #D8CDB9;
-        }
+.mission p{
+    color:#D5DED7;
+    max-width:650px;
+    margin:auto;
+}
 
-        .card-icon {
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
+footer{
+    background:#0D2014;
+    color:#AAB8AD;
+    text-align:center;
+    padding:20px;
+}
 
-        .card h3 {
-            font-size: 21px;
-            margin-bottom: 7px;
-            color: #16301F;
-        }
 
-        .card p {
-            color: #667066;
-            font-size: 15px;
-        }
+/* FARM SETUP */
 
-        .mission {
-            background: #16301F;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
+.setup{
+    display:none;
+    max-width:650px;
+    margin:30px auto 70px;
+    padding:0 20px;
+}
 
-        .mission h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+.setup-box{
+    background:white;
+    border:1px solid #DED6C7;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:5px 5px 0 #D8CDB9;
+}
 
-        .mission p {
-            max-width: 650px;
-            margin: auto;
-            color: #D5DED7;
-            font-size: 17px;
-        }
+.setup-box h2{
+    color:#16301F;
+    font-size:30px;
+    margin-bottom:5px;
+}
 
-        footer {
-            background: #0D2014;
-            color: #AAB8AD;
-            text-align: center;
-            padding: 22px;
-            font-size: 14px;
-        }
+.setup-box .intro{
+    color:#667066;
+    margin-bottom:22px;
+}
 
-        .popup {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.55);
-            z-index: 200;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+.form-group{
+    margin-bottom:17px;
+}
 
-        .popup-box {
-            background: #FAF6EC;
-            max-width: 400px;
-            width: 100%;
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-        }
+label{
+    display:block;
+    font-weight:600;
+    color:#16301F;
+    margin-bottom:6px;
+}
 
-        .popup-box h2 {
-            color: #16301F;
-            margin-bottom: 10px;
-        }
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #C9C2B5;
+    border-radius:8px;
+    font-family:inherit;
+    font-size:16px;
+    background:#FAF6EC;
+}
 
-        .popup-box p {
-            color: #596458;
-            margin-bottom: 20px;
-        }
+.create-btn{
+    width:100%;
+    background:#2F6B4A;
+    color:white;
+    border:0;
+    padding:14px;
+    border-radius:8px;
+    font-family:inherit;
+    font-size:18px;
+    font-weight:600;
+    margin-top:8px;
+    cursor:pointer;
+}
 
-        .close-btn {
-            border: none;
-            background: #2F6B4A;
-            color: white;
-            padding: 10px 22px;
-            border-radius: 7px;
-            font-family: inherit;
-            cursor: pointer;
-        }
 
-        @media (max-width: 750px) {
+/* FARM RESULT */
 
-            .hero {
-                grid-template-columns: 1fr;
-                padding-top: 45px;
-            }
+.result{
+    display:none;
+    max-width:650px;
+    margin:30px auto 70px;
+    padding:0 20px;
+}
 
-            .hero-art {
-                min-height: 200px;
-            }
+.result-box{
+    background:#E9F1E9;
+    border:2px solid #2F6B4A;
+    border-radius:16px;
+    padding:25px;
+}
 
-            .farm-icon {
-                font-size: 90px;
-            }
+.result-box h2{
+    color:#16301F;
+    margin-bottom:15px;
+}
 
-            .cards {
-                grid-template-columns: 1fr;
-            }
+.farm-info{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+    line-height:1.8;
+}
 
-            h1 {
-                font-size: 43px;
-            }
-        }
+.action{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+    border-left:5px solid #2F6B4A;
+}
 
-    </style>
+.action strong{
+    color:#16301F;
+}
+
+.action p{
+    color:#596458;
+}
+
+.back-btn{
+    margin-top:20px;
+    background:#E3A23C;
+    color:#16301F;
+    border:0;
+    padding:11px 18px;
+    border-radius:8px;
+    font-family:inherit;
+    font-weight:600;
+    cursor:pointer;
+}
+
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .hero{
+        padding:50px 20px;
+    }
+
+    h1{
+        font-size:43px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .setup-box,
+    .result-box{
+        padding:20px;
+    }
+}
+</style>
 </head>
+
 
 <body>
 
@@ -283,8 +326,11 @@
             Khedut<span>OS</span> 🌱
         </div>
 
-        <button class="language-btn" onclick="toggleLanguage()">
-            ગુજરાતી / EN
+        <button
+            class="lang-btn"
+            onclick="changeLanguage()"
+            id="langButton">
+            ગુજરાતી
         </button>
 
     </div>
@@ -292,117 +338,361 @@
 </header>
 
 
-<main>
+<!-- HOME -->
 
-    <section class="hero">
+<section class="hero" id="home">
 
-        <div>
+    <div class="tag" id="tag">
+        SMART FARM ASSISTANT
+    </div>
 
-            <div class="tag" id="tag">
-                SMART FARM ASSISTANT
-            </div>
+    <h1 id="headline">
+        Aaje tamara khetarma shu karvu?
+    </h1>
 
-            <h1 id="headline">
-                Aaje tamara khetarma shu karvu?
-            </h1>
+    <p class="subtitle" id="subtitle">
+        KhedutOS helps you understand your crop,
+        monitor farm risks and decide what to check today.
+    </p>
 
-            <p class="hero-subtitle" id="subtitle">
-                KhedutOS helps you understand your crop,
-                monitor farm risks and decide what to check today.
+    <button
+        class="start-btn"
+        onclick="showSetup()"
+        id="startButton">
+        Start My Farm →
+    </button>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+    <h2 class="section-title">
+        Your farm, one simple dashboard
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🌦️</div>
+
+            <h3>
+                Weather Awareness
+            </h3>
+
+            <p>
+                Understand how weather can affect
+                irrigation and field activities.
             </p>
 
-            <button class="start-btn" onclick="startFarm()" id="startButton">
-                Start My Farm →
-            </button>
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🐛</div>
+
+            <h3>
+                Crop Risk
+            </h3>
+
+            <p>
+                Get simple monitoring reminders based
+                on crop stage and field observations.
+            </p>
 
         </div>
 
 
-        <div class="hero-art">
+        <div class="card">
 
-            <div class="farm-icon">
-                🌾🌱☀️
-            </div>
+            <div class="icon">🌱</div>
+
+            <h3>
+                Crop Guidance
+            </h3>
+
+            <p>
+                Receive practical daily actions for
+                your crop.
+            </p>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <section class="section">
+<!-- MISSION -->
 
-        <h2 class="section-title" id="featureTitle">
-            Your farm, one simple dashboard
+<section class="mission">
+
+    <h2>
+        Technology that speaks the farmer's language.
+    </h2>
+
+    <p>
+        Our goal is simple: make farm decisions easier,
+        clearer and more useful for everyday farmers.
+    </p>
+
+</section>
+
+
+<!-- FARM SETUP -->
+
+<section class="setup" id="setup">
+
+    <div class="setup-box">
+
+        <h2>
+            🌱 Create Your Farm
         </h2>
 
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="card-icon">🌦️</div>
-
-                <h3 id="card1Title">
-                    Weather Awareness
-                </h3>
-
-                <p id="card1Text">
-                    Understand how upcoming weather can affect
-                    irrigation and field activities.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🐛</div>
-
-                <h3 id="card2Title">
-                    Crop Risk
-                </h3>
-
-                <p id="card2Text">
-                    Get simple monitoring reminders based on
-                    crop stage and field observations.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🌱</div>
-
-                <h3 id="card3Title">
-                    Crop Guidance
-                </h3>
-
-                <p id="card3Text">
-                    Receive practical daily actions for your
-                    crop instead of complicated information.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="mission">
-
-        <h2 id="missionTitle">
-            Technology that speaks the farmer's language.
-        </h2>
-
-        <p id="missionText">
-            Our goal is simple: make farm decisions easier,
-            clearer and more useful for everyday farmers.
+        <p class="intro">
+            Tell us a few things about your farm.
         </p>
 
-    </section>
 
-</main>
+        <!-- CROP -->
+
+        <div class="form-group">
+
+            <label for="crop">
+                🌾 Select Crop
+            </label>
+
+            <select id="crop">
+
+                <option value="">
+                    Select your crop
+                </option>
+
+                <option value="Cotton">
+                    Cotton
+                </option>
+
+                <option value="Maize">
+                    Maize
+                </option>
+
+                <option value="Rice">
+                    Rice
+                </option>
+
+                <option value="Groundnut">
+                    Groundnut
+                </option>
+
+                <option value="Wheat">
+                    Wheat
+                </option>
+
+                <option value="Tomato">
+                    Tomato
+                </option>
+
+                <option value="Chilli">
+                    Chilli
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="form-group">
+
+            <label for="location">
+                📍 Your Location
+            </label>
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Example: Vadodara">
+
+        </div>
+
+
+        <!-- SOWING DATE -->
+
+        <div class="form-group">
+
+            <label for="sowingDate">
+                📅 Sowing Date
+            </label>
+
+            <input
+                type="date"
+                id="sowingDate">
+
+        </div>
+
+
+        <!-- IRRIGATION -->
+
+        <div class="form-group">
+
+            <label for="irrigation">
+                💧 Irrigation Method
+            </label>
+
+            <select id="irrigation">
+
+                <option value="">
+                    Select method
+                </option>
+
+                <option value="Drip">
+                    Drip
+                </option>
+
+                <option value="Sprinkler">
+                    Sprinkler
+                </option>
+
+                <option value="Flood">
+                    Flood / Canal
+                </option>
+
+                <option value="Rainfed">
+                    Rainfed
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- FARM AREA -->
+
+        <div class="form-group">
+
+            <label for="area">
+                📐 Farm Area (acres)
+            </label>
+
+            <input
+                type="number"
+                id="area"
+                placeholder="Example: 2"
+                min="0.1"
+                step="0.1">
+
+        </div>
+
+
+        <button
+            class="create-btn"
+            onclick="createFarm()">
+
+            CREATE MY FARM →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- RESULT -->
+
+<section class="result" id="result">
+
+    <div class="result-box">
+
+        <h2>
+            🌱 Your Farm is Ready!
+        </h2>
+
+        <div
+            class="farm-info"
+            id="farmInfo">
+        </div>
+
+
+        <h3>
+            Aaje tamara khetarma shu karvu?
+        </h3>
+
+
+        <div class="action">
+
+            <strong>
+                💧 Irrigation Check
+            </strong>
+
+            <p>
+                Check soil moisture before deciding
+                whether irrigation is needed.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <strong>
+                🐛 Pest Monitoring
+            </strong>
+
+            <p>
+                Inspect at least 10 plants and check
+                leaves carefully for unusual insects
+                or damage.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <strong>
+                🌿 Crop Observation
+            </strong>
+
+            <p>
+                Look for yellowing leaves, unusual
+                spots, wilting or abnormal growth.
+            </p>
+
+        </div>
+
+
+        <div class="action">
+
+            <strong>
+                ⚠️ Important
+            </strong>
+
+            <p>
+                Do not spray pesticides only because
+                a problem is suspected. Confirm the
+                issue first or consult an agriculture
+                professional.
+            </p>
+
+        </div>
+
+
+        <button
+            class="back-btn"
+            onclick="backHome()">
+
+            ← Back to Home
+
+        </button>
+
+    </div>
+
+</section>
 
 
 <footer>
@@ -412,149 +702,177 @@
 </footer>
 
 
-<div class="popup" id="popup">
-
-    <div class="popup-box">
-
-        <h2 id="popupTitle">
-            🌱 Your farm journey starts here
-        </h2>
-
-        <p id="popupText">
-            Farm setup is coming next. Soon you will be able
-            to select your crop, location and crop age.
-        </p>
-
-        <button class="close-btn" onclick="closePopup()">
-            Okay
-        </button>
-
-    </div>
-
-</div>
-
-
 <script>
 
-    let gujarati = false;
+
+/* SHOW FARM SETUP */
+
+function showSetup(){
+
+    document.getElementById("home").style.display =
+        "none";
+
+    document.getElementById("features").style.display =
+        "none";
+
+    document.querySelector(".mission").style.display =
+        "none";
+
+    document.getElementById("setup").style.display =
+        "block";
+
+    window.scrollTo(0,0);
+}
 
 
-    function startFarm() {
+/* CREATE FARM */
 
-        document.getElementById("popup").style.display = "flex";
+function createFarm(){
 
+    const crop =
+        document.getElementById("crop").value;
+
+    const location =
+        document.getElementById("location").value.trim();
+
+    const sowingDate =
+        document.getElementById("sowingDate").value;
+
+    const irrigation =
+        document.getElementById("irrigation").value;
+
+    const area =
+        document.getElementById("area").value;
+
+
+    /* CHECK EMPTY FIELDS */
+
+    if(
+        !crop ||
+        !location ||
+        !sowingDate ||
+        !irrigation ||
+        !area
+    ){
+
+        alert(
+            "Please complete all farm details."
+        );
+
+        return;
     }
 
 
-    function closePopup() {
+    /* CALCULATE CROP AGE */
 
-        document.getElementById("popup").style.display = "none";
+    const sowing =
+        new Date(sowingDate);
 
-    }
+    const today =
+        new Date();
+
+    const difference =
+        today - sowing;
+
+    const cropAge =
+        Math.max(
+            0,
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            )
+        );
 
 
-    function toggleLanguage() {
+    /* SHOW FARM INFORMATION */
 
-        gujarati = !gujarati;
+    document.getElementById("farmInfo").innerHTML =
+
+        "<strong>🌾 Crop:</strong> " + crop +
+        "<br><strong>📍 Location:</strong> " + location +
+        "<br><strong>📅 Crop Age:</strong> " + cropAge + " days" +
+        "<br><strong>💧 Irrigation:</strong> " + irrigation +
+        "<br><strong>📐 Farm Area:</strong> " + area + " acres";
 
 
-        if (gujarati) {
+    /* SWITCH SCREEN */
 
-            document.getElementById("tag").innerText =
-                "સ્માર્ટ ફાર્મ આસિસ્ટન્ટ";
+    document.getElementById("setup").style.display =
+        "none";
 
-            document.getElementById("headline").innerText =
-                "આજે તમારા ખેતરમાં શું કરવું?";
+    document.getElementById("result").style.display =
+        "block";
 
-            document.getElementById("subtitle").innerText =
-                "KhedutOS તમને તમારા પાકને સમજવામાં, ખેતરના જોખમો પર નજર રાખવામાં અને આજે શું તપાસવું તે નક્કી કરવામાં મદદ કરે છે.";
+    window.scrollTo(0,0);
+}
 
-            document.getElementById("startButton").innerText =
-                "મારું ખેતર શરૂ કરો →";
 
-            document.getElementById("featureTitle").innerText =
-                "તમારું ખેતર, એક સરળ ડેશબોર્ડ";
+/* BACK HOME */
 
-            document.getElementById("card1Title").innerText =
-                "હવામાનની માહિતી";
+function backHome(){
 
-            document.getElementById("card1Text").innerText =
-                "આવનારું હવામાન સિંચાઈ અને ખેતરના કામને કેવી રીતે અસર કરી શકે તે સમજો.";
+    document.getElementById("result").style.display =
+        "none";
 
-            document.getElementById("card2Title").innerText =
-                "પાકનું જોખમ";
+    document.getElementById("home").style.display =
+        "block";
 
-            document.getElementById("card2Text").innerText =
-                "પાકની ઉંમર અને ખેતરની સ્થિતિ પ્રમાણે સરળ મોનિટરિંગ સૂચનાઓ મેળવો.";
+    document.getElementById("features").style.display =
+        "block";
 
-            document.getElementById("card3Title").innerText =
-                "પાકની સલાહ";
+    document.querySelector(".mission").style.display =
+        "block";
 
-            document.getElementById("card3Text").innerText =
-                "મુશ્કેલ માહિતીની જગ્યાએ તમારા પાક માટે ઉપયોગી દૈનિક કામની સલાહ મેળવો.";
+    window.scrollTo(0,0);
+}
 
-            document.getElementById("missionTitle").innerText =
-                "ખેડૂતની ભાષામાં ટેકનોલોજી.";
 
-            document.getElementById("missionText").innerText =
-                "અમારો હેતુ સરળ છે: ખેડૂતો માટે ખેતીના નિર્ણયો વધુ સરળ, સ્પષ્ટ અને ઉપયોગી બનાવવા.";
+/* LANGUAGE */
 
-            document.getElementById("popupTitle").innerText =
-                "🌱 તમારા ખેતરની સફર અહીંથી શરૂ થાય છે";
+let gujarati = false;
 
-            document.getElementById("popupText").innerText =
-                "આગળના વર્ઝનમાં તમે પાક, સ્થળ અને પાકની ઉંમર પસંદ કરી શકશો.";
 
-        } else {
+function changeLanguage(){
 
-            document.getElementById("tag").innerText =
-                "SMART FARM ASSISTANT";
+    gujarati = !gujarati;
 
-            document.getElementById("headline").innerText =
-                "Aaje tamara khetarma shu karvu?";
 
-            document.getElementById("subtitle").innerText =
-                "KhedutOS helps you understand your crop, monitor farm risks and decide what to check today.";
+    if(gujarati){
 
-            document.getElementById("startButton").innerText =
-                "Start My Farm →";
+        document.getElementById("langButton").innerText =
+            "EN";
 
-            document.getElementById("featureTitle").innerText =
-                "Your farm, one simple dashboard";
+        document.getElementById("tag").innerText =
+            "સ્માર્ટ ફાર્મ આસિસ્ટન્ટ";
 
-            document.getElementById("card1Title").innerText =
-                "Weather Awareness";
+        document.getElementById("headline").innerText =
+            "આજે તમારા ખેતરમાં શું કરવું?";
 
-            document.getElementById("card1Text").innerText =
-                "Understand how upcoming weather can affect irrigation and field activities.";
+        document.getElementById("subtitle").innerText =
+            "KhedutOS તમને તમારા પાકને સમજવામાં અને આજે શું તપાસવું તે નક્કી કરવામાં મદદ કરે છે.";
 
-            document.getElementById("card2Title").innerText =
-                "Crop Risk";
-
-            document.getElementById("card2Text").innerText =
-                "Get simple monitoring reminders based on crop stage and field observations.";
-
-            document.getElementById("card3Title").innerText =
-                "Crop Guidance";
-
-            document.getElementById("card3Text").innerText =
-                "Receive practical daily actions for your crop instead of complicated information.";
-
-            document.getElementById("missionTitle").innerText =
-                "Technology that speaks the farmer's language.";
-
-            document.getElementById("missionText").innerText =
-                "Our goal is simple: make farm decisions easier, clearer and more useful for everyday farmers.";
-
-            document.getElementById("popupTitle").innerText =
-                "🌱 Your farm journey starts here";
-
-            document.getElementById("popupText").innerText =
-                "Farm setup is coming next. Soon you will be able to select your crop, location and crop age.";
-
-        }
+        document.getElementById("startButton").innerText =
+            "મારું ખેતર શરૂ કરો →";
 
     }
+    else{
+
+        document.getElementById("langButton").innerText =
+            "ગુજરાતી";
+
+        document.getElementById("tag").innerText =
+            "SMART FARM ASSISTANT";
+
+        document.getElementById("headline").innerText =
+            "Aaje tamara khetarma shu karvu?";
+
+        document.getElementById("subtitle").innerText =
+            "KhedutOS helps you understand your crop, monitor farm risks and decide what to check today.";
+
+        document.getElementById("startButton").innerText =
+            "Start My Farm →";
+    }
+}
 
 </script>
 
