@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="UF8NcN2qwmd540MX7LII3nXOmZfwH7cqjPkheUlyV0E" name="google-site-verification"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#123d2a" name="theme-color"/>
+<title>
+   KhedutOS — Smart Farm Decision Assistant
+  </title>
+<style>
+   :root{--g:#123d2a;--g2:#24734a;--bg:#f6f4eb;--card:#fff;--text:#193027;--muted:#68766f;--line:#dce6df;--lime:#e3f3c9;--warn:#fff4d6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}a{text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#f6f4ebee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:10px;align-items:center;color:var(--g);font-weight:900;font-size:1.2rem}.logo{width:42px;height:42px;border-radius:13px;background:var(--g);display:grid;place-items:center;color:#fff;font-size:22px}.links{display:flex;align-items:center;gap:18px}.links a{color:var(--muted);font-weight:700;font-size:.9rem}.lang{border:1px solid var(--line);background:#fff;color:var(--g);border-radius:11px;padding:9px 12px;font-weight:800}
+.hero{padding:70px 0 55px}.heroGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}.tag{display:inline-block;background:var(--lime);color:var(--g);padding:8px 12px;border-radius:99px;font-weight:850;font-size:.82rem}h1{font-size:clamp(2.6rem,6vw,5rem);line-height:.98;letter-spacing:-.05em;color:var(--g);margin:18px 0}.hero p{color:var(--muted);font-size:1.08rem;max-width:620px}.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:14px;padding:14px 19px;font-weight:900;display:inline-block}.primary{background:var(--g);color:#fff}.secondary{background:#fff;color:var(--g);border:1px solid var(--line)}.heroCard{background:var(--g);padding:18px;border-radius:28px;box-shadow:0 18px 45px #123d2a22}.heroCard img{width:100%;height:440px;object-fit:cover;border-radius:20px}.badge{color:var(--g);background:#fff;border-radius:13px;padding:9px 13px;font-weight:850;display:inline-block;margin:-25px 0 0 18px;position:relative}
+.decisionCard{min-height:440px;padding:28px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 20%,#24734a 0,#123d2a 44%,#0b291c 100%);color:#fff}.decisionCard:before{content:'';position:absolute;width:250px;height:250px;border:1px solid #ffffff1c;border-radius:50%;left:50%;top:25px;transform:translateX(-50%);animation:decisionSpin 16s linear infinite}.decisionCard:after{content:'';position:absolute;width:330px;height:330px;border:1px dashed #ffffff14;border-radius:50%;left:50%;top:-15px;transform:translateX(-50%);animation:decisionSpin 24s linear infinite reverse}.decisionOrb{position:relative;width:145px;height:145px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;border:1px solid #ffffff32;box-shadow:0 0 0 10px #ffffff08,0 0 45px #8fd37a22;z-index:1}.orbCore{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:#ffffff16;border:1px solid #ffffff3d;font-size:34px;box-shadow:inset 0 0 25px #ffffff0c;animation:orbBreath 2.8s ease-in-out infinite}.orbDot{position:absolute;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--g);font-size:15px;box-shadow:0 6px 18px #0004}.dot1{top:-2px;left:56px}.dot2{right:-1px;top:55px}.dot3{bottom:-1px;left:56px}.dot4{left:-1px;top:55px}.decisionKicker{text-align:center;color:#d9f0c6;font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;position:relative;z-index:1}.decisionCard h3{text-align:center;color:#fff;font-size:1.55rem;margin:7px 0 8px;position:relative;z-index:1}.decisionCard p{text-align:center;color:#d7e7dc;font-size:.93rem;max-width:480px;margin:0 auto 18px;position:relative;z-index:1}.decisionSteps{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;position:relative;z-index:1}.decisionSteps div{background:#ffffff10;border:1px solid #ffffff1c;border-radius:12px;padding:9px 6px;text-align:center}.decisionSteps b{display:block;font-size:.65rem;color:#b9d9c5;margin-bottom:3px}.decisionSteps span{font-size:.76rem;font-weight:800}.decisionStatus{position:relative;z-index:1;margin:16px auto 0;width:max-content;max-width:100%;padding:7px 11px;border-radius:99px;background:#ffffff0d;border:1px solid #ffffff18;color:#cfe3d7;font-size:.72rem;font-weight:750}.statusPulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#b7e27f;margin-right:6px;box-shadow:0 0 0 5px #b7e27f18;animation:statusBlink 1.7s ease-in-out infinite}@keyframes decisionSpin{to{transform:translateX(-50%) rotate(360deg)}}@keyframes orbBreath{50%{transform:scale(1.06)}}@keyframes statusBlink{50%{opacity:.35}}
+section{padding:65px 0}.head{margin-bottom:25px}.kicker{color:var(--g2);font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}h2{color:var(--g);font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;margin:5px 0}.head p{color:var(--muted);max-width:650px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card,.formCard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:23px;box-shadow:0 9px 28px #123d2a0c}.ico{width:45px;height:45px;border-radius:13px;background:var(--lime);display:grid;place-items:center;font-size:21px;margin-bottom:14px}.card h3{color:var(--g);margin:0 0 7px}.card p{color:var(--muted);margin:0}
+.farm{background:#eaf2e7;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.field label{display:block;color:var(--g);font-weight:800;font-size:.88rem;margin-bottom:6px}.field input,.field select{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--text);font:inherit}.full{grid-column:1/-1}.note,.safety{font-size:.82rem;color:var(--muted);margin-top:12px}
+#dashboard{display:none}#dashboard.show{display:block}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:17px}.metric{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px}.metric small{color:var(--muted);display:block}.metric strong{color:var(--g);font-size:1.2rem}.dash{display:grid;grid-template-columns:1.3fr .7fr;gap:17px}.list{display:grid;gap:9px;margin-top:13px}.item{background:#f3f8f0;border-radius:13px;padding:12px}.warning{background:#fff7f1}.risk{display:inline-block;background:var(--warn);color:#775900;border-radius:99px;padding:4px 9px;font-size:.8rem}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:17px}.result{display:none;background:var(--g);color:#fff;border-radius:16px;padding:15px;margin-top:14px}.result strong{display:block;font-size:1.55rem}.safety{background:var(--warn);padding:13px;border-radius:12px;color:#66552b}
+.about{display:grid;grid-template-columns:.7fr 1.3fr;gap:28px;align-items:center}.profile{text-align:center;background:#fff;border:1px solid var(--line);border-radius:23px;padding:18px}.profile img{width:205px;height:255px;object-fit:cover;border-radius:18px}.profilePhoto{animation:slideIn .8s ease both}@keyframes slideIn{from{opacity:0;transform:translateX(-28px) scale(.96)}to{opacity:1;transform:none}}.profile h3{color:var(--g);margin:12px 0 3px}.profile p{color:var(--muted);margin:0}.contact{background:var(--g);color:#fff;border-radius:25px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px}.contact h2{color:#fff}.contact p{color:#d8e8dd}
+footer{background:#0b291c;color:#c8dbd0;padding:26px 0}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot b{color:#fff}.small{font-size:.82rem}
+.toast{display:none;position:fixed;right:16px;bottom:16px;background:var(--g);color:#fff;padding:12px 15px;border-radius:12px;z-index:30}
+@media(max-width:800px){.heroGrid,.dash,.about,.calc{grid-template-columns:1fr}.features{grid-template-columns:1fr}.grid,.metrics{grid-template-columns:1fr}.links a{display:none}.hero{padding-top:45px}.heroCard img{height:360px}.contact{display:block}.full{grid-column:auto}}
+
+/* Research-backed agronomy upgrade */
+.research{background:#eef5eb;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.advisorGrid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.sourceList{display:grid;gap:9px;margin-top:12px}.sourceItem{padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:13px}.sourceItem a{color:var(--g2);font-weight:800}
+.pill{display:inline-block;border-radius:99px;background:var(--lime);color:var(--g);padding:5px 9px;font-size:.75rem;font-weight:850;margin:2px 4px 2px 0}
+@media(max-width:800px){.advisorGrid{grid-template-columns:1fr}}
+
+/* KhedutOS v3 mode experience */
+#welcomeScreen{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0b291c,#123d2a 55%,#24734a);display:flex;align-items:center;justify-content:center;padding:20px;color:#fff}
+.welcomeBox{width:min(980px,94vw);display:grid;grid-template-columns:1.05fr .95fr;background:#ffffff12;border:1px solid #ffffff2d;border-radius:32px;overflow:hidden;box-shadow:0 30px 90px #0005;backdrop-filter:blur(8px)}
+.welcomeImg{min-height:500px;background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Woman_at_work%2C_Gujarat.jpg/1280px-Woman_at_work%2C_Gujarat.jpg') center/cover no-repeat;position:relative}.welcomeImg:after{content:'🌾';position:absolute;right:18px;bottom:14px;font-size:44px;filter:drop-shadow(0 5px 8px #0006)}
+.welcomeCopy{padding:48px;display:flex;flex-direction:column;justify-content:center}.welcomeCopy .mini{font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#d9f0c6;font-size:.78rem}.welcomeCopy h1{color:#fff;margin:10px 0 12px;font-size:clamp(2.6rem,6vw,4.8rem)}.welcomeCopy p{color:#e0eee5;font-size:1.05rem}.welcomeBtn{margin-top:20px;align-self:flex-start;border:0;border-radius:15px;padding:14px 20px;font-weight:900;background:#fff;color:var(--g);cursor:pointer}
+#welcomeScreen.hide{animation:welcomeOut .55s ease forwards}@keyframes welcomeOut{to{opacity:0;visibility:hidden;transform:scale(1.02)}}
+.modeSection{background:#eaf2e7;border-bottom:1px solid var(--line);padding:42px 0}.modeCards{display:grid;grid-template-columns:1fr 1fr;gap:18px}.modeCard{background:#fff;border:2px solid var(--line);border-radius:24px;padding:25px;cursor:pointer;transition:.2s;box-shadow:0 10px 28px #123d2a10}.modeCard:hover{transform:translateY(-4px);border-color:#8bbd95}.modeCard .modeIcon{font-size:42px}.modeCard h3{font-size:1.45rem;color:var(--g);margin:8px 0}.modeCard p{color:var(--muted);margin:0}.modeCard.organic{background:linear-gradient(145deg,#fbfff6,#edf7df)}.modeCard.inorganic{background:linear-gradient(145deg,#f8fbff,#eef3f8)}
+#organicContent{display:none}.modeSelected #organicContent{display:block}.modeSelected.organicActive #inorganicContent{display:none}.modeSelected.inorganicActive #organicContent{display:none}
+.organicHero{background:#eef7e7}.organicGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.organicImage{width:100%;height:210px;object-fit:cover;border-radius:18px;margin-bottom:14px}.method{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px}.method h3{color:var(--g);margin-top:0}.method ul{padding-left:20px;color:var(--muted)}.method li{margin:7px 0}.safeBox{background:#fff4d6;border:1px solid #ead79b;border-radius:16px;padding:15px;color:#66552b}.cropLibrary{display:grid;grid-template-columns:.8fr 1.2fr;gap:17px}.cropList{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.cropChip{border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px;text-align:left;font-weight:850;color:var(--g);cursor:pointer}.cropChip.active{outline:2px solid #79a87f;background:#f0f8ea}.cropInfo{min-height:260px}.sourceBadges a{display:inline-block;margin:4px 5px 0 0;padding:6px 9px;border-radius:99px;background:var(--lime);color:var(--g);font-weight:800;font-size:.78rem}.sticker{position:fixed;right:14px;bottom:14px;z-index:20;display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;max-width:180px;pointer-events:none}.sticker span{background:#fff;border:1px solid var(--line);border-radius:50%;width:43px;height:43px;display:grid;place-items:center;box-shadow:0 7px 18px #123d2a20;animation:floaty 3.2s ease-in-out infinite}.sticker span:nth-child(2){animation-delay:.5s}.sticker span:nth-child(3){animation-delay:1s}.sticker span:nth-child(4){animation-delay:1.5s}@keyframes floaty{50%{transform:translateY(-7px) rotate(4deg)}}
+.profilePhoto{animation:profileSlide 1s cubic-bezier(.2,.8,.2,1) both}@keyframes profileSlide{from{opacity:0;transform:translateX(-55px) rotate(-3deg)}to{opacity:1;transform:none}}
+@media(max-width:800px){.welcomeBox,.modeCards,.organicGrid,.cropLibrary{grid-template-columns:1fr}.welcomeImg{min-height:270px}.welcomeCopy{padding:28px}.cropList{grid-template-columns:1fr}.sticker{display:none}}
+
+.organicHero .head{max-width:900px}.inputPill{display:inline-block;padding:5px 9px;border-radius:99px;background:var(--lime);color:var(--g);font-weight:800;margin:3px}
+  
+/* KhedutOS V2 — location-first live data layer */
+.locationHub{background:#f0f7ed;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.locationTop{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.locationStatus{font-weight:800;color:var(--g)}
+.locationGrid{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:18px}.liveCard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 8px 24px #123d2a0b}.liveCard h3{margin:0 0 8px;color:var(--g)}
+.liveMeta{font-size:.82rem;color:var(--muted);margin-top:8px}.weatherNow{display:flex;align-items:center;gap:14px}.weatherIcon{font-size:42px}.temp{font-size:2.2rem;font-weight:900;color:var(--g)}
+.forecast{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.day{background:#f4f8f1;border-radius:13px;padding:10px}.day b{display:block;color:var(--g)}
+.actionBox{margin-top:14px;background:var(--lime);border-radius:14px;padding:12px;color:var(--g)}.locButtons{display:flex;gap:9px;flex-wrap:wrap}.miniBtn{border:0;border-radius:12px;padding:11px 14px;background:var(--g);color:#fff;font-weight:800;cursor:pointer}.miniBtn.secondary{background:#fff;color:var(--g);border:1px solid var(--line)}
+@media(max-width:800px){.locationGrid{grid-template-columns:1fr}.forecast{grid-template-columns:1fr 1fr 1fr}.temp{font-size:1.9rem}}
+</style>
+<style id="final-welcome-polish">
+/* Welcome screen: center the Enter button and make it attractive */
+#welcomeScreen .welcomeCopy { align-items:center; text-align:center; }
+#welcomeScreen .welcomeCopy .mini,
+#welcomeScreen .welcomeCopy h1,
+#welcomeScreen .welcomeCopy p { width:100%; }
+#welcomeScreen .welcomeBtn {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:min(330px,88%) !important;
+  min-height:72px !important;
+  margin:28px auto 8px !important;
+  padding:18px 32px !important;
+  border:0 !important;
+  border-radius:22px !important;
+  font-size:1.28rem !important;
+  font-weight:900 !important;
+  color:#fff !important;
+  background:linear-gradient(135deg,#8fd14f,#2f8b4b) !important;
+  box-shadow:0 0 0 3px rgba(255,255,255,.18),0 0 24px rgba(154,255,110,.55),0 12px 32px rgba(0,0,0,.25) !important;
+  animation:welcomeGlow 1.8s ease-in-out infinite !important;
+  cursor:pointer !important;
+}
+#welcomeScreen .welcomeBtn:active {
+  transform:scale(.94) !important;
+}
+@keyframes welcomeGlow {
+  0%,100% { box-shadow:0 0 0 3px rgba(255,255,255,.18),0 0 18px rgba(154,255,110,.42),0 12px 32px rgba(0,0,0,.25); }
+  50% { box-shadow:0 0 0 5px rgba(255,255,255,.25),0 0 42px rgba(154,255,110,.9),0 14px 34px rgba(0,0,0,.28); }
+}
+
+/* Running tractor across the welcome screen */
+.welcomeTractor {
+  position:absolute;
+  left:-110px;
+  bottom:18px;
+  z-index:3;
+  font-size:58px;
+  line-height:1;
+  filter:drop-shadow(0 7px 8px rgba(0,0,0,.35));
+  pointer-events:none;
+  animation:tractorRun 8s linear infinite;
+}
+@keyframes tractorRun {
+  from { transform:translateX(0); }
+  to { transform:translateX(calc(100vw + 220px)); }
+}
+
+/* Smaller owner photo */
+.profile img,
+.profilePhoto,
+#profilePhoto {
+  width:115px !important;
+  height:145px !important;
+  max-width:115px !important;
+  object-fit:cover !important;
+  border-radius:16px !important;
+}
+
+/* Keep the mode choice page cleanly bilingual */
+#modeChoice .modeCard h3,
+#modeChoice .modeCard p,
+#modeChoice .head .kicker,
+#modeChoice .head h2,
+#modeChoice .head > p {
+  transition:opacity .18s ease;
+}
+
+.modeCard.khedut-touch{transform:scale(.975);box-shadow:0 0 0 4px rgba(126,190,96,.28),0 12px 30px #123d2a20!important}
+</style>
+<script id="final-welcome-polish-script">
+document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('pointerdown',function(e){
+    var c=e.target.closest('.modeCard');
+    if(c){c.classList.add('khedut-touch');}
+  },{passive:true});
+  document.addEventListener('pointerup',function(e){
+    var c=e.target.closest('.modeCard');
+    if(c){c.classList.remove('khedut-touch');}
+  },{passive:true});
+  var w=document.getElementById('welcomeScreen');
+  if(w && !document.querySelector('.welcomeTractor')){
+    var t=document.createElement('div');
+    t.className='welcomeTractor';
+    t.setAttribute('aria-hidden','true');
+    t.textContent='🚜';
+    w.appendChild(t);
+  }
+});
+</script>
+<style id="khedutos-v3-fixes">
+.permissionOverlay{position:fixed;inset:0;background:rgba(8,20,12,.72);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px;z-index:99999}.permissionOverlay.hidden{display:none}.permissionBox{max-width:430px;width:100%;background:#fff;border-radius:24px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.3)}.permissionIcon{font-size:42px}.permissionBox h3{margin:8px 0}.permissionBox p{color:#5b665f;line-height:1.55}.permissionActions{display:grid;gap:10px;margin-top:18px}.permissionActions button{border:0;border-radius:14px;padding:14px;font-weight:800;font-size:16px;cursor:pointer}.allowLocation{background:#176b3a;color:#fff}.manualLocationBtn{background:#edf5ef;color:#176b3a}.locationSource{font-size:12px;color:#6a756e;margin-top:10px}.officialGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.officialCard{padding:16px;border:1px solid rgba(30,90,50,.12);border-radius:16px;background:#fff}.officialCard a{display:inline-block;margin-top:8px;font-weight:800;color:#176b3a;text-decoration:none}.pinResult{margin-top:12px;padding:14px;border-radius:14px;background:#f2f7f3}.mapsBtn{display:inline-block;margin-top:8px;padding:9px 12px;border-radius:10px;background:#e9f2eb;color:#176b3a;text-decoration:none;font-weight:700}@media(max-width:700px){.officialGrid{grid-template-columns:1fr}.permissionBox{padding:22px}}
+.weatherDetails{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.weatherStat{background:#f4f8f1;border-radius:12px;padding:9px}.weatherStat small{display:block;color:var(--muted);font-size:.7rem}.weatherStat b{color:var(--g);font-size:.9rem}.hourly{display:flex;gap:8px;overflow:auto;margin-top:12px;padding-bottom:4px}.hour{min-width:86px;background:#f4f8f1;border-radius:12px;padding:9px;text-align:center}.hour b{display:block;color:var(--g)}.alertBox{margin-top:12px;padding:12px;border-radius:14px;background:#fff4d6;color:#66552b}.sourceLine{font-size:.75rem;color:var(--muted);margin-top:10px}@media(max-width:700px){.weatherDetails{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div aria-modal="true" class="permissionOverlay hidden" id="permissionOverlay" role="dialog">
+<div class="permissionBox">
+<div class="permissionIcon">📍</div>
+<h3 data-e="Allow location for better farm advice" data-g="સારી ખેતી સલાહ માટે સ્થાનની મંજૂરી આપો">Allow location for better farm advice</h3>
+<p data-e="KhedutOS uses your location only to find your area and local weather. Your browser controls the permission. If you do not want GPS, use village or pincode instead." data-g="KhedutOS તમારા વિસ્તાર અને સ્થાનિક હવામાન માટે જ સ્થાનનો ઉપયોગ કરે છે. મંજૂરી બ્રાઉઝર નિયંત્રિત કરે છે. GPS ન આપવું હોય તો ગામ અથવા pincode વાપરો.">KhedutOS uses your location only to find your area and local weather. Your browser controls the permission. If you do not want GPS, use village or pincode instead.</p>
+<div class="permissionActions"><button class="allowLocation" id="permissionAllow" type="button">📍 Allow location</button><button class="manualLocationBtn" id="permissionManual" type="button">✏️ Use village / pincode instead</button><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><input id="permissionPin" inputmode="numeric" maxlength="6" placeholder="6-digit PIN code" style="flex:1;min-width:160px;padding:13px;border:1px solid #d7e4da;border-radius:12px;font-size:15px"><button class="miniBtn" id="permissionPinBtn" type="button" style="border:0">Find PIN</button></div><button class="manualLocationBtn" id="skipLocation" type="button" style="margin-top:2px">Continue without location →</button><a id="openLiveSite" href="https://neelpatel10203040-wq.github.io/khedutos/" target="_blank" rel="noopener" style="display:none;text-align:center;color:#176b3a;font-weight:800;text-decoration:none;padding:8px">Open live KhedutOS on GitHub Pages ↗</a></div>
+</div>
+</div>
+<div id="welcomeScreen">
+<div class="welcomeBox">
+<div class="welcomeImg">
+</div>
+<div class="welcomeCopy">
+<div class="mini" data-e="🌱 KhedutOS • Smart Farm Assistant" data-g="🌱 KhedutOS • સ્માર્ટ ફાર્મ સહાયક">
+      🌱 KhedutOS • Smart Farm Assistant
+     </div>
+<h1 data-e="Welcome, Khedut!" data-g="સ્વાગત છે, ખેડૂત!">
+      Welcome, Khedut!
+     </h1>
+<p data-e="Simple, practical and research-backed farming guidance — built for Indian farmers." data-g="ભારતીય ખેડૂતો માટે સરળ, વ્યવહારુ અને સંશોધન આધારિત ખેતી માર્ગદર્શન.">
+      Simple, practical and research-backed farming guidance — built for Indian farmers.
+     </p>
+<p data-e="Choose your farming approach to continue." data-g="આગળ વધવા માટે તમારી ખેતી પદ્ધતિ પસંદ કરો.">
+      Choose your farming approach to continue.
+     </p>
+<button class="welcomeBtn" data-e="Enter KhedutOS →" data-g="KhedutOS માં પ્રવેશ કરો →" id="enterKhedut" type="button">
+      Enter KhedutOS →
+     </button>
+</div>
+</div>
+</div>
+<div class="sticker">
+<span>
+    🌱
+   </span>
+<span>
+    🚜
+   </span>
+<span>
+    🌾
+   </span>
+<span>
+    🐝
+   </span>
+</div>
+<header>
+<div class="wrap nav">
+<div class="brand">
+<div class="logo">
+      🌱
+     </div>
+     KhedutOS
+    </div>
+<div class="links">
+<a data-e="Features" data-g="સુવિધાઓ" href="#features">
+      Features
+     </a>
+<a data-e="My Farm" data-g="મારું ખેતર" href="#farm">
+      My Farm
+     </a>
+<a data-e="About" data-g="અમારા વિશે" href="#about">
+      About
+     </a>
+<a href="#modeChoice">
+      Mode
+     </a>
+<a data-e="Research" data-g="Research" href="#research">
+      Research
+     </a>
+<button class="lang" id="lang" type="button">
+      ગુજરાતી
+     </button>
+</div>
+</div>
+</header>
+<section class="locationHub" id="locationHub">
+<div class="wrap" style="padding:34px 0">
+<div class="locationTop">
+<div>
+<div class="kicker" data-e="Your farm location" data-g="તમારા ખેતરનું સ્થાન">Your farm location</div>
+<h2 data-e="Location first. Advice second." data-g="પહેલા સ્થાન. પછી સલાહ." style="margin:4px 0 6px">Location first. Advice second.</h2>
+<div class="locationStatus" id="locationStatus">Location not detected yet.</div>
+<div class="liveMeta" data-e="KhedutOS uses your browser location only after you tap the button. No location is stored by this static page." data-g="બટન દબાવ્યા પછી જ બ્રાઉઝરનું સ્થાન લેવામાં આવે છે. આ static page સ્થાન store કરતી નથી.">KhedutOS uses your browser location only after you tap the button. No location is stored by this static page.</div>
+</div>
+<div class="locButtons"><button class="miniBtn" id="useLocation" type="button">📍 Use my location</button><button class="miniBtn secondary" id="manualLocation" type="button">✏️ Enter village / pincode</button></div>
+</div>
+<div class="locationGrid">
+<div class="liveCard">
+<h3>📍 <span data-e="Farm location" data-g="ખેતરનું સ્થાન">Farm location</span></h3>
+<div class="liveMeta" id="locationDetails">Tap “Use my location” to detect GPS.</div>
+<div class="liveMeta" id="locationCoords"></div>
+</div>
+<div class="liveCard">
+<h3>🌦️ <span data-e="Live local weather" data-g="તમારા વિસ્તારનું લાઈવ હવામાન">Live local weather</span></h3>
+<div class="liveMeta" id="weatherContent">Weather will load after location is available.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="locationHub" id="officialGuidance">
+<div class="wrap" style="padding:10px 0 34px">
+<div class="head"><div class="kicker">Official guidance</div><h2 data-e="Recommendations you can verify" data-g="ચકાસી શકાય તેવી સત્તાવાર ભલામણો">Recommendations you can verify</h2><p data-e="Fertilizer dose should not be guessed. Use crop + stage + soil-test information and verify against an institutional recommendation." data-g="ખાતરની માત્રા અંદાજથી નક્કી ન કરો. પાક + અવસ્થા + જમીન ટેસ્ટની માહિતી સાથે સંસ્થાકીય ભલામણ ચકાસો.">Fertilizer dose should not be guessed. Use crop + stage + soil-test information and verify against an institutional recommendation.</p></div>
+<div class="officialGrid">
+<div class="officialCard"><b>🧪 Soil Health Card</b><p class="liveMeta">Soil-test based nutrient planning.</p><a href="https://soilhealth.dac.gov.in/" rel="noopener" target="_blank">Open official source ↗</a></div>
+<div class="officialCard"><b>🌾 ICAR</b><p class="liveMeta">Research and crop production guidance.</p><a href="https://icar.gov.in/" rel="noopener" target="_blank">Open ICAR ↗</a></div>
+<div class="officialCard"><b>📞 Kisan Call Centre</b><p class="liveMeta">Government farmer helpline: 1800-180-1551.</p><a href="tel:18001801551">Call 1800-180-1551</a></div>
+</div>
+<div class="locationSource">Sources: Government of India / ICAR. Exact fertilizer dose is crop-, state-, stage- and soil-dependent.</div>
+</div>
+</section>
+<section class="modeSection" id="modeChoice">
+<div class="wrap">
+<div class="head">
+<div class="kicker" data-e="Choose your path" data-g="તમારો માર્ગ પસંદ કરો">
+      Choose your path
+     </div>
+<h2 data-e="How do you want to farm today?" data-g="આજે તમે ખેતી કેવી રીતે કરવા માંગો છો?">
+      How do you want to farm today?
+     </h2>
+<p data-e="Choose Organic for natural/organic crop-management guidance, or Inorganic for fertilizer planning, farm setup and verified-rate quantity tools." data-g="ઓર્ગેનિક પસંદ કરો તો કુદરતી ખેતી અને પાક વ્યવસ્થાપનની માહિતી મળશે, જ્યારે ઇનઓર્ગેનિકમાં ખાતર આયોજન, ફાર્મ સેટઅપ અને ચકાસેલા ઇનપુટની માહિતી મળશે.">
+      Choose Organic for natural/organic crop-management guidance, or Inorganic for fertilizer planning, farm setup and verified-rate quantity tools.
+     </p>
+</div>
+<div class="modeCards">
+<button class="modeCard organic" id="organicBtn" type="button">
+<div class="modeIcon">
+       🌿
+      </div>
+<h3 data-e="Organic" data-g="ઓર્ગેનિક">
+       Organic
+      </h3>
+<p data-e="Organic sowing, soil health, compost, bio-inputs, pest monitoring and non-chemical crop protection." data-g="ઓર્ગેનિક વાવણી, જમીનનું આરોગ્ય, કમ્પોસ્ટ, જૈવિક ઇનપુટ, જીવાત નિરીક્ષણ અને રાસાયણિક દવા વગર પાક સંરક્ષણ.">
+       Organic sowing, soil health, compost, bio-inputs, pest monitoring and non-chemical crop protection.
+      </p>
+</button>
+<button class="modeCard inorganic" id="inorganicBtn" type="button">
+<div class="modeIcon">
+       🧪
+      </div>
+<h3 data-e="Inorganic" data-g="ઇનઓર્ગેનિક">
+       Inorganic
+      </h3>
+<p data-e="Farm profile, crop-stage guidance, research-backed nutrient baselines and verified-input calculators." data-g="ફાર્મ પ્રોફાઇલ, પાકની અવસ્થા પ્રમાણે માર્ગદર્શન, સંશોધન આધારિત પોષક તત્વોની માહિતી અને ચકાસેલા ઇનપુટ માટેના સાધનો.">
+       Farm profile, crop-stage guidance, research-backed nutrient baselines and verified-input calculators.
+      </p>
+</button>
+</div>
+</div>
+</section>
+<section class="hero">
+<div class="wrap heroGrid">
+<div>
+<span class="tag" data-e="Smart decisions for every farm" data-g="દરેક ખેતર માટે સ્માર્ટ નિર્ણય">
+      Smart decisions for every farm
+     </span>
+<h1 data-e="What should I do on my farm today?" data-g="આજે મારા ખેતરમાં શું કરવું?">
+      What should I do on my farm today?
+     </h1>
+<p data-e="KhedutOS is a farmer-focused decision assistant that turns basic crop and farm information into simple daily guidance." data-g="KhedutOS ખેડૂત માટેનું નિર્ણય સહાયક પ્લેટફોર્મ છે, જે પાક અને ખેતરની મૂળભૂત માહિતીમાંથી સરળ દૈનિક માર્ગદર્શન આપે છે.">
+      KhedutOS is a farmer-focused decision assistant that turns basic crop and farm information into simple daily guidance.
+     </p>
+<div class="btns">
+<button class="btn primary" data-e="Start My Farm →" data-g="મારું ખેતર શરૂ કરો →" id="start" type="button">
+       Start My Farm →
+      </button>
+<a class="btn secondary" data-e="Explore Features" data-g="સુવિધાઓ જુઓ" href="#features">
+       Explore Features
+      </a>
+</div>
+</div>
+<div class="heroCard decisionCard">
+<div aria-hidden="true" class="decisionOrb">
+<div class="orbCore">🌱</div>
+<span class="orbDot dot1">💧</span>
+<span class="orbDot dot2">🌾</span>
+<span class="orbDot dot3">🔎</span>
+<span class="orbDot dot4">📝</span>
+</div>
+<div class="decisionKicker" data-e="KhedutOS Decision Loop" data-g="KhedutOS નિર્ણય ચક્ર">
+      KhedutOS Decision Loop
+     </div>
+<h3 data-e="Observe → Decide → Act → Remember" data-g="જોવો → નિર્ણય લો → અમલ કરો → યાદ રાખો">
+      Observe → Decide → Act → Remember
+     </h3>
+<p data-e="A simple farm-intelligence loop that turns field observations into practical next steps — and keeps a memory of what happened." data-g="ખેતરની સ્થિતિને વ્યવહારુ આગળના પગલાંમાં ફેરવતું સરળ farm-intelligence ચક્ર — અને શું થયું તેની યાદ પણ રાખે છે.">
+      A simple farm-intelligence loop that turns field observations into practical next steps — and keeps a memory of what happened.
+     </p>
+<div class="decisionSteps">
+<div><b>01</b><span data-e="Observe" data-g="અવલોકન">Observe</span></div>
+<div><b>02</b><span data-e="Assess" data-g="મૂલ્યાંકન">Assess</span></div>
+<div><b>03</b><span data-e="Act" data-g="અમલ">Act</span></div>
+<div><b>04</b><span data-e="Remember" data-g="યાદ રાખો">Remember</span></div>
+</div>
+<div class="decisionStatus" data-e="Built for day-to-day farm decisions" data-g="રોજિંદા ખેતરના નિર્ણય માટે બનાવેલ">
+<span class="statusPulse"></span> Built for day-to-day farm decisions
+     </div>
+</div>
+/div&gt;
+   </div>
+</section>
+<div id="organicContent">
+<section class="organicHero">
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       Organic farming knowledge base
+      </div>
+<h2 data-e="Organic farming — from sowing to harvest" data-g="જૈવિક ખેતી — વાવણીથી લણણી સુધી">
+       Organic farming — from sowing to harvest
+      </h2>
+<p data-e="Guidance is built from ICAR, TNAU, AAU/JAU and other institutional agricultural material. Exact rates are shown only where a source supports the crop and context." data-g="આ માર્ગદર્શન ICAR, TNAU, AAU/JAU અને અન્ય સંસ્થાકીય કૃષિ સામગ્રી પરથી તૈયાર કરાયું છે. ચોક્કસ દર માત્ર યોગ્ય સ્ત્રોત અને પાકની પરિસ્થિતિ આધારિત હોય ત્યારે જ બતાવવામાં આવે છે.">
+       Guidance is built from ICAR, TNAU, AAU/JAU and other institutional agricultural material. Exact rates are shown only where a source supports the crop and context.
+      </p>
+</div>
+<img alt="Organic compost preparation on a farm" class="organicImage" src="https://content.wotr.org/indias-path-to-sustainable-agriculture-embracing-natural-farming-for-farmers-and-consumers/assets/SrVzwhqK1x/img_7933-4096x2731.jpg"/>
+<div class="safeBox" data-e="Important: Organic does not automatically mean risk-free. Use only correctly identified, legally permitted bio-inputs/biopesticides, follow their label where applicable, and confirm crop-specific use with a KVK/agriculture expert when the source is not crop-specific." data-g="મહત્વનું: જૈવિક ખેતીનો અર્થ જોખમમુક્ત ખેતી નથી. યોગ્ય ઓળખ ધરાવતા અને કાયદેસર રીતે મંજૂર bio-inputs/biopesticides જ વાપરો, લાગુ પડે ત્યારે label અનુસરો અને crop-specific ઉપયોગ માટે KVK/કૃષિ નિષ્ણાતની સલાહ લો.">
+<b>
+       Important:
+      </b>
+      Organic does not automatically mean risk-free. Use only correctly identified, legally permitted bio-inputs/biopesticides, follow their label where applicable, and confirm crop-specific use with a KVK/agriculture expert when the source is not crop-specific.
+     </div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       Step-by-step
+      </div>
+<h2 data-e="Core organic methods" data-g="જૈવિક ખેતીની મુખ્ય પદ્ધતિઓ">
+       Core organic methods
+      </h2>
+</div>
+<div class="organicGrid">
+<div class="method">
+<div class="ico">
+        🌱
+       </div>
+<h3 data-e="Sowing &amp; seed preparation" data-g="વાવણી અને બીજ માવજત">
+        Sowing &amp; seed preparation
+       </h3>
+<ul>
+<li data-e="Use clean, healthy seed suited to the local agro-climatic zone." data-g="સ્થાનિક agro-climatic zone માટે યોગ્ય, સ્વચ્છ અને તંદુરસ્ત બીજ વાપરો.">
+         Use clean, healthy seed suited to the local agro-climatic zone.
+        </li>
+<li data-e="Prefer crop rotation and diversification; avoid repeating the same crop continuously." data-g="પાક ફેરબદલી અને વિવિધતા અપનાવો; એક જ પાક સતત લેવાનું ટાળો.">
+         Prefer crop rotation and diversification; avoid repeating the same crop continuously.
+        </li>
+<li data-e="Where an approved biofertilizer/biocontrol seed treatment is recommended for the crop, use the product and rate specified by the official label or institutional package of practices." data-g="પાક માટે અધિકૃત biofertilizer/biocontrol seed treatment ભલામણ હોય તો official label અથવા સંસ્થાકીય package મુજબનું product અને rate જ વાપરો.">
+         Where an approved biofertilizer/biocontrol seed treatment is recommended for the crop, use the product and rate specified by the official label or institutional package of practices.
+        </li>
+<li data-e="Prepare a fine, well-drained seedbed and avoid waterlogging." data-g="ભુરભુરી અને સારી નિકાસવાળી seedbed તૈયાર કરો અને પાણી ભરાવું ટાળો.">
+         Prepare a fine, well-drained seedbed and avoid waterlogging.
+        </li>
+</ul>
+</div>
+<div class="method">
+<div class="ico">
+        🪱
+       </div>
+<h3 data-e="Organic fertilizer &amp; soil health" data-g="જૈવિક ખાતર અને જમીનનું સ્વાસ્થ્ય">
+        Organic fertilizer &amp; soil health
+       </h3>
+<ul>
+<li data-e="Use well-decomposed FYM, compost, vermicompost and suitable green manure to build soil organic matter." data-g="સારી રીતે સડેલું FYM, compost, vermicompost અને યોગ્ય લીલું ખાતર વાપરી જમીનમાં organic matter વધારો.">
+         Use well-decomposed FYM, compost, vermicompost and suitable green manure to build soil organic matter.
+        </li>
+<li data-e="Recycle crop residues safely instead of burning them." data-g="પાકના અવશેષોને સળગાવવાને બદલે સુરક્ષિત રીતે જમીનમાં/કમ્પોસ્ટમાં પુનઃઉપયોગ કરો.">
+         Recycle crop residues safely instead of burning them.
+        </li>
+<li data-e="Biofertilizers can supplement nutrient management, but they do not guarantee that every crop's full nutrient demand will be met." data-g="Biofertilizer nutrient managementમાં મદદરૂપ થઈ શકે છે, પરંતુ દરેક પાકની સંપૂર્ણ પોષક જરૂરિયાત પૂરી થશે તેની ખાતરી નથી.">
+         Biofertilizers can supplement nutrient management, but they do not guarantee that every crop's full nutrient demand will be met.
+        </li>
+<li data-e="Soil testing remains important even in organic systems." data-g="જૈવિક ખેતીમાં પણ soil testing મહત્વપૂર્ણ છે.">
+         Soil testing remains important even in organic systems.
+        </li>
+</ul>
+</div>
+<div class="method">
+<div class="ico">
+        🐞
+       </div>
+<h3 data-e="Pest control without routine chemical spraying" data-g="નિયમિત chemical spray વગર જીવાત નિયંત્રણ">
+        Pest control without routine chemical spraying
+       </h3>
+<ul>
+<li data-e="Start with field scouting, clean cultivation, crop rotation, resistant varieties and balanced nutrition." data-g="શરૂઆત field scouting, સ્વચ્છ ખેતી, પાક ફેરબદલી, resistant variety અને સંતુલિત પોષણથી કરો.">
+         Start with field scouting, clean cultivation, crop rotation, resistant varieties and balanced nutrition.
+        </li>
+<li data-e="Use yellow/blue sticky traps, light traps or pheromone traps where appropriate for monitoring." data-g="જ્યાં યોગ્ય હોય ત્યાં yellow/blue sticky trap, light trap અથવા pheromone trapથી monitoring કરો.">
+         Use yellow/blue sticky traps, light traps or pheromone traps where appropriate for monitoring.
+        </li>
+<li data-e="Conserve spiders, ladybird beetles, parasitoids and other natural enemies." data-g="માકોળિયા, ladybird beetle, parasitoids અને અન્ય લાભદાયી કુદરતી શત્રુઓને બચાવો.">
+         Conserve spiders, ladybird beetles, parasitoids and other natural enemies.
+        </li>
+<li data-e="Botanicals and microbial biocontrols such as neem products, Trichoderma, Beauveria or Bt may be used only when the crop/pest/product use is supported and the label or expert guidance is followed." data-g="Neem products, Trichoderma, Beauveria અથવા Bt જેવા botanical/microbial biocontrols માત્ર પાક-જીવાત માટે યોગ્ય ઉપયોગ અધિકૃત હોય ત્યારે અને label/expert guidance મુજબ વાપરો.">
+         Botanicals and microbial biocontrols such as neem products, Trichoderma, Beauveria or Bt may be used only when the crop/pest/product use is supported and the label or expert guidance is followed.
+        </li>
+</ul>
+</div>
+<div class="method">
+<div class="ico">
+        ♻️
+       </div>
+<h3 data-e="How to make compost" data-g="કમ્પોસ્ટ કેવી રીતે બનાવવું">
+        How to make compost
+       </h3>
+<ul>
+<li data-e="Collect plant residues and suitable animal-manure materials; avoid plastics, diseased material and contaminated waste." data-g="છોડના અવશેષો અને યોગ્ય પશુમળ સામગ્રી ભેગી કરો; plastic, રોગગ્રસ્ત સામગ્રી અને contaminated waste ટાળો.">
+         Collect plant residues and suitable animal-manure materials; avoid plastics, diseased material and contaminated waste.
+        </li>
+<li data-e="Build a moist, aerated pile with alternating carbon-rich dry material and nitrogen-rich green/manure material." data-g="ભેજવાળો અને હવાની અવરજવર ધરાવતો ઢગલો બનાવો; સુકા carbon-rich અને લીલા/મળવાળા nitrogen-rich પદાર્થોના સ્તરો રાખો.">
+         Build a moist, aerated pile with alternating carbon-rich dry material and nitrogen-rich green/manure material.
+        </li>
+<li data-e="Turn the pile periodically to supply oxygen and maintain even decomposition." data-g="ઓક્સિજન અને સમાન decomposition માટે ઢગલાને સમયાંતરે ફેરવો.">
+         Turn the pile periodically to supply oxygen and maintain even decomposition.
+        </li>
+<li data-e="Use mature, dark, crumbly compost rather than fresh manure directly beside sensitive roots." data-g="સંવેદનશીલ મૂળ પાસે તાજા મળને બદલે પરિપક્વ, કાળાશવાળું અને ભુરભુરું compost વાપરો.">
+         Use mature, dark, crumbly compost rather than fresh manure directly beside sensitive roots.
+        </li>
+</ul>
+</div>
+<div class="method">
+<div class="ico">
+        💧
+       </div>
+<h3 data-e="Water &amp; mulch" data-g="પાણી અને mulch">
+        Water &amp; mulch
+       </h3>
+<ul>
+<li data-e="Water according to crop stage, soil moisture and weather; avoid chronic over-irrigation." data-g="પાકની અવસ્થા, જમીનની ભેજ અને હવામાન પ્રમાણે પાણી આપો; સતત વધારે સિંચાઈ ટાળો.">
+         Water according to crop stage, soil moisture and weather; avoid chronic over-irrigation.
+        </li>
+<li data-e="Organic mulches can reduce evaporation, suppress weeds and moderate soil temperature." data-g="Organic mulch બાષ્પીભવન ઘટાડે, નીંદણ દબાવે અને જમીનનું તાપમાન સંતુલિત કરવામાં મદદ કરે છે.">
+         Organic mulches can reduce evaporation, suppress weeds and moderate soil temperature.
+        </li>
+<li data-e="Keep mulch away from the stem/collar when disease risk or excessive moisture is a concern." data-g="રોગનું જોખમ અથવા વધારે ભેજ હોય ત્યારે mulchને stem/collarથી થોડું દૂર રાખો.">
+         Keep mulch away from the stem/collar when disease risk or excessive moisture is a concern.
+        </li>
+</ul>
+</div>
+<div class="method">
+<div class="ico">
+        🔬
+       </div>
+<h3 data-e="Monitoring rule" data-g="નિરીક્ષણનો નિયમ">
+        Monitoring rule
+       </h3>
+<ul>
+<li data-e="Do not spray just because an insect is seen." data-g="માત્ર જીવાત દેખાય એટલે તરત spray ન કરો.">
+         Do not spray just because an insect is seen.
+        </li>
+<li data-e="Identify the pest/disease and estimate its level before choosing a control." data-g="control પસંદ કરતા પહેલાં જીવાત/રોગની ઓળખ અને તેનું પ્રમાણ તપાસો.">
+         Identify the pest/disease and estimate its level before choosing a control.
+        </li>
+<li data-e="Prefer integrated management and escalate uncertain cases to a KVK/agriculture officer." data-g="Integrated managementને પ્રાથમિકતા આપો અને અનિશ્ચિત કેસમાં KVK/કૃષિ અધિકારીની મદદ લો.">
+         Prefer integrated management and escalate uncertain cases to a KVK/agriculture officer.
+        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       On-farm preparations
+      </div>
+<h2 data-e="Organic inputs farmers commonly use" data-g="ખેડૂતો સામાન્ય રીતે વાપરતા જૈવિક inputs">
+       Organic inputs farmers commonly use
+      </h2>
+<p data-e="These are knowledge cards, not a blanket prescription. Preparation recipes and rates can vary by system and source." data-g="આ knowledge cards છે, દરેક ખેતર માટે એકસરખી prescription નથી. બનાવવાની રીત અને દર system તથા source પ્રમાણે બદલાઈ શકે છે.">
+       These are knowledge cards, not a blanket prescription. Preparation recipes and rates can vary by system and source.
+      </p>
+</div>
+<div class="organicGrid">
+<div class="card">
+<h3 data-e="Compost / Vermicompost" data-g="Compost / Vermicompost">
+        Compost / Vermicompost
+       </h3>
+<p data-e="Use mature material as an organic matter and nutrient source. Nutrient content varies, so do not assume a fixed N-P-K value without analysis." data-g="પરિપક્વ compostને organic matter અને nutrient source તરીકે વાપરો. તેની nutrient content બદલાય છે, તેથી analysis વગર fixed N-P-K માનશો નહીં.">
+        Use mature material as an organic matter and nutrient source. Nutrient content varies, so do not assume a fixed N-P-K value without analysis.
+       </p>
+</div>
+<div class="card">
+<h3 data-e="Green manure" data-g="લીલું ખાતર">
+        Green manure
+       </h3>
+<p data-e="Grow a suitable green-manure crop and incorporate it at the appropriate stage for the local system. This can add organic matter and biologically supplied nitrogen." data-g="સ્થાનિક પદ્ધતિ માટે યોગ્ય green-manure પાક ઉગાડી યોગ્ય અવસ્થાએ જમીનમાં ભેળવો. તે organic matter અને biologically supplied nitrogenમાં મદદ કરી શકે છે.">
+        Grow a suitable green-manure crop and incorporate it at the appropriate stage for the local system. This can add organic matter and biologically supplied nitrogen.
+       </p>
+</div>
+<div class="card">
+<h3 data-e="Jeevamrit / Beejamrit / Ghanjeevamrit" data-g="જીવામૃત / બીજામૃત / ઘનજીવામૃત">
+        Jeevamrit / Beejamrit / Ghanjeevamrit
+       </h3>
+<p data-e="These natural-farming inputs are used in some Indian natural-farming systems. ICAR extension programmes document their preparation and application; use a verified institutional recipe rather than a random social-media formula." data-g="આ inputs કેટલીક ભારતીય natural-farming પદ્ધતિઓમાં વપરાય છે. ICAR extension materialમાં તેમની તૈયારી/ઉપયોગનો ઉલ્લેખ મળે છે; social-mediaની random recipe કરતાં verified institutional recipe વાપરો.">
+        These natural-farming inputs are used in some Indian natural-farming systems. ICAR extension programmes document their preparation and application; use a verified institutional recipe rather than a random social-media formula.
+       </p>
+</div>
+<div class="card">
+<h3 data-e="Neem-based inputs" data-g="લીમડા આધારિત inputs">
+        Neem-based inputs
+       </h3>
+<p data-e="Neem seed kernel extract, neem oil and other neem products are used in some crop IPM programmes. The correct concentration, crop and target pest must be checked against an institutional recommendation or product label." data-g="Neem seed kernel extract, neem oil અને અન્ય neem products કેટલીક crop-IPM પદ્ધતિઓમાં વપરાય છે. concentration, crop અને target pest માટે institutional recommendation અથવા product label ચકાસો.">
+        Neem seed kernel extract, neem oil and other neem products are used in some crop IPM programmes. The correct concentration, crop and target pest must be checked against an institutional recommendation or product label.
+       </p>
+</div>
+<div class="card">
+<h3 data-e="Trichoderma &amp; microbial biocontrols" data-g="Trichoderma અને microbial biocontrols">
+        Trichoderma &amp; microbial biocontrols
+       </h3>
+<p data-e="Some ICAR crop programmes report Trichoderma and other microbial agents for disease management. Use the crop-specific, formulation-specific recommendation where available." data-g="કેટલાક ICAR crop programmesમાં Trichoderma અને અન્ય microbial agents રોગ નિયંત્રણ માટે દર્શાવાયા છે. જ્યાં ઉપલબ્ધ હોય ત્યાં crop-specific અને formulation-specific recommendation અનુસરો.">
+        Some ICAR crop programmes report Trichoderma and other microbial agents for disease management. Use the crop-specific, formulation-specific recommendation where available.
+       </p>
+</div>
+<div class="card">
+<h3 data-e="Biological pest control" data-g="જૈવિક જીવાત નિયંત્રણ">
+        Biological pest control
+       </h3>
+<p data-e="Predators, parasitoids and microbial agents can suppress pests while protecting beneficial insects. Organic crop protection works best as a complete IPM programme, not as one magic spray." data-g="Predators, parasitoids અને microbial agents લાભદાયી જીવાતોને બચાવી જીવાતનું પ્રમાણ ઘટાડવામાં મદદ કરે છે. Organic crop protection સંપૂર્ણ IPM programme તરીકે વધુ અસરકારક છે, એક જ magic sprayથી નહીં.">
+        Predators, parasitoids and microbial agents can suppress pests while protecting beneficial insects. Organic crop protection works best as a complete IPM programme, not as one magic spray.
+       </p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       Crop library
+      </div>
+<h2 data-e="Organic guidance by crop" data-g="પાક પ્રમાણે જૈવિક માર્ગદર્શન">
+       Organic guidance by crop
+      </h2>
+<p data-e="Select a crop to see the practical starting checklist. Exact crop-specific doses are displayed only when the research source supports them." data-g="પાક પસંદ કરો અને શરૂઆતની practical checklist જુઓ. ચોક્કસ crop-specific dose માત્ર research source આધાર આપે ત્યારે જ બતાવવામાં આવે છે.">
+       Select a crop to see the practical starting checklist. Exact crop-specific doses are displayed only when the research source supports them.
+      </p>
+</div>
+<div class="cropLibrary">
+<div class="formCard">
+<div class="cropList" id="organicCropList">
+</div>
+</div>
+<div class="formCard cropInfo" id="organicCropInfo">
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       Verified references
+      </div>
+<h2 data-e="Where this knowledge comes from" data-g="આ માહિતી ક્યાંથી આવે છે">
+       Where this knowledge comes from
+      </h2>
+<p data-e="Priority is given to Indian public agricultural research, government agriculture resources and institutional crop-management material." data-g="ભારતીય public agricultural research, government agriculture resources અને institutional crop-management materialને પ્રાથમિકતા આપવામાં આવે છે.">
+       Priority is given to Indian public agricultural research, government agriculture resources and institutional crop-management material.
+      </p>
+</div>
+<div class="sourceList sourceBadges">
+<a href="https://icar.gov.in/" rel="noopener" target="_blank">
+       ICAR
+      </a>
+<a href="https://epubs.icar.org.in/" rel="noopener" target="_blank">
+       ICAR ePubs / Indian Farming
+      </a>
+<a href="https://agritech.tnau.ac.in/org_farm/" rel="noopener" target="_blank">
+       TNAU Organic Farming
+      </a>
+<a href="https://aau.in/" rel="noopener" target="_blank">
+       Anand Agricultural University
+      </a>
+<a href="https://www.jau.in/" rel="noopener" target="_blank">
+       Junagadh Agricultural University
+      </a>
+<a href="https://icar-iigr.org.in/" rel="noopener" target="_blank">
+       ICAR-IIGR
+      </a>
+<a href="https://ppqs.gov.in/" rel="noopener" target="_blank">
+       PPQS / CIB&amp;RC
+      </a>
+<a href="https://soilhealth.dac.gov.in/" rel="noopener" target="_blank">
+       Soil Health Card
+      </a>
+<a href="https://www.fao.org/" rel="noopener" target="_blank">
+       FAO
+      </a>
+</div>
+</div>
+</section>
+</div>
+<div id="inorganicContent">
+<section id="features">
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       KhedutOS
+      </div>
+<h2 data-e="One place for everyday farm decisions." data-g="રોજિંદા ખેતીના નિર્ણય માટે એક જ જગ્યા.">
+       One place for everyday farm decisions.
+      </h2>
+<p data-e="A lightweight agriculture-tech prototype designed to grow into a smarter farm assistant." data-g="સ્માર્ટ farm assistant બનવાની ક્ષમતા ધરાવતું lightweight agriculture-tech prototype.">
+       A lightweight agriculture-tech prototype designed to grow into a smarter farm assistant.
+      </p>
+</div>
+<div class="features">
+<div class="card">
+<div class="ico">
+        ☀️
+       </div>
+<h3 data-e="Today's Farm Actions" data-g="આજના ખેતરના કામ">
+        Today's Farm Actions
+       </h3>
+<p data-e="Get practical crop-stage actions and checks in a simple dashboard." data-g="સરળ dashboardમાં પાકની અવસ્થા પ્રમાણે વ્યવહારુ કામ અને checks મેળવો.">
+        Get practical crop-stage actions and checks in a simple dashboard.
+       </p>
+</div>
+<div class="card">
+<div class="ico">
+        🛡️
+       </div>
+<h3 data-e="Crop Risk &amp; Monitoring" data-g="પાકનું જોખમ અને નિરીક્ષણ">
+        Crop Risk &amp; Monitoring
+       </h3>
+<p data-e="Track irrigation, observations and a simple risk level." data-g="સિંચાઈ, observations અને સરળ risk level પર નજર રાખો.">
+        Track irrigation, observations and a simple risk level.
+       </p>
+</div>
+<div class="card">
+<div class="ico">
+        🧮
+       </div>
+<h3 data-e="Input Quantity Tools" data-g="ઇનપુટ જથ્થા સાધનો">
+        Input Quantity Tools
+       </h3>
+<p data-e="Calculate pesticide or fertilizer quantity from a verified rate and farm area." data-g="ચકાસેલ rate અને farm area પરથી pesticide અથવા fertilizer નો જથ્થો ગણો.">
+        Calculate pesticide or fertilizer quantity from a verified rate and farm area.
+       </p>
+</div>
+</div>
+</div>
+</section>
+<section class="farm" id="farm">
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       Farm Setup
+      </div>
+<h2 data-e="Create your farm profile" data-g="તમારા ખેતરની માહિતી બનાવો">
+       Create your farm profile
+      </h2>
+</div>
+<div class="formCard">
+<div class="grid">
+<div class="field">
+<label data-e="Crop" data-g="પાક">
+         Crop
+        </label>
+<select id="crop">
+<option value="">
+          Select crop
+         </option>
+<option>
+          Cotton
+         </option>
+<option>
+          Maize
+         </option>
+<option>
+          Rice
+         </option>
+<option>
+          Groundnut
+         </option>
+<option>
+          Wheat
+         </option>
+<option>
+          Tomato
+         </option>
+<option>
+          Chilli
+         </option>
+<option>
+          Soybean
+         </option>
+<option>
+          Bajra (Pearl Millet)
+         </option>
+<option>
+          Jowar (Sorghum)
+         </option>
+<option>
+          Chickpea (Gram)
+         </option>
+<option>
+          Pigeonpea (Tur)
+         </option>
+<option>
+          Green Gram (Moong)
+         </option>
+<option>
+          Black Gram (Urad)
+         </option>
+<option>
+          Mustard
+         </option>
+<option>
+          Onion
+         </option>
+<option>
+          Potato
+         </option>
+<option>
+          Okra
+         </option>
+<option>
+          Brinjal
+         </option>
+<option>
+          Cabbage
+         </option>
+<option>
+          Cauliflower
+         </option>
+<option>
+          Banana
+         </option>
+<option>
+          Sugarcane
+         </option><option>Castor</option>
+</select>
+</div>
+<div class="field">
+<label data-e="Location" data-g="સ્થળ">
+         Location
+        </label>
+<input id="loc" placeholder="Mahisagar, Gujarat"/>
+</div>
+<div class="field">
+<label data-e="Sowing Date" data-g="વાવણીની તારીખ">
+         Sowing Date
+        </label>
+<input id="sow" type="date"/>
+</div>
+<div class="field">
+<label data-e="Irrigation Method" data-g="સિંચાઈ પદ્ધતિ">
+         Irrigation Method
+        </label>
+<select id="irr">
+<option value="">
+          Select method
+         </option>
+<option>
+          Drip
+         </option>
+<option>
+          Sprinkler
+         </option>
+<option>
+          Flood / Furrow
+         </option>
+<option>
+          Rainfed
+         </option>
+</select>
+</div>
+<div class="field">
+<label data-e="Farm Area (acres)" data-g="ખેતર વિસ્તાર (એકર)">
+         Farm Area (acres)
+        </label>
+<input id="area" min=".01" placeholder="2.5" step=".01" type="number"/>
+</div>
+<div class="field">
+<label>
+</label>
+<button class="btn primary" data-e="Create My Farm" data-g="મારું ખેતર બનાવો" id="create" style="width:100%" type="button">
+         Create My Farm
+        </button>
+</div>
+</div>
+<div class="note" data-e="Location is stored for future weather/local context; it does not automatically make agronomy guidance location-specific." data-g="Location આગળ weather/local context માટે છે; તેનાથી agronomy guidance આપમેળે location-specific બનતી નથી.">
+       Location is stored for future weather/local context; it does not automatically make agronomy guidance location-specific.
+      </div>
+</div>
+</div>
+</section>
+<section id="dashboard">
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       Farm Dashboard
+      </div>
+<h2 data-e="Your farm at a glance" data-g="તમારા ખેતરની એક નજરમાં માહિતી">
+       Your farm at a glance
+      </h2>
+</div>
+<div class="metrics">
+<div class="metric">
+<small data-e="Crop" data-g="પાક">
+        Crop
+       </small>
+<strong id="dc">
+        —
+       </strong>
+</div>
+<div class="metric">
+<small data-e="Crop Age" data-g="પાકની ઉંમર">
+        Crop Age
+       </small>
+<strong id="da">
+        —
+       </strong>
+</div>
+<div class="metric">
+<small data-e="Risk Level" data-g="જોખમ સ્તર">
+        Risk Level
+       </small>
+<strong>
+<span class="risk" id="dr">
+         Low
+        </span>
+</strong>
+</div>
+</div>
+<div class="dash">
+<div>
+<div class="card">
+<h3 data-e="Today's Farm Actions" data-g="આજના ખેતરના કામ">
+         Today's Farm Actions
+        </h3>
+<div class="list" id="actions">
+</div>
+</div>
+<div class="card" style="margin-top:17px">
+<h3 data-e="Pest &amp; Disease Monitoring" data-g="જીવાત અને રોગનું નિરીક્ષણ">
+         Pest &amp; Disease Monitoring
+        </h3>
+<div class="list">
+<div class="item">
+          🔎
+          <span data-e="Inspect new leaves and growing points for visible pest activity." data-g="નવા પાન અને growing points પર દેખાતી જીવાત તપાસો.">
+           Inspect new leaves and growing points for visible pest activity.
+          </span>
+</div>
+<div class="item">
+          📷
+          <span data-e="Record unusual spots, curling, wilting or insect clusters before taking action." data-g="અસામાન્ય ડાઘ, વળાંક, કરમાવું અથવા જીવાતના જૂથની નોંધ કરો.">
+           Record unusual spots, curling, wilting or insect clusters before taking action.
+          </span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="card">
+<h3 data-e="Farm Snapshot" data-g="ખેતરની માહિતી">
+         Farm Snapshot
+        </h3>
+<div class="list">
+<div class="item">
+          📍
+          <span id="dl">
+           —
+          </span>
+</div>
+<div class="item">
+          💧
+          <span id="di">
+           —
+          </span>
+</div>
+<div class="item">
+          📐
+          <span id="darea">
+           —
+          </span>
+</div>
+</div>
+</div>
+<div class="card warning" style="margin-top:17px">
+<h3 data-e="What NOT to do" data-g="શું ન કરવું">
+         What NOT to do
+        </h3>
+<div class="list">
+<div class="item">
+          ⚠️
+          <span data-e="Do not spray pesticides only because a pest is suspected." data-g="માત્ર જીવાતની શંકા હોય એટલા માટે pesticide spray ન કરો.">
+           Do not spray pesticides only because a pest is suspected.
+          </span>
+</div>
+<div class="item">
+          ⚠️
+          <span data-e="Do not mix products unless the label or a qualified expert confirms compatibility." data-g="Label અથવા qualified expertની પુષ્ટિ વિના products mix ન કરો.">
+           Do not mix products unless the label or a qualified expert confirms compatibility.
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="inputAdvisor">
+<div class="wrap">
+<div class="head">
+<div class="kicker" data-e="Smart input recommendation" data-g="સ્માર્ટ ઇનપુટ ભલામણ">
+       Smart input recommendation
+      </div>
+<h2 data-e="Which fertilizer or pesticide should I consider?" data-g="કયું ખાતર કે pesticide વિચારવું જોઈએ?">
+       Which fertilizer or pesticide should I consider?
+      </h2>
+<p data-e="Select the crop, stage and observed problem. KhedutOS gives a source-backed starting recommendation where the official material supports it. It does not diagnose a pest from one symptom or invent a chemical dose." data-g="પાક, અવસ્થા અને દેખાતી સમસ્યા પસંદ કરો. જ્યાં official source આધાર આપે છે ત્યાં KhedutOS શરૂઆતની ભલામણ આપે છે. એક લક્ષણ પરથી જીવાતનું નિદાન કે પોતાની રીતે chemical dose બનાવતું નથી.">
+       Select the crop, stage and observed problem. KhedutOS gives a source-backed starting recommendation where the official material supports it. It does not diagnose a pest from one symptom or invent a chemical dose.
+      </p>
+</div>
+<div class="advisorGrid">
+<div class="formCard">
+<h3 data-e="Input Advisor" data-g="ઇનપુટ સલાહકાર">
+        Input Advisor
+       </h3>
+<div class="grid" style="margin-top:15px">
+<div class="field">
+<label data-e="Crop" data-g="પાક">
+          Crop
+         </label>
+<select id="inputCrop">
+</select>
+</div>
+<div class="field">
+<label data-e="Farm Area (acres)" data-g="ખેતર વિસ્તાર (એકર)">
+          Farm Area (acres)
+         </label>
+<input id="inputArea" min="0.01" placeholder="2" step="0.01" type="number"/>
+</div>
+<div class="field">
+<label data-e="Crop stage" data-g="પાકની અવસ્થા">
+          Crop stage
+         </label>
+<select id="inputStage">
+<option value="basal">
+           Sowing / basal
+          </option>
+<option value="vegetative">
+           Vegetative
+          </option>
+<option value="flowering">
+           Flowering
+          </option>
+<option value="fruiting">
+           Fruiting / grain filling
+          </option>
+</select>
+</div>
+<div class="field">
+<label data-e="Observed problem / target" data-g="દેખાતી સમસ્યા / લક્ષ્ય">
+          Observed problem / target
+         </label>
+<select id="inputProblem">
+</select>
+</div>
+<div class="field full">
+<button class="btn primary" data-e="Get recommendation" data-g="ભલામણ મેળવો" id="inputAdvisorBtn" style="width:100%" type="button">
+          Get recommendation
+         </button>
+</div>
+</div>
+<div class="result" id="inputResult">
+</div>
+<div class="safety" data-e="Safety: use only a product/formulation registered for the crop and target pest in India, follow the current label, PPE and waiting period. If the pest/disease is uncertain, contact a KVK or agriculture officer." data-g="સલામતી: ભારતમાં પાક અને લક્ષ્ય જીવાત માટે registered product/formulation જ વાપરો અને current label, PPE તથા waiting period અનુસરો. જીવાત/રોગની ખાતરી ન હોય તો KVK અથવા કૃષિ અધિકારીનો સંપર્ક કરો.">
+        Safety: use only a product/formulation registered for the crop and target pest in India, follow the current label, PPE and waiting period. If the pest/disease is uncertain, contact a KVK or agriculture officer.
+       </div>
+</div>
+<div class="formCard">
+<h3 data-e="How the recommendation is built" data-g="ભલામણ કેવી રીતે બને છે">
+        How the recommendation is built
+       </h3>
+<div class="list">
+<div class="item" data-e="🌱 Fertilizer: published crop/region nutrient baselines are used when available; soil-test results should override a generic baseline." data-g="🌱 ખાતર: ઉપલબ્ધ હોય ત્યારે પાક/વિસ્તારની published nutrient baseline વપરાય છે; soil-test result generic baseline કરતાં પ્રાથમિક છે.">
+         🌱 Fertilizer: published crop/region nutrient baselines are used when available; soil-test results should override a generic baseline.
+        </div>
+<div class="item" data-e="🐞 Pesticide: the app identifies a target pest from the selected problem and points to an officially registered active ingredient/use. Exact dose is not invented." data-g="🐞 Pesticide: પસંદ કરેલી સમસ્યા પરથી target pest પસંદ થાય છે અને official registered active ingredient/use તરફ માર્ગદર્શન મળે છે. Exact dose પોતાની રીતે બનાવાતી નથી.">
+         🐞 Pesticide: the app identifies a target pest from the selected problem and points to an officially registered active ingredient/use. Exact dose is not invented.
+        </div>
+<div class="item" data-e="🔎 Before spraying: confirm the pest/disease, assess severity/threshold, protect beneficial insects and avoid unnecessary mixtures." data-g="🔎 Spray પહેલાં: જીવાત/રોગની ખાતરી કરો, severity/threshold જુઓ, લાભદાયી જીવાતોને બચાવો અને અનાવશ્યક mixture ટાળો.">
+         🔎 Before spraying: confirm the pest/disease, assess severity/threshold, protect beneficial insects and avoid unnecessary mixtures.
+        </div>
+</div>
+<div class="sourceList" style="margin-top:15px">
+<div class="sourceItem">
+         🛡️
+         <a href="https://ppqs.gov.in/" rel="noopener" target="_blank">
+          PPQS / CIB&amp;RC
+         </a>
+         — registered pesticide-use references
+        </div>
+<div class="sourceItem">
+         🌾
+         <a href="https://icar.gov.in/" rel="noopener" target="_blank">
+          ICAR
+         </a>
+         — crop research and advisories
+        </div>
+<div class="sourceItem">
+         🌱
+         <a href="https://aau.in/" rel="noopener" target="_blank">
+          AAU
+         </a>
+         — Gujarat crop recommendations
+        </div>
+<div class="sourceItem">
+         🥜
+         <a href="https://icar-iigr.org.in/" rel="noopener" target="_blank">
+          ICAR-IIGR
+         </a>
+         — groundnut crop protection
+        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="research" id="research">
+<div class="wrap">
+<div class="head">
+<div class="kicker">
+       Research-backed agronomy
+      </div>
+<h2 data-e="Smart fertilizer &amp; crop guidance" data-g="સ્માર્ટ ખાતર અને પાક માર્ગદર્શન">
+       Smart fertilizer &amp; crop guidance
+      </h2>
+<p data-e="KhedutOS uses a curated knowledge base from official agricultural research and plant-protection sources. Exact recommendations are shown only within their published scope; otherwise the app asks for a soil test or expert confirmation." data-g="KhedutOS official agricultural research અને plant-protection sources પરથી તૈયાર કરેલા knowledge base નો ઉપયોગ કરે છે. ચોક્કસ recommendation માત્ર તેના published scopeમાં જ બતાવવામાં આવે છે; નહીં તો soil test અથવા expert confirmation જરૂરી છે.">
+       KhedutOS uses a curated knowledge base from official agricultural research and plant-protection sources. Exact recommendations are shown only within their published scope; otherwise the app asks for a soil test or expert confirmation.
+      </p>
+</div>
+<div class="advisorGrid">
+<div class="formCard">
+<h3 data-e="Smart Fertilizer Advisor" data-g="સ્માર્ટ ખાતર સલાહકાર">
+        Smart Fertilizer Advisor
+       </h3>
+<p class="note" data-e="Choose a crop and enter farm area. The engine returns a source-backed nutrient baseline when a published Gujarat recommendation is available. It does not invent a dose." data-g="પાક પસંદ કરો અને ખેતરનો વિસ્તાર નાખો. જ્યાં ગુજરાત માટે published recommendation ઉપલબ્ધ હોય ત્યાં engine source-backed nutrient baseline બતાવે છે. તે પોતાની રીતે dose બનાવતું નથી.">
+        Choose a crop and enter farm area. The engine returns a source-backed nutrient baseline when a published Gujarat recommendation is available. It does not invent a dose.
+       </p>
+<div class="grid" style="margin-top:15px">
+<div class="field">
+<label data-e="Crop" data-g="પાક">
+          Crop
+         </label>
+<select id="acrop">
+<option value="">
+           Select crop
+          </option>
+<option>
+           Cotton
+          </option>
+<option>
+           Maize
+          </option>
+<option>
+           Rice
+          </option>
+<option>
+           Groundnut
+          </option>
+<option>
+           Wheat
+          </option>
+<option>
+           Tomato
+          </option>
+<option>
+           Chilli
+          </option>
+<option>
+           Soybean
+          </option>
+<option>
+           Bajra (Pearl Millet)
+          </option>
+<option>
+           Jowar (Sorghum)
+          </option>
+<option>
+           Chickpea (Gram)
+          </option>
+<option>
+           Pigeonpea (Tur)
+          </option>
+<option>
+           Green Gram (Moong)
+          </option>
+<option>
+           Black Gram (Urad)
+          </option>
+<option>
+           Mustard
+          </option>
+<option>
+           Onion
+          </option>
+<option>
+           Potato
+          </option>
+<option>
+           Okra
+          </option>
+<option>
+           Brinjal
+          </option>
+<option>
+           Cabbage
+          </option>
+<option>
+           Cauliflower
+          </option>
+<option>
+           Banana
+          </option>
+<option>
+           Sugarcane
+          </option>
+</select>
+</div>
+<div class="field">
+<label data-e="Farm Area (acres)" data-g="ખેતર વિસ્તાર (એકર)">
+          Farm Area (acres)
+         </label>
+<input id="aarea" min="0.01" placeholder="2.5" step="0.01" type="number"/>
+</div>
+<div class="field">
+<label data-e="Soil test available?" data-g="Soil test છે?">
+          Soil test available?
+         </label>
+<select id="soil">
+<option value="no">
+           No
+          </option>
+<option value="yes">
+           Yes
+          </option>
+</select>
+</div>
+<div class="field">
+<label data-e="Crop stage" data-g="પાકની અવસ્થા">
+          Crop stage
+         </label>
+<select id="stage">
+<option value="basal">
+           Sowing / basal
+          </option>
+<option value="vegetative">
+           Vegetative
+          </option>
+<option value="flowering">
+           Flowering
+          </option>
+<option value="fruiting">
+           Fruiting / grain filling
+          </option>
+</select>
+</div>
+<div class="field full">
+<button class="btn primary" data-e="Get research-backed recommendation" data-g="Research-backed ભલામણ મેળવો" id="advisorBtn" style="width:100%" type="button">
+          Get research-backed recommendation
+         </button>
+</div>
+</div>
+<div class="result" id="advisorResult">
+</div>
+<div class="safety" data-e="Important: N-P-K figures are nutrient quantities, not bags of urea/DAP/MOP. Product conversion depends on the fertilizer analysis and local recommendation." data-g="મહત્વનું: N-P-K આંકડા nutrient quantity છે, urea/DAP/MOP ની bags નથી. Product conversion fertilizer analysis અને સ્થાનિક ભલામણ પર આધારિત છે.">
+        Important: N-P-K figures are nutrient quantities, not bags of urea/DAP/MOP. Product conversion depends on the fertilizer analysis and local recommendation.
+       </div>
+</div>
+<div class="formCard">
+<h3 data-e="Evidence &amp; sources" data-g="પુરાવા અને સ્ત્રોતો">
+        Evidence &amp; sources
+       </h3>
+<p class="note" data-e="The current knowledge base prioritizes ICAR, Anand Agricultural University, Junagadh Agricultural University and Government of India plant-protection material." data-g="હાલનું knowledge base ICAR, Anand Agricultural University, Junagadh Agricultural University અને ભારત સરકારના plant-protection material ને પ્રાથમિકતા આપે છે.">
+        The current knowledge base prioritizes ICAR, Anand Agricultural University, Junagadh Agricultural University and Government of India plant-protection material.
+       </p>
+<div class="sourceList">
+<div class="sourceItem">
+         🌾
+         <a href="https://icar.gov.in/" rel="noopener" target="_blank">
+          ICAR
+         </a>
+         — national agricultural research and advisories
+        </div>
+<div class="sourceItem">
+         🌱
+         <a href="https://aau.in/" rel="noopener" target="_blank">
+          Anand Agricultural University
+         </a>
+         — Gujarat crop research recommendations
+        </div>
+<div class="sourceItem">
+         🥜
+         <a href="https://www.jau.in/" rel="noopener" target="_blank">
+          Junagadh Agricultural University
+         </a>
+         — Gujarat groundnut and crop recommendations
+        </div>
+<div class="sourceItem">
+         🛡️
+         <a href="https://ppqs.gov.in/" rel="noopener" target="_blank">
+          PPQS / CIB&amp;RC
+         </a>
+         — Government of India plant-protection and registered pesticide-use material
+        </div>
+</div>
+<p class="small" data-e="No website can guarantee zero-error agronomy for every field. Soil, variety, season, irrigation, pest pressure and local recommendations can change the correct action." data-g="દરેક ખેતર માટે 100% ભૂલમુક્ત agronomy ની ખાતરી કોઈ website આપી શકતી નથી. જમીન, જાત, ઋતુ, સિંચાઈ, જીવાતનું દબાણ અને સ્થાનિક ભલામણ પ્રમાણે યોગ્ય નિર્ણય બદલાઈ શકે છે." style="margin-top:13px;color:var(--muted)">
+        No website can guarantee zero-error agronomy for every field. Soil, variety, season, irrigation, pest pressure and local recommendations can change the correct action.
+       </p>
+</div>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="wrap about">
+<div class="profile">
+<h3>
+       Patel Nil Kumar Mavleshbhai
+      </h3>
+<p>
+       Student / Agriculture-Tech Project Developer
+      </p>
+</div>
+<div>
+<div class="kicker">
+       About KhedutOS
+      </div>
+<h2 data-e="Technology that helps farmers decide with clarity." data-g="ખેડૂતોને સ્પષ્ટ નિર્ણય લેવામાં મદદ કરતી ટેક્નોલોજી.">
+       Technology that helps farmers decide with clarity.
+      </h2>
+<p data-e="KhedutOS is a student-built agriculture-tech prototype focused on practical day-to-day farm decisions, monitoring and safe input-quantity calculations." data-g="KhedutOS એક student-built agriculture-tech prototype છે, જે રોજિંદા ખેતરના નિર્ણય, monitoring અને safe input-quantity calculations પર કેન્દ્રિત છે." style="color:var(--muted)">
+       KhedutOS is a student-built agriculture-tech prototype focused on practical day-to-day farm decisions, monitoring and safe input-quantity calculations.
+      </p>
+<div class="card">
+<h3 data-e="Developer &amp; Contact" data-g="Developer અને Contact">
+        Developer &amp; Contact
+       </h3>
+<p>
+<b>
+         Patel Nil Kumar Mavleshbhai
+        </b>
+<br/>
+        Mahisagar, Gujarat, India
+        <br/>
+<a href="mailto:nilmpatel1020@gmail.com" style="color:var(--g2);font-weight:800">
+         nilmpatel1020@gmail.com
+        </a>
+</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="contact">
+<div>
+<h2 data-e="Have a question about KhedutOS?" data-g="KhedutOS વિશે પ્રશ્ન છે?">
+        Have a question about KhedutOS?
+       </h2>
+<p data-e="Contact the developer by email." data-g="Developerનો email દ્વારા સંપર્ક કરો.">
+        Contact the developer by email.
+       </p>
+</div>
+<a class="btn secondary" data-e="Contact Me ✉" data-g="મારો સંપર્ક કરો ✉" href="mailto:nilmpatel1020@gmail.com">
+       Contact Me ✉
+      </a>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="wrap foot">
+<div>
+<b>
+      KhedutOS
+     </b>
+<div class="small">
+      Smart Farm Decision Assistant
+     </div>
+</div>
+<div class="small">
+     Built by Patel Nil Kumar Mavleshbhai • Mahisagar, Gujarat, India
+    </div>
+<div class="small">
+     nilmpatel1020@gmail.com
+    </div>
+</div>
+</footer>
+<div class="toast" id="toast">
+</div>
+<script>
+   (()=>{
+  let gu=false;
+  const $=id=>document.getElementById(id);
+  const cropData={
+    Cotton:{npk:[180,37.5,112.5],scope:'South Saurashtra Agro-climatic Zone, medium black calcareous soil, Bt cotton: 75% RDF reference with 19-19-19 foliar sprays. Do not apply this blindly outside the stated zone/soil/system.',source:'JAU Department of Soil Science recommendation',url:'https://www.jau.in/storage/document/dynamic_document/css_recommendations_20260511_1536.pdf'},
+    Maize:{npk:[160,20,0],scope:'Middle Gujarat kharif hybrid maize recommendation: 160 kg N + 20 kg P₂O₅/ha; potassium did not increase yield in the cited study. This is zone/season specific.',source:'Anand Agricultural University Annual Report 2024-25',url:'https://aau.in/sites/default/files/21th_annual_report_2024_25.pdf'},
+    Rice:{npk:[120,30,0],scope:'South Gujarat coastal saline-sodic rice-wheat system reference: kharif rice 120:30:0 N:P₂O₅:K₂O kg/ha. This is for the stated soil/system, not universal rice.',source:'Anand Agricultural University 21st AGRESCO proceedings',url:'https://aau.in/sites/default/files/21%20st%20Proceeding_of_21th_agresco_meeting_rega_dor_circular_jun_2025.pdf'},
+    Groundnut:{npk:[18.75,37.5,37.5],scope:'South Saurashtra summer groundnut: 75% RDF as basal, followed by 19-19-19 foliar spray at 45, 60 and 75 DAS. Season and agro-climatic zone matter.',source:'Junagadh Agricultural University, Main Oilseeds Research Station',url:'https://www.jau.in/main-oilseeds-research-station-junagadh'},
+    Wheat:{npk:[120,60,0],scope:'South Saurashtra wheat: 120 kg N + 60 kg P₂O₅/ha; JAU specifies split N application. Soil/zone/irrigation and cropping sequence matter.',source:'Junagadh Agricultural University, Wheat Research Station',url:'https://staging.jau.in/research-stations/research-stations/wheat-research-station-junagadh'},
+    Tomato:{npk:null,scope:'No single Gujarat-wide exact rate is shown here because tomato recommendations vary by production system, season, variety and zone. Use the local SAU package/soil test.',source:'Gujarat Agricultural Universities / ICAR principle: soil- and system-specific recommendation',url:'https://icar.gov.in/'},
+    Chilli:{npk:[100,40,40],scope:'Middle Gujarat chilli: 100:40:40 N:P₂O₅:K₂O kg/ha, with N split after transplanting; AAU also specifies Bio-NPK treatment in this recommendation.',source:'Anand Agricultural University Recommendation Book 2024',url:'https://aau.in/sites/default/files/Recomondation%20Book_2024.pdf'}
+  };
+  const advice={
+    Cotton:['Inspect leaves and growing points for visible pest activity.','Check soil moisture before irrigation.','Record unusual leaf spots, curling or wilting.'],
+    Maize:['Check leaf colour and stand uniformity.','Inspect whorl and lower leaves for visible pest activity.','Check soil moisture before irrigation.'],
+    Rice:['Inspect plant stand and water conditions.','Monitor leaves for unusual disease or insect symptoms.','Avoid unnecessary irrigation when field conditions are already adequate.'],
+    Groundnut:['Inspect leaves for spots and unusual yellowing.','Check soil moisture and field drainage.','Monitor canopy changes and early disease symptoms.'],
+    Wheat:['Inspect leaves for unusual discoloration or disease symptoms.','Check soil moisture according to crop stage.','Record patches that look different before treatment.'],
+    Tomato:['Inspect new leaves, flowers and fruit for pest symptoms.','Check root-zone moisture and avoid prolonged water stress.','Record severely affected plants before treatment.'],
+    Chilli:['Inspect new growth and leaf undersides for pests.','Check root-zone moisture and drainage.','Monitor curling, spots and fruit damage.']
+  };
+  const stageNames={basal:['Sowing / basal','વાવણી / પાયાની'],vegetative:['Vegetative','વૃદ્ધિ અવસ્થા'],flowering:['Flowering','ફૂલ આવવાની અવસ્થા'],fruiting:['Fruiting / grain filling','ફળ / દાણા ભરાવાની અવસ્થા']};
+  function toast(m){$('toast').textContent=m;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2200)}
+  const cropGu={Cotton:'કપાસ',Maize:'મકાઈ',Rice:'ચોખા / ડાંગર',Groundnut:'મગફળી',Wheat:'ઘઉં',Tomato:'ટામેટા',Chilli:'મરચાં',Soybean:'સોયાબીન','Bajra (Pearl Millet)':'બાજરી','Jowar (Sorghum)':'જુવાર','Chickpea (Gram)':'ચણા','Pigeonpea (Tur)':'તુવેર','Green Gram (Moong)':'મગ','Black Gram (Urad)':'અડદ',Mustard:'રાઈ / સરસવ',Onion:'ડુંગળી',Potato:'બટાકા',Okra:'ભીંડા',Brinjal:'રીંગણ',Cabbage:'કોબી',Cauliflower:'ફૂલકોબી',Banana:'કેળા',Sugarcane:'શેરડી'};
+  function cropLabel(c){return gu?(cropGu[c]||c):c;}
+  function lang(){
+  document.querySelectorAll('[data-e]').forEach(x=>x.textContent=gu?x.dataset.g:x.dataset.e);
+  $('lang').textContent=gu?'English':'ગુજરાતી';
+  document.documentElement.lang=gu?'gu':'en';
+
+  const optionGu={
+    'Select crop':'પાક પસંદ કરો','Cotton':'કપાસ','Maize':'મકાઈ','Rice':'ચોખા / ડાંગર',
+    'Groundnut':'મગફળી','Wheat':'ઘઉં','Tomato':'ટામેટા','Chilli':'મરચાં','Soybean':'સોયાબીન',
+    'Bajra (Pearl Millet)':'બાજરી','Jowar (Sorghum)':'જુવાર','Chickpea (Gram)':'ચણા',
+    'Pigeonpea (Tur)':'તુવેર','Green Gram (Moong)':'મગ','Black Gram (Urad)':'અડદ',
+    'Mustard':'રાઈ / સરસવ','Onion':'ડુંગળી','Potato':'બટાકા','Okra':'ભીંડા',
+    'Brinjal':'રીંગણ','Cabbage':'કોબી','Cauliflower':'ફૂલકોબી','Banana':'કેળા','Sugarcane':'શેરડી',
+    'Select method':'પદ્ધતિ પસંદ કરો','Drip':'ડ્રિપ','Sprinkler':'સ્પ્રિંકલર',
+    'Flood / Furrow':'ફ્લડ / ફરો','Rainfed':'વરસાદ આધારિત',
+    'Yes':'હા','No':'ના','Early vegetative':'પ્રારંભિક વૃદ્ધિ','Vegetative':'વૃદ્ધિ અવસ્થા',
+    'Flowering':'ફૂલ આવવાની અવસ્થા','Fruiting / boll / pod filling':'ફળ / બૉલ / શીંગ ભરાવાની અવસ્થા',
+    'Maturity / harvest':'પરિપક્વતા / લણણી'
+  };
+  document.querySelectorAll('select option').forEach(o=>{
+    if(!o.dataset.enLabel) o.dataset.enLabel=(o.value||o.textContent.trim());
+    const en=o.dataset.enLabel;
+    o.textContent=gu?(optionGu[en]||en):en;
+  });
+
+  if(document.body.classList.contains('organicActive')){
+    const active=document.querySelector('.cropChip.active');
+    if(active) showOrganicCrop(active.dataset.cropKey||active.textContent);
+  }
+  initInputAdvisor();
+}
+  function cropStage(age){if(age<25)return gu?'સ્થાપના / શરૂઆત':'Establishment / early growth';if(age<55)return gu?'વેજિટેટિવ વૃદ્ધિ':'Vegetative growth';if(age<90)return gu?'ફૂલ આવવાની નજીક':'Flowering / reproductive';return gu?'પરિપક્વતા / ઉત્પાદન':'Maturity / production'}
+  function createFarm(){
+    const c=$('crop').value,l=$('loc').value.trim(),s=$('sow').value,i=$('irr').value,a=parseFloat($('area').value);
+    if(!c||!l||!s||!i||!(a>0)){toast(gu?'બધી માહિતી ભરો.':'Please complete all farm details.');return}
+    const age=Math.max(0,Math.floor((Date.now()-new Date(s+'T00:00:00'))/86400000));
+    $('dc').textContent=cropLabel(c);$('da').textContent=age+' '+(gu?'દિવસ':'days');$('dl').textContent=l;$('di').textContent=i;$('darea').textContent=a+' acres';$('dr').textContent=gu?'નિરીક્ષણ':'Monitoring';
+    $('actions').innerHTML='';const cd=organicCrops[c];let farmActions=advice[c]||[];if(cd){farmActions=[cd.sow,cd.soil,cd.pest];}if(!farmActions.length)farmActions=['Inspect the crop for visible pest or disease symptoms.','Check soil moisture before irrigation.','Record unusual patches before treatment.'];farmActions.forEach(x=>{const d=document.createElement('div');d.className='item';d.textContent='✅ '+(gu?x:x);$('actions').appendChild(d)});
+    $('dashboard').classList.add('show');$('dashboard').scrollIntoView({behavior:'smooth'});toast(gu?'તમારું dashboard તૈયાર છે.':'Your dashboard is ready.');
+  }
+  function calc(rate,area,unit,out,name){const r=parseFloat($(rate).value),a=parseFloat($(area).value);if(!(r>=0)||!(a>0)){toast(gu?'Rate અને area સાચા દાખલ કરો.':'Enter a valid rate and area.');return}const total=r*a,u=unit.value.replace('/acre',''),n=$(name).value.trim()||'Product';$(out).style.display='block';$(out).innerHTML='<strong>'+total.toFixed(3).replace(/\.?0+$/,'')+' '+u+'</strong><span>'+ (gu?'ગણતરી: ':'Calculation: ')+r+' × '+a+' acres • '+n+'</span>'}
+  function advisor(){
+    const c=$('acrop').value,a=parseFloat($('aarea').value),soil=$('soil').value,stage=$('stage').value;
+    if(!c||!(a>0)){toast(gu?'પાક અને area દાખલ કરો.':'Choose a crop and enter farm area.');return}
+    const d=cropData[c];$('advisorResult').style.display='block';
+    if(!d.npk){$('advisorResult').innerHTML='<strong>'+ (gu?'Exact automatic rate ઉપલબ્ધ નથી':'No automatic exact rate available') +'</strong><span>'+d.scope+' '+(gu?'Soil test અને સ્થાનિક કૃષિ નિષ્ણાતની ભલામણ લો.':'Use a soil test and local agricultural recommendation before choosing a fertilizer rate.')+'<br><br><b>'+ (gu?'સ્ત્રોત: ':'Source: ')+d.source+'</b><br><a href="'+d.url+'" target="_blank" rel="noopener">'+(gu?'મૂળ સત્તાવાર ભલામણ જુઓ ↗':'Open original official recommendation ↗')+'</a></span>';return}
+    const [n,p,k]=d.npk,ha=a/2.47105,tn=n*ha,tp=p*ha,tk=k*ha,st=stageNames[stage][gu?1:0];
+    const soilMsg=soil==='yes'?(gu?'Soil test ઉપલબ્ધ છે — આ baseline ને soil-test recommendation સાથે મેળવો.':'Soil test is available — reconcile this baseline with the soil-test recommendation.'):(gu?'Soil test ઉપલબ્ધ નથી — આ published baseline ને final farm-specific dose ન માનશો.':'No soil test — treat this published baseline as a reference, not a final field-specific dose.');
+    $('advisorResult').innerHTML='<strong>'+c+' • '+st+'</strong><span><b>'+ (gu?'Published nutrient baseline: ':'Published nutrient baseline: ') +n+' N + '+p+' P₂O₅ + '+k+' K₂O kg/ha</b><br>'+ (gu?'તમારા ':'For your ') +a+' acres (~'+ha.toFixed(2)+' ha): '+tn.toFixed(1)+' kg N, '+tp.toFixed(1)+' kg P₂O₅, '+tk.toFixed(1)+' kg K₂O.<br><br>'+d.scope+'<br><br>'+soilMsg+'<br><br><b>'+ (gu?'સ્ત્રોત: ':'Source: ')+d.source+'</b><br><a href="'+d.url+'" target="_blank" rel="noopener">'+(gu?'મૂળ સત્તાવાર ભલામણ જુઓ ↗':'Open original official recommendation ↗')+'</a></span>';
+  }
+
+  Object.assign(cropData,{
+    Soybean:{npk:null,scope:'No verified Gujarat zone-specific nutrient rate is loaded in this engine yet; use soil test + local SAU recommendation.',source:'ICAR / Gujarat Agricultural Universities',url:'https://icar.gov.in/'},
+    'Bajra (Pearl Millet)':{npk:[80,40,0],scope:'North Saurashtra kharif pearl millet reference for the stated cultivar/zone; zinc additions depend on the condition described by JAU.',source:'Junagadh Agricultural University, Main Pearl Millet Research Station',url:'https://www.jau.in/main-pearl-millet-research-station-jamnagar'},
+    'Jowar (Sorghum)':{npk:[40,20,0],scope:'Ghed-area sorghum reference from JAU; N is split basal + top dressing. Not a universal Gujarat rate.',source:'Junagadh Agricultural University, Main Dry Farming Research Station',url:'https://www.jau.in/main-dry-farming-research-station-targhadia'},
+    'Chickpea (Gram)':{npk:[20,40,0],scope:'South Saurashtra irrigated chickpea recommendation. Micronutrients should be based on soil test; JAU also lists Rhizobium + PSB seed treatment.',source:'Junagadh Agricultural University, Pulses Research Station',url:'https://www.jau.in/pulses-research-station-junagadh'},
+    'Pigeonpea (Tur)':{npk:[25,50,50],scope:'South Saurashtra kharif pigeonpea recommendation. Zone, season and soil still matter.',source:'Junagadh Agricultural University, Pulses Research Station',url:'https://www.jau.in/pulses-research-station-junagadh'},
+    'Green Gram (Moong)':{npk:null,scope:'Use the local Gujarat/SAU recommendation for season, soil and cropping sequence; no unverified universal rate is shown.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    'Black Gram (Urad)':{npk:[20,20,0],scope:'Middle Gujarat summer black gram recommendation in AAU annual research material. Season/zone specific.',source:'Anand Agricultural University Annual Report 2024-25',url:'https://aau.in/sites/default/files/21th_annual_report_2024_25.pdf'},
+    Mustard:{npk:null,scope:'No verified Gujarat-specific rate is loaded here yet; use soil test + local SAU recommendation.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    Onion:{npk:[75,60,50],scope:'Middle Gujarat rabi onion recommendation: 75:60:50 N:P₂O₅:K₂O kg/ha, with part of N through vermicompost and remaining N after transplanting. Zone/season specific.',source:'Junagadh Agricultural University AGRESCO proceeding',url:'https://www.jau.in/attachments/proceedings/21ComAGRESCOPro.pdf'},
+    Potato:{npk:[220,110,220],scope:'Middle Gujarat agro-climatic zone-III potato RDF reference from AAU; this is not a universal rate for every soil/variety.',source:'Anand Agricultural University recommendation material',url:'https://aau.in/sites/default/files/09_reco_micro.pdf'},
+    Okra:{npk:null,scope:'No verified Gujarat-specific exact rate is loaded here yet; use local vegetable recommendation and soil test.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    Brinjal:{npk:null,scope:'No verified Gujarat-specific exact rate is loaded here yet; use local vegetable recommendation and soil test.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    'Cabbage':{npk:null,scope:'No verified Gujarat-specific exact rate is loaded here yet; use local vegetable recommendation and soil test.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    Cauliflower:{npk:null,scope:'No verified Gujarat-specific exact rate is loaded here yet; use local vegetable recommendation and soil test.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    Banana:{npk:null,scope:'No verified Gujarat-specific exact rate is loaded here yet; use local horticulture recommendation and soil test.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    Sugarcane:{npk:null,scope:'Sugarcane nutrient rate depends strongly on soil, crop type and irrigation system; use local SAU package and soil test.',source:'Gujarat Agricultural Universities / ICAR',url:'https://icar.gov.in/'},
+    Castor:{npk:[120,40,50],scope:'South Saurashtra irrigated castor recommendation from JAU; N is split and P/K basal.',source:'Junagadh Agricultural University, Castor Research Station',url:'https://www.jau.in/castor-research-station-junagadh'}
+  });
+
+  function renderOrganicCrops(){const list=$('organicCropList'); if(!list)return; list.innerHTML=''; Object.keys(organicCrops).forEach((c,i)=>{const b=document.createElement('button');b.className='cropChip'+(i===0?' active':'');b.dataset.cropKey=c;b.textContent=c;b.onclick=()=>{document.querySelectorAll('.cropChip').forEach(x=>x.classList.remove('active'));b.classList.add('active');showOrganicCrop(c)};list.appendChild(b)});showOrganicCrop(Object.keys(organicCrops)[0])}
+  function showOrganicCrop(c){const d=gu&&organicCropsGu[c]?organicCropsGu[c]:organicCrops[c], box=$('organicCropInfo'); if(!box)return; const L=gu; box.innerHTML='<div class="kicker">'+(L?'પાક માર્ગદર્શન':'Crop guide')+'</div><h3>'+cropLabel(c)+'</h3><p><b>🌱 '+(L?'વાવણી:':'Sowing:')+'</b> '+d.sow+'</p><p><b>🪱 '+(L?'જમીન અને જૈવિક પોષણ:':'Soil & organic nutrition:')+'</b> '+d.soil+'</p><p><b>🐞 '+(L?'જીવાત અને રોગ વ્યવસ્થાપન:':'Pest & disease management:')+'</b> '+d.pest+'</p><div class="safeBox"><b>'+(L?'પુરાવાનો વ્યાપ:':'Evidence scope:')+'</b> '+d.source+'. '+(L?'આ card practical summary છે; exact product rates, certification requirements અને crop-specific doses માટે મૂળ institutional recommendation/label ચકાસો.':'This card is a practical summary; exact product rates, certification requirements and crop-specific doses must be checked against the original institutional recommendation/label.')+'</div>'}
+  function chooseMode(mode){document.body.classList.add('modeSelected');document.body.classList.remove('organicActive','inorganicActive');document.body.classList.add(mode==='organic'?'organicActive':'inorganicActive');$('modeChoice').scrollIntoView({behavior:'smooth'}); if(mode==='organic'){renderOrganicCrops();} else {initInputAdvisor();} }
+  function initInputAdvisor(){const sel=$('inputCrop'),p=$('inputProblem'); if(!sel||!p)return; sel.innerHTML=Object.keys(cropData).map(c=>'<option>'+c+'</option>').join(''); const fill=()=>{const c=sel.value; const arr=inputProblems[c]||['None / monitoring']; const guMap={'None / monitoring':'માત્ર નિરીક્ષણ','Aphid / whitefly / jassid / thrips':'માહુ / સફેદમાખી / જાસિડ / થ્રિપ્સ','Bollworm / pink bollworm':'બોલવર્મ / પિંક બોલવર્મ','Stem borer / leaf folder':'સ્ટેમ બોરર / લીફ ફોલ્ડર','Hoppers':'હોપર','Whitefly':'સફેદમાખી','Fruit borer':'ફળછેદક ઇયળ','Thrips / mites':'થ્રિપ્સ / માઇટ','Shoot / fruit borer':'શૂટ / ફળછેદક ઇયળ','Diamondback moth':'ડાયમંડબેક મોથ','Caterpillars / aphids':'ઇયળ / માહુ','Aphid':'માહુ','Thrips':'થ્રિપ્સ','Pod borer':'શીંગછેદક ઇયળ','Pod borer / pod fly':'શીંગછેદક ઇયળ / શીંગમાખી','Jassid / whitefly':'જાસિડ / સફેદમાખી','Defoliator (Spodoptera/Helicoverpa)':'પાનખાઉ ઇયળ (Spodoptera/Helicoverpa)','Stem/root disease':'થડ / મૂળનો રોગ'}; p.innerHTML=arr.map(x=>'<option value="'+x.replace(/"/g,'&quot;')+'">'+(gu?(guMap[x]||x):x)+'</option>').join('')}; sel.onchange=fill; fill();}
+  function inputAdvisor(){const c=$('inputCrop').value,a=parseFloat($('inputArea').value),prob=$('inputProblem').value,stage=$('inputStage').value;if(!(a>0)){toast(gu?'ખેતર વિસ્તાર નાખો.':'Enter farm area.');return}const d=cropData[c],ha=a/2.47105;let fert=''; if(d.npk){const [n,p,k]=d.npk;fert=(gu?'ખાતર માટે published nutrient baseline: ':'Published fertilizer nutrient baseline: ')+n+' N + '+p+' P₂O₅ + '+k+' K₂O kg/ha. '+(gu?'તમારા ':'For your ')+a+' acres (~'+ha.toFixed(2)+' ha): '+(n*ha).toFixed(1)+' kg N, '+(p*ha).toFixed(1)+' kg P₂O₅, '+(k*ha).toFixed(1)+' kg K₂O.';}else fert=gu?'આ પાક માટે આ engineમાં universal exact N-P-K rate નથી; soil test અને સ્થાનિક ભલામણ લો.':'This engine has no universal exact N-P-K rate for this crop; use a soil test and local recommendation.';const key=c+'|'+prob;let pest=(gu?pesticideAdviceGu[key]:pesticideAdvice[key]); if(!pest) pest=prob==='None / monitoring'?(gu?'હાલ routine pesticideની ભલામણ નથી. પહેલા scouting અને pest/disease identification કરો.':'No routine pesticide is recommended yet. Scout and identify the pest/disease first.'):(gu?'આ target માટે current verified formulation અહીં ઉપલબ્ધ નથી. Official PPQS/label અથવા KVK પરથી crop-target match ચકાસો.':'A current verified formulation is not stored for this target here. Check the crop-target match in the official PPQS material or with a KVK.'); if(gu&&pest.startsWith('Imidacloprid')){} $('inputResult').style.display='block';$('inputResult').innerHTML='<strong>'+c+' • '+(gu?'ભલામણ':'Recommendation')+'</strong><span><b>🌱 '+(gu?'ખાતર:':'Fertilizer:')+'</b> '+fert+'<br><br><b>📚 '+(gu?'સ્ત્રોત:':'Source:')+'</b> <a href="'+d.url+'" target="_blank" rel="noopener">'+d.source+' ↗</a><br><br><b>🐞 '+(gu?'Pesticide/target:':'Pesticide/target:')+'</b> '+pest+'<br><br><b>⚠️ '+(gu?'અવસ્થા:':'Stage:')+'</b> '+(stageNames[stage][gu?1:0])+' — '+(gu?'આ recommendation final diagnosis નથી.':'This is not a final diagnosis.')+'</span>';}
+  $('enterKhedut').onclick=()=>{$('welcomeScreen').classList.add('hide');setTimeout(async()=>{$('welcomeScreen').remove();$('locationHub').scrollIntoView({behavior:'smooth',block:'start'});try{if(navigator.permissions&&navigator.permissions.query){const q=await navigator.permissions.query({name:'geolocation'});if(q.state==='granted'){requestLocation();return;}}}catch(e){}showPermission();},600)};
+  $('organicBtn').onclick=()=>chooseMode('organic'); $('inorganicBtn').onclick=()=>chooseMode('inorganic');
+  $('lang').onclick=()=>{gu=!gu;lang()};$('start').onclick=()=>{$('farm').scrollIntoView({behavior:'smooth'})};$('create').onclick=createFarm;
+  $('advisorBtn').onclick=advisor; $('inputAdvisorBtn').onclick=inputAdvisor; initInputAdvisor();
+
+  // Location-first live data: explicit in-app explanation + native browser permission.
+  const weatherText={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Rime fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌧️','Heavy drizzle'],61:['🌦️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],80:['🌦️','Rain showers'],81:['🌧️','Rain showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm + hail'],99:['⛈️','Thunderstorm + hail']};
+  const weatherGu={0:'આકાશ સ્વચ્છ',1:'મુખ્યત્વે સ્વચ્છ',2:'થોડા વાદળ',3:'વાદળછાયું',45:'ધુમ્મસ',48:'ધુમ્મસ',51:'હળવો ઝરમર વરસાદ',53:'ઝરમર વરસાદ',55:'વધુ ઝરમર વરસાદ',61:'હળવો વરસાદ',63:'વરસાદ',65:'ભારે વરસાદ',71:'હળવો બરફ',73:'બરફ',75:'ભારે બરફ',80:'વરસાદી ઝાપટાં',81:'વરસાદી ઝાપટાં',82:'ભારે ઝાપટાં',95:'વાવાઝોડું',96:'વાવાઝોડું + કરા',99:'વાવાઝોડું + કરા'};
+  function weatherLabel(code){return gu?(weatherGu[code]||'હવામાન'):((weatherText[code]||['🌦️','Weather'])[1]);}
+  function weatherEmoji(code){return (weatherText[code]||['🌦️','Weather'])[0];}
+  function escapeHTML(x){return String(x).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+  async function loadWeather(lat,lon){
+    const box=$('weatherContent'); box.innerHTML=gu?'હવામાન લોડ થઈ રહ્યું છે…':'Loading live weather…';
+    try{
+      // Primary live layer: Open-Meteo. It is keyless, so the static GitHub Pages build works.
+      // For production, this function can be switched to Google Weather API with a server-side key.
+      const u='https://api.open-meteo.com/v1/forecast?latitude='+encodeURIComponent(lat)+'&longitude='+encodeURIComponent(lon)+'&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,rain,showers,snowfall,weather_code,pressure_msl,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,visibility,uv_index,dew_point_2m&hourly=temperature_2m,precipitation_probability,precipitation,weather_code,relative_humidity_2m,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_speed_10m_max,uv_index_max,sunrise,sunset&forecast_days=10&forecast_hours=24&timezone=auto';
+      const r=await fetch(u,{cache:'no-store'}); if(!r.ok)throw new Error('weather');
+      const d=await r.json(),c=d.current,days=d.daily,h=d.hourly;
+      const fmtTime=t=>new Date(t).toLocaleTimeString(gu?'gu-IN':'en-IN',{hour:'2-digit',minute:'2-digit'});
+      const kmh=v=>v==null?'—':Math.round(v)+' km/h';
+      const mm=v=>v==null?'—':Number(v).toFixed(1)+' mm';
+      let html='<div class="weatherNow"><div class="weatherIcon">'+weatherEmoji(c.weather_code)+'</div><div><div class="temp">'+Math.round(c.temperature_2m)+'°C</div><b>'+escapeHTML(weatherLabel(c.weather_code))+'</b><div class="liveMeta">'+(gu?'લાગતું તાપમાન':'Feels like')+': '+Math.round(c.apparent_temperature)+'°C</div></div></div>';
+      html+='<div class="weatherDetails">';
+      const stats=[
+        [gu?'ભેજ':'Humidity',Math.round(c.relative_humidity_2m)+'%'],
+        [gu?'વરસાદની શક્યતા':'Rain chance',(days.precipitation_probability_max?.[0]??0)+'%'],
+        [gu?'પવન':'Wind',kmh(c.wind_speed_10m)],
+        [gu?'ઝટકાનો પવન':'Gust',kmh(c.wind_gusts_10m)],
+        [gu?'વાયુ દબાણ':'Pressure',Math.round(c.pressure_msl)+' hPa'],
+        [gu?'વાદળ':'Cloud',Math.round(c.cloud_cover)+'%'],
+        [gu?'UV':'UV',''+Number(c.uv_index??0).toFixed(1)],
+        [gu?'દૃશ્યતા':'Visibility',c.visibility==null?'—':(c.visibility/1000).toFixed(1)+' km'],
+        [gu?'ઝાકળ બિંદુ':'Dew point',Math.round(c.dew_point_2m)+'°C'],
+        [gu?'વરસાદ':'Rain',mm(c.precipitation)],
+        [gu?'પવન દિશા':'Wind dir',(Math.round(c.wind_direction_10m||0))+'°'],
+        [gu?'આજનો UV':'UV today',Number(days.uv_index_max?.[0]??0).toFixed(1)]
+      ]; stats.forEach(x=>html+='<div class="weatherStat"><small>'+x[0]+'</small><b>'+x[1]+'</b></div>'); html+='</div>';
+      html+='<div class="hourly"><div class="liveMeta" style="min-width:70px">'+(gu?'આગામી કલાકો':'Next hours')+'</div>';
+      for(let i=0;i<Math.min(12,h.time.length);i++){html+='<div class="hour"><b>'+fmtTime(h.time[i])+'</b><span>'+weatherEmoji(h.weather_code[i])+' '+Math.round(h.temperature_2m[i])+'°</span><small style="display:block;color:var(--muted)">'+(gu?'વરસાદ ':'Rain ')+(h.precipitation_probability[i]??0)+'%</small></div>';} html+='</div>';
+      html+='<div class="forecast" style="grid-template-columns:repeat(5,1fr);overflow:auto">';
+      for(let i=0;i<10;i++){const dt=new Date(days.time[i]+'T00:00:00');const day=i===0?(gu?'આજે':'Today'):dt.toLocaleDateString(gu?'gu-IN':'en-IN',{weekday:'short'});html+='<div class="day" style="min-width:105px"><b>'+day+'</b><span>'+weatherEmoji(days.weather_code[i])+' '+Math.round(days.temperature_2m_max[i])+'° / '+Math.round(days.temperature_2m_min[i])+'°</span><small style="display:block;color:var(--muted)">'+(gu?'વરસાદ ':'Rain ')+(days.precipitation_probability_max?.[i]??0)+'% · '+mm(days.precipitation_sum?.[i])+'</small></div>';} html+='</div>';
+      const rain=days.precipitation_probability_max?.[0]??0, rainSum=days.precipitation_sum?.[0]??0, gust=c.wind_gusts_10m||0;
+      let situation;
+      if(rain>=70||rainSum>=10){situation=gu?'આજે વરસાદની શક્યતા વધારે છે. સિંચાઈ અટકાવો/મોડું કરો અને spray માટે વરસાદ પછીનું સુકું વિન્ડો જુઓ.':'High rain risk today. Delay irrigation and check a dry window before spraying.';}
+      else if(gust>=35){situation=gu?'પવન તેજ છે. spray/foliar application પહેલાં પવનની સ્થિતિ તપાસો અને drift ટાળો.':'Wind is strong. Check conditions before spraying and avoid drift.';}
+      else if(c.uv_index>=8){situation=gu?'UV ઊંચું છે. બપોરના તીવ્ર સૂર્યમાં અનાવશ્યક field work ટાળો અને પાકમાં પાણીની જરૂરિયાત ચકાસો.':'UV is high. Avoid unnecessary midday field work and check crop water needs.';}
+      else{situation=gu?'હવામાન સામાન્ય છે. સિંચાઈ પાકની અવસ્થા અને જમીનની ભેજ પરથી નક્કી કરો.':'Weather is relatively normal. Decide irrigation from crop stage and soil moisture.';}
+      html+='<div class="actionBox">🌱 <b>'+(gu?'આજની સ્થિતિ:':'Today’s situation:')+'</b> '+situation+'</div>';
+      html+='<div class="liveMeta">'+(gu?'સૂર્યોદય':'Sunrise')+': '+fmtTime(days.sunrise?.[0])+' · '+(gu?'સૂર્યાસ્ત':'Sunset')+': '+fmtTime(days.sunset?.[0])+'</div>';
+      html+='<div class="alertBox">⚠️ <b>'+(gu?'હવામાન ચેતવણી:':'Weather alerts:')+'</b> '+(gu?'સ્થાનિક સરકારી ચેતવણી અને જિલ્લા/બ્લોક કૃષિ advisory માટે ':'For official local alerts and district/block advisories, check ')+ '<a href="https://mausam.imd.gov.in/responsive/agromet_adv_ser_district_current_en.php" target="_blank" rel="noopener">IMD Agromet ↗</a> '+(gu?'ચેક કરો. KhedutOS પોતાની તરફથી warning બનાવતું નથી.':'KhedutOS does not invent warning levels.')+'</div>';
+      html+='<div class="sourceLine">'+(gu?'લાઈવ ડેટા: Open-Meteo · કૃષિ ચેતવણી: IMD/Agromet · અપડેટ: ':'Live data: Open-Meteo · Agricultural alerts: IMD/Agromet · Updated: ')+new Date().toLocaleString(gu?'gu-IN':'en-IN')+'</div>';
+      box.innerHTML=html;
+    }catch(e){box.innerHTML=gu?'લાઈવ હવામાન લોડ થઈ શક્યું નથી. Internet ચાલુ છે કે નહીં તપાસો અને ફરી પ્રયાસ કરો.':'Live weather could not be loaded. Check internet and try again.';}
+  }
+  function showPermission(){ $('permissionOverlay').classList.remove('hidden'); }
+  function hidePermission(){ $('permissionOverlay').classList.add('hidden'); }
+  async function resolveLocation(lat,lon){
+    const status=$('locationStatus'),details=$('locationDetails'),coords=$('locationCoords'); status.textContent=gu?'GPS સ્થાન મળી રહ્યું છે…':'Detecting GPS location…'; coords.textContent=lat.toFixed(5)+', '+lon.toFixed(5); details.textContent=gu?'સ્થાનનું નામ શોધી રહ્યા છીએ…':'Resolving locality…';
+    try{const r=await fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+lat+'&longitude='+lon+'&localityLanguage='+(gu?'gu':'en'),{cache:'no-store'}); const d=await r.json(); const name=d.locality||d.city||d.principalSubdivision||d.countryName||'Detected location'; const full=name+(d.principalSubdivision&&d.locality?(', '+d.principalSubdivision):''); details.innerHTML=escapeHTML(full)+'<br><a class="mapsBtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(lat+','+lon)+'">🗺️ Open in Google Maps</a>'; status.textContent=gu?'સ્થાન તૈયાર છે ✓':'Location ready ✓'; const locInput=$('loc'); if(locInput&&!locInput.value)locInput.value=full;}catch(e){details.innerHTML=(gu?'GPS coordinates મળ્યા. ':'GPS coordinates found. ')+'<a class="mapsBtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(lat+','+lon)+'">🗺️ Google Maps</a>'; status.textContent=gu?'GPS તૈયાર છે ✓':'GPS ready ✓';} loadWeather(lat,lon);
+  }
+  function requestLocation(){
+    if(!window.isSecureContext){toast(gu?'Location માટે HTTPS જરૂરી છે. GitHub Pages પરથી ખોલો.':'Location needs HTTPS. Open the GitHub Pages HTTPS address.');return;}
+    if(!navigator.geolocation){toast(gu?'આ બ્રાઉઝરમાં GPS ઉપલબ્ધ નથી. નીચે PIN code વાપરો.':'GPS is not available in this browser. Use the PIN code option below.');return;}
+    $('locationStatus').textContent=gu?'Location permission પૂછાઈ રહી છે…':'Requesting location permission…';
+    navigator.geolocation.getCurrentPosition(
+      p=>resolveLocation(p.coords.latitude,p.coords.longitude),
+      e=>{
+        let msg=e.code===1?(gu?'Location permission બંધ છે. નીચે PIN code નાખો અથવા Chrome Site settings માં Location → Allow કરો.':'Location permission is blocked. Enter your PIN below or open Chrome Site settings → Location → Allow.'):
+          e.code===2?(gu?'GPS સ્થાન મળ્યું નથી. PIN code વાપરો.':'GPS location unavailable. Use the PIN code option.'):
+          (gu?'GPS સમયસર મળ્યું નથી. ફરી પ્રયાસ કરો અથવા PIN code વાપરો.':'GPS timed out. Try again or use the PIN code option.');
+        $('locationStatus').textContent=msg; toast(msg); showPermission();
+      },
+      {enableHighAccuracy:true,timeout:20000,maximumAge:300000}
+    );
+  }
+  $('useLocation').onclick=showPermission; $('permissionAllow').onclick=requestLocation;
+  $('permissionManual').onclick=()=>{const el=$('permissionPin'); if(el){el.focus();toast(gu?'નીચે 6 અંકનું PIN નાખો.':'Enter your 6-digit PIN below.');}};
+  $('permissionPinBtn').onclick=()=>{const v=$('permissionPin').value.trim(); if(v) {resolvePincode(v);}};
+  $('skipLocation').onclick=()=>{hidePermission(); $('locationStatus').textContent=gu?'Location પછીથી પણ આપી શકો છો.':'You can add location later.'; toast(gu?'Location વગર આગળ વધી રહ્યા છીએ.':'Continuing without location.'); const hub=$('locationHub'); if(hub) hub.scrollIntoView({behavior:'smooth',block:'start'});};
+  if(location.protocol==='file:' || location.protocol==='content:'){ const a=$('openLiveSite'); if(a)a.style.display='block'; const p=document.querySelector('.permissionBox p'); if(p)p.innerHTML += '<br><b>Tip:</b> You are opening a downloaded HTML file. For GPS and live APIs, open the GitHub Pages version.'; }
+  $('permissionPin').addEventListener('keydown',e=>{if(e.key==='Enter')$('permissionPinBtn').click();});
+  async function resolvePincode(v){
+    const pin=v.replace(/\D/g,'').slice(0,6);
+    if(pin.length!==6){toast(gu?'સાચો 6 અંકનો pincode નાખો.':'Enter a valid 6-digit PIN code.');showPermission();return;}
+    $('locationStatus').textContent=gu?'PIN code પરથી વિસ્તાર શોધી રહ્યા છીએ…':'Finding area from PIN code…';
+    try{
+      let area='',district='',state='',lat=null,lon=null;
+      // First get reliable Indian postal details.
+      try{
+        const r=await fetch('https://api.pincodeapi.in/api/v1/pincode/'+pin,{cache:'no-store'});
+        const d=await r.json();
+        const po=d?.data?.post_offices?.[0];
+        if(po){area=po.office_name||po.district||'';district=po.district||'';state=po.state||'';lat=Number(po.latitude)||null;lon=Number(po.longitude)||null;}
+      }catch(_){ }
+      // Always try Open-Meteo geocoding with the PIN. It supports postal-code searches.
+      if(!lat||!lon){
+        const r=await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(pin+', India')+'&count=10&language=en&countryCode=IN&format=json',{cache:'no-store'});
+        const d=await r.json(); const hit=(d.results||[]).find(x=>Array.isArray(x.postcodes)&&x.postcodes.includes(pin)) || (d.results||[])[0];
+        if(hit){lat=Number(hit.latitude);lon=Number(hit.longitude);area=area||hit.name||'';district=district||hit.admin2||'';state=state||hit.admin1||'';}
+      }
+      if(!area && !district && !state){
+        try{const r=await fetch('https://api.postalpincode.in/pincode/'+pin,{cache:'no-store'});const d=await r.json();const po=d?.[0]?.PostOffice?.[0];if(po){area=po.Name||po.Block||po.District;district=po.District||'';state=po.State||'';}}catch(_){ }
+      }
+      if(!area&&!district&&!state)throw new Error('pin');
+      const full=(area||district)+', '+district+', '+state+' '+pin;
+      $('locationDetails').innerHTML='<b>'+escapeHTML(area||district)+'</b><br>'+escapeHTML((district?district+', ':'')+state+' '+pin)+'<br><a class="mapsBtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(pin+', India')+'">🗺️ Open this area in Google Maps</a>';
+      $('locationCoords').textContent=lat&&lon?('GPS: '+lat.toFixed(5)+', '+lon.toFixed(5)):'Pincode: '+pin;
+      $('locationStatus').textContent=gu?'વિસ્તાર તૈયાર છે ✓':'Area ready ✓';
+      if($('loc'))$('loc').value=full;
+      if(lat&&lon){await loadWeather(lat,lon);toast(gu?'PIN codeથી location અને weather તૈયાર છે.':'PIN code location and weather are ready.');}
+      else {$('weatherContent').innerHTML=gu?'વિસ્તાર મળી ગયો, પરંતુ coordinates મળ્યા નથી. GPS ચાલુ કરો.':'Area found, but coordinates were not available. Use GPS for weather.';toast(gu?'વિસ્તાર મળી ગયો ✓':'Area found ✓');}
+    }catch(e){
+      $('locationStatus').textContent=gu?'Pincode મળ્યો નથી. ફરી ચકાસો.':'PIN code could not be resolved. Check it and try again.';
+      $('locationDetails').textContent=gu?'6 અંકનો સાચો Indian PIN code નાખો.':'Enter a valid 6-digit Indian PIN code.';
+      toast(gu?'Pincode ફરી ચકાસો અથવા Location વગર આગળ વધો.':'Please check the PIN or continue without location.');
+    }
+  }
+  $('manualLocation').onclick=()=>{showPermission();};
+  lang();
+})();
+  </script>
+<script id="khedut-location-hard-fix">
+/* KhedutOS Location Hard Fix v2
+   Independent controller so the location UI still works even if another optional
+   feature script throws an error. It intentionally does not depend on the main IIFE. */
+(function(){
+  function el(id){ return document.getElementById(id); }
+  function toast2(msg){
+    var t=el('toast');
+    if(t){ t.textContent=msg; t.style.display='block'; clearTimeout(window.__kToast); window.__kToast=setTimeout(function(){t.style.display='none'},2600); }
+  }
+  function show(){ var o=el('permissionOverlay'); if(o)o.classList.remove('hidden'); }
+  function hide(){ var o=el('permissionOverlay'); if(o)o.classList.add('hidden'); }
+  function setStatus(msg){ var s=el('locationStatus'); if(s)s.textContent=msg; }
+  function safeText(x){ return String(x==null?'':x).replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]}); }
+  function maps(lat,lon){ return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(lat+','+lon); }
+
+  async function weather(lat,lon){
+    var box=el('weatherContent');
+    if(!box)return;
+    box.innerHTML='Loading live weather…';
+    try{
+      var u='https://api.open-meteo.com/v1/forecast?latitude='+encodeURIComponent(lat)+'&longitude='+encodeURIComponent(lon)+'&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,rain,weather_code,pressure_msl,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,visibility,uv_index,dew_point_2m&hourly=temperature_2m,precipitation_probability,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,sunrise,sunset&forecast_days=5&forecast_hours=12&timezone=auto';
+      var r=await fetch(u,{cache:'no-store'}); if(!r.ok)throw new Error('weather');
+      var d=await r.json(), c=d.current, days=d.daily;
+      var code={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:['🌦️','Drizzle'],53:['🌦️','Drizzle'],55:['🌧️','Heavy drizzle'],61:['🌦️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],80:['🌦️','Rain showers'],81:['🌧️','Rain showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm + hail'],99:['⛈️','Thunderstorm + hail']}[c.weather_code]||['🌦️','Weather'];
+      var rain=days.precipitation_probability_max&&days.precipitation_probability_max[0]!=null?days.precipitation_probability_max[0]:0;
+      var action=rain>=70?'High rain chance today. Check irrigation and spraying before work.':((c.wind_gusts_10m||0)>=35?'Strong wind today. Check spraying conditions and avoid drift.':'Weather is relatively normal. Decide irrigation from crop stage and soil moisture.');
+      box.innerHTML='<div class="weatherNow"><div class="weatherIcon">'+code[0]+'</div><div><div class="temp">'+Math.round(c.temperature_2m)+'°C</div><b>'+code[1]+'</b><div class="liveMeta">Feels like '+Math.round(c.apparent_temperature)+'°C</div></div></div>'+
+      '<div class="weatherDetails"><div class="weatherStat"><small>Humidity</small><b>'+Math.round(c.relative_humidity_2m)+'%</b></div><div class="weatherStat"><small>Rain chance</small><b>'+rain+'%</b></div><div class="weatherStat"><small>Wind</small><b>'+Math.round(c.wind_speed_10m)+' km/h</b></div><div class="weatherStat"><small>Gust</small><b>'+Math.round(c.wind_gusts_10m||0)+' km/h</b></div><div class="weatherStat"><small>Pressure</small><b>'+Math.round(c.pressure_msl)+' hPa</b></div><div class="weatherStat"><small>Cloud</small><b>'+Math.round(c.cloud_cover)+'%</b></div><div class="weatherStat"><small>UV</small><b>'+Number(c.uv_index||0).toFixed(1)+'</b></div><div class="weatherStat"><small>Visibility</small><b>'+((c.visibility||0)/1000).toFixed(1)+' km</b></div></div>'+
+      '<div class="actionBox">🌱 <b>Today’s situation:</b> '+action+'</div>'+
+      '<div class="sourceLine">Live weather: Open-Meteo · Updated: '+new Date().toLocaleString('en-IN')+'</div>';
+    }catch(e){ box.innerHTML='<div class="safeBox"><b>Weather could not load right now.</b><br>Internet/API access may be unavailable. Your location can still be saved.</div>'; }
+  }
+
+  async function finish(lat,lon,label){
+    setStatus('Location found ✓');
+    var coords=el('locationCoords'), details=el('locationDetails'), loc=el('loc');
+    if(coords)coords.textContent=Number(lat).toFixed(5)+', '+Number(lon).toFixed(5);
+    if(details)details.innerHTML=safeText(label||'Detected location')+'<br><a class="mapsBtn" target="_blank" rel="noopener" href="'+maps(lat,lon)+'">🗺️ Open in Google Maps</a>';
+    if(loc&&!loc.value)loc.value=label||'Detected location';
+    hide();
+    toast2('Location connected ✓');
+    var hub=el('locationHub'); if(hub)hub.scrollIntoView({behavior:'smooth',block:'start'});
+    weather(lat,lon);
+  }
+
+  function requestGPS(){
+    var secure=window.isSecureContext;
+    if(!secure || location.protocol==='file:' || location.protocol==='content:'){
+      setStatus('Open the live GitHub Pages version for GPS.');
+      var a=el('openLiveSite'); if(a)a.style.display='block';
+      toast2('GPS needs the live HTTPS KhedutOS site.');
+      return;
+    }
+    if(!navigator.geolocation){ setStatus('GPS is not available. Use PIN code instead.'); toast2('GPS unavailable — use PIN code.'); return; }
+    setStatus('Requesting location permission…');
+    toast2('Please tap Allow if Chrome asks for location.');
+    navigator.geolocation.getCurrentPosition(function(pos){
+      finish(pos.coords.latitude,pos.coords.longitude,'GPS detected location');
+    },function(err){
+      var msg=err&&err.code===1?'Location permission is blocked. Chrome → Site settings → Location → Allow.':(err&&err.code===2?'GPS location unavailable. Try again or use PIN code.':'GPS timed out. Try again or use PIN code.');
+      setStatus(msg); toast2(msg); show();
+    },{enableHighAccuracy:false,timeout:12000,maximumAge:600000});
+  }
+
+  async function pinLookup(){
+    var input=el('permissionPin'), pin=(input?input.value:'').replace(/\D/g,'').slice(0,6);
+    if(pin.length!==6){toast2('Enter a valid 6-digit PIN code.'); if(input)input.focus(); return;}
+    setStatus('Finding your area from PIN…'); toast2('Finding area…');
+    var label='PIN '+pin, lat=null, lon=null;
+    try{
+      var r=await fetch('https://api.pincodeapi.in/api/v1/pincode/'+pin,{cache:'no-store'});
+      if(r.ok){
+        var d=await r.json();
+        var x=Array.isArray(d)?d[0]:d;
+        if(x){
+          label=x.postOfficeName||x.postOffice||x.area||x.district||x.state||label;
+          if(x.district)label += (label.indexOf(x.district)<0?', '+x.district:'');
+          if(x.state)label += (label.indexOf(x.state)<0?', '+x.state:'');
+          lat=Number(x.latitude||x.lat); lon=Number(x.longitude||x.lng||x.lon);
+        }
+      }
+    }catch(e){}
+    if(!(isFinite(lat)&&isFinite(lon))){
+      try{
+        var g=await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(pin)+'&count=5&language=en&format=json',{cache:'no-store'});
+        if(g.ok){var gd=await g.json();var z=gd.results&&gd.results[0];if(z){lat=Number(z.latitude);lon=Number(z.longitude);label=z.name+(z.admin1?', '+z.admin1:'')+(z.country?', '+z.country:'');}}
+      }catch(e){}
+    }
+    if(isFinite(lat)&&isFinite(lon)) finish(lat,lon,label); else { setStatus('PIN area found, but map coordinates were not available.'); toast2('PIN found, but coordinates were unavailable.'); }
+  }
+
+  function bind(){
+    var allow=el('permissionAllow'), use=el('useLocation'), manual=el('permissionManual'), pinBtn=el('permissionPinBtn'), skip=el('skipLocation'), pin=el('permissionPin'), open=el('openLiveSite'), enter=el('enterKhedut');
+    if(use)use.onclick=function(e){e.preventDefault();requestGPS();};
+    if(allow)allow.onclick=function(e){e.preventDefault();requestGPS();};
+    if(manual)manual.onclick=function(e){e.preventDefault();if(pin){pin.focus();pin.scrollIntoView({behavior:'smooth',block:'center'});}};
+    if(pinBtn)pinBtn.onclick=function(e){e.preventDefault();pinLookup();};
+    if(pin)pin.onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();pinLookup();}};
+    if(skip)skip.onclick=function(e){e.preventDefault();hide();setStatus('Location skipped — you can add it later.');toast2('Continuing without location.');};
+    if(enter){
+      enter.addEventListener('click',function(){setTimeout(function(){show();},700);},true);
+    }
+    if(location.protocol==='file:'||location.protocol==='content:'){
+      if(open)open.style.display='block';
+      var p=document.querySelector('.permissionBox p');
+      if(p && p.textContent.indexOf('downloaded HTML file')<0)p.innerHTML += '<br><b>Tip:</b> You are opening a downloaded HTML file. For GPS, open the live HTTPS KhedutOS version.';
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
+})();
+</script>
+</body>
+</html>
