@@ -1356,6 +1356,13 @@ document.addEventListener('DOMContentLoaded', function(){
    (()=>{
   let gu=false;
   const $=id=>document.getElementById(id);
+  // Safe fallbacks keep the main controller running even when optional
+  // knowledge-base objects are absent.
+  const organicCrops=window.organicCrops||{};
+  const organicCropsGu=window.organicCropsGu||{};
+  const inputProblems=window.inputProblems||{};
+  const pesticideAdvice=window.pesticideAdvice||{};
+  const pesticideAdviceGu=window.pesticideAdviceGu||{};
   const cropData={
     Cotton:{npk:[180,37.5,112.5],scope:'South Saurashtra Agro-climatic Zone, medium black calcareous soil, Bt cotton: 75% RDF reference with 19-19-19 foliar sprays. Do not apply this blindly outside the stated zone/soil/system.',source:'JAU Department of Soil Science recommendation',url:'https://www.jau.in/storage/document/dynamic_document/css_recommendations_20260511_1536.pdf'},
     Maize:{npk:[160,20,0],scope:'Middle Gujarat kharif hybrid maize recommendation: 160 kg N + 20 kg P₂O₅/ha; potassium did not increase yield in the cited study. This is zone/season specific.',source:'Anand Agricultural University Annual Report 2024-25',url:'https://aau.in/sites/default/files/21th_annual_report_2024_25.pdf'},
@@ -1411,11 +1418,49 @@ document.addEventListener('DOMContentLoaded', function(){
   function cropStage(age){if(age<25)return gu?'સ્થાપના / શરૂઆત':'Establishment / early growth';if(age<55)return gu?'વેજિટેટિવ વૃદ્ધિ':'Vegetative growth';if(age<90)return gu?'ફૂલ આવવાની નજીક':'Flowering / reproductive';return gu?'પરિપક્વતા / ઉત્પાદન':'Maturity / production'}
   function createFarm(){
     const c=$('crop').value,l=$('loc').value.trim(),s=$('sow').value,i=$('irr').value,a=parseFloat($('area').value);
-    if(!c||!l||!s||!i||!(a>0)){toast(gu?'બધી માહિતી ભરો.':'Please complete all farm details.');return}
+    // Location should not block farm creation. It may be unavailable when the user
+    // is testing the downloaded HTML; the profile can still be created and location
+    // can be added later from the location section.
+    if(!c||!s||!i||!(a>0)){
+      toast(gu?'પાક, વાવણી તારીખ, સિંચાઈ અને વિસ્તાર ભરો.':'Please enter crop, sowing date, irrigation method and farm area.');
+      return;
+    }
+    const location=l|| (gu?'સ્થળ સેટ નથી':'Location not set');
     const age=Math.max(0,Math.floor((Date.now()-new Date(s+'T00:00:00'))/86400000));
-    $('dc').textContent=cropLabel(c);$('da').textContent=age+' '+(gu?'દિવસ':'days');$('dl').textContent=l;$('di').textContent=i;$('darea').textContent=a+' acres';$('dr').textContent=gu?'નિરીક્ષણ':'Monitoring';
-    $('actions').innerHTML='';const cd=organicCrops[c];let farmActions=advice[c]||[];if(cd){farmActions=[cd.sow,cd.soil,cd.pest];}if(!farmActions.length)farmActions=['Inspect the crop for visible pest or disease symptoms.','Check soil moisture before irrigation.','Record unusual patches before treatment.'];farmActions.forEach(x=>{const d=document.createElement('div');d.className='item';d.textContent='✅ '+(gu?x:x);$('actions').appendChild(d)});
-    $('dashboard').classList.add('show');$('dashboard').scrollIntoView({behavior:'smooth'});toast(gu?'તમારું dashboard તૈયાર છે.':'Your dashboard is ready.');
+    $('dc').textContent=cropLabel(c);
+    $('da').textContent=age+' '+(gu?'દિવસ':'days');
+    $('dl').textContent=location;
+    $('di').textContent=i;
+    $('darea').textContent=a+' acres';
+    $('dr').textContent=gu?'નિરીક્ષણ':'Monitoring';
+    $('actions').innerHTML='';
+    const cd=organicCrops[c]||null;
+    let farmActions=advice[c]||[];
+    if(cd){farmActions=[cd.sow,cd.soil,cd.pest];}
+    if(!farmActions.length)farmActions=['Inspect the crop for visible pest or disease symptoms.','Check soil moisture before irrigation.','Record unusual patches before treatment.'];
+    farmActions.forEach(x=>{const d=document.createElement('div');d.className='item';d.textContent='✅ '+x;$('actions').appendChild(d)});
+
+    // Save the created profile so it remains available after refresh/reopen.
+    const farmProfile={crop:c,location:location,sowingDate:s,irrigation:i,area:a,createdAt:new Date().toISOString()};
+    try{localStorage.setItem('khedutosFarmProfile',JSON.stringify(farmProfile));}catch(e){}
+
+    $('dashboard').classList.add('show');
+    $('dashboard').scrollIntoView({behavior:'smooth',block:'start'});
+    toast(gu?'તમારું Farm Profile બની ગયું ✓':'Your Farm Profile has been created ✓');
+  }
+  function loadSavedFarm(){
+    try{
+      const raw=localStorage.getItem('khedutosFarmProfile');
+      if(!raw)return;
+      const f=JSON.parse(raw);
+      if(!f||!f.crop||!f.sowingDate||!f.irrigation||!(Number(f.area)>0))return;
+      if($('crop'))$('crop').value=f.crop;
+      if($('loc'))$('loc').value=f.location==='Location not set'||f.location==='સ્થળ સેટ નથી'?'':(f.location||'');
+      if($('sow'))$('sow').value=f.sowingDate;
+      if($('irr'))$('irr').value=f.irrigation;
+      if($('area'))$('area').value=f.area;
+      createFarm();
+    }catch(e){}
   }
   function calc(rate,area,unit,out,name){const r=parseFloat($(rate).value),a=parseFloat($(area).value);if(!(r>=0)||!(a>0)){toast(gu?'Rate અને area સાચા દાખલ કરો.':'Enter a valid rate and area.');return}const total=r*a,u=unit.value.replace('/acre',''),n=$(name).value.trim()||'Product';$(out).style.display='block';$(out).innerHTML='<strong>'+total.toFixed(3).replace(/\.?0+$/,'')+' '+u+'</strong><span>'+ (gu?'ગણતરી: ':'Calculation: ')+r+' × '+a+' acres • '+n+'</span>'}
   function advisor(){
@@ -1453,10 +1498,10 @@ document.addEventListener('DOMContentLoaded', function(){
   function chooseMode(mode){document.body.classList.add('modeSelected');document.body.classList.remove('organicActive','inorganicActive');document.body.classList.add(mode==='organic'?'organicActive':'inorganicActive');$('modeChoice').scrollIntoView({behavior:'smooth'}); if(mode==='organic'){renderOrganicCrops();} else {initInputAdvisor();} }
   function initInputAdvisor(){const sel=$('inputCrop'),p=$('inputProblem'); if(!sel||!p)return; sel.innerHTML=Object.keys(cropData).map(c=>'<option>'+c+'</option>').join(''); const fill=()=>{const c=sel.value; const arr=inputProblems[c]||['None / monitoring']; const guMap={'None / monitoring':'માત્ર નિરીક્ષણ','Aphid / whitefly / jassid / thrips':'માહુ / સફેદમાખી / જાસિડ / થ્રિપ્સ','Bollworm / pink bollworm':'બોલવર્મ / પિંક બોલવર્મ','Stem borer / leaf folder':'સ્ટેમ બોરર / લીફ ફોલ્ડર','Hoppers':'હોપર','Whitefly':'સફેદમાખી','Fruit borer':'ફળછેદક ઇયળ','Thrips / mites':'થ્રિપ્સ / માઇટ','Shoot / fruit borer':'શૂટ / ફળછેદક ઇયળ','Diamondback moth':'ડાયમંડબેક મોથ','Caterpillars / aphids':'ઇયળ / માહુ','Aphid':'માહુ','Thrips':'થ્રિપ્સ','Pod borer':'શીંગછેદક ઇયળ','Pod borer / pod fly':'શીંગછેદક ઇયળ / શીંગમાખી','Jassid / whitefly':'જાસિડ / સફેદમાખી','Defoliator (Spodoptera/Helicoverpa)':'પાનખાઉ ઇયળ (Spodoptera/Helicoverpa)','Stem/root disease':'થડ / મૂળનો રોગ'}; p.innerHTML=arr.map(x=>'<option value="'+x.replace(/"/g,'&quot;')+'">'+(gu?(guMap[x]||x):x)+'</option>').join('')}; sel.onchange=fill; fill();}
   function inputAdvisor(){const c=$('inputCrop').value,a=parseFloat($('inputArea').value),prob=$('inputProblem').value,stage=$('inputStage').value;if(!(a>0)){toast(gu?'ખેતર વિસ્તાર નાખો.':'Enter farm area.');return}const d=cropData[c],ha=a/2.47105;let fert=''; if(d.npk){const [n,p,k]=d.npk;fert=(gu?'ખાતર માટે published nutrient baseline: ':'Published fertilizer nutrient baseline: ')+n+' N + '+p+' P₂O₅ + '+k+' K₂O kg/ha. '+(gu?'તમારા ':'For your ')+a+' acres (~'+ha.toFixed(2)+' ha): '+(n*ha).toFixed(1)+' kg N, '+(p*ha).toFixed(1)+' kg P₂O₅, '+(k*ha).toFixed(1)+' kg K₂O.';}else fert=gu?'આ પાક માટે આ engineમાં universal exact N-P-K rate નથી; soil test અને સ્થાનિક ભલામણ લો.':'This engine has no universal exact N-P-K rate for this crop; use a soil test and local recommendation.';const key=c+'|'+prob;let pest=(gu?pesticideAdviceGu[key]:pesticideAdvice[key]); if(!pest) pest=prob==='None / monitoring'?(gu?'હાલ routine pesticideની ભલામણ નથી. પહેલા scouting અને pest/disease identification કરો.':'No routine pesticide is recommended yet. Scout and identify the pest/disease first.'):(gu?'આ target માટે current verified formulation અહીં ઉપલબ્ધ નથી. Official PPQS/label અથવા KVK પરથી crop-target match ચકાસો.':'A current verified formulation is not stored for this target here. Check the crop-target match in the official PPQS material or with a KVK.'); if(gu&&pest.startsWith('Imidacloprid')){} $('inputResult').style.display='block';$('inputResult').innerHTML='<strong>'+c+' • '+(gu?'ભલામણ':'Recommendation')+'</strong><span><b>🌱 '+(gu?'ખાતર:':'Fertilizer:')+'</b> '+fert+'<br><br><b>📚 '+(gu?'સ્ત્રોત:':'Source:')+'</b> <a href="'+d.url+'" target="_blank" rel="noopener">'+d.source+' ↗</a><br><br><b>🐞 '+(gu?'Pesticide/target:':'Pesticide/target:')+'</b> '+pest+'<br><br><b>⚠️ '+(gu?'અવસ્થા:':'Stage:')+'</b> '+(stageNames[stage][gu?1:0])+' — '+(gu?'આ recommendation final diagnosis નથી.':'This is not a final diagnosis.')+'</span>';}
-  $('enterKhedut').onclick=()=>{$('welcomeScreen').classList.add('hide');setTimeout(async()=>{$('welcomeScreen').remove();$('locationHub').scrollIntoView({behavior:'smooth',block:'start'});try{if(navigator.permissions&&navigator.permissions.query){const q=await navigator.permissions.query({name:'geolocation'});if(q.state==='granted'){requestLocation();return;}}}catch(e){}showPermission();},600)};
+  $('enterKhedut').onclick=()=>{$('welcomeScreen').classList.add('hide');setTimeout(async()=>{$('welcomeScreen').remove();$('locationHub').scrollIntoView({behavior:'smooth',block:'start'});try{if(navigator.permissions&&navigator.permissions.query){const q=await navigator.permissions.query({name:'geolocation'});if(q.state==='granted'){if(window.khedutLocationFinalFix&&window.khedutLocationFinalFix.requestGPS){window.khedutLocationFinalFix.requestGPS();return;}}}}catch(e){}showPermission();},600)};
   $('organicBtn').onclick=()=>chooseMode('organic'); $('inorganicBtn').onclick=()=>chooseMode('inorganic');
   $('lang').onclick=()=>{gu=!gu;lang()};$('start').onclick=()=>{$('farm').scrollIntoView({behavior:'smooth'})};$('create').onclick=createFarm;
-  $('advisorBtn').onclick=advisor; $('inputAdvisorBtn').onclick=inputAdvisor; initInputAdvisor();
+  $('advisorBtn').onclick=advisor; $('inputAdvisorBtn').onclick=inputAdvisor; initInputAdvisor(); loadSavedFarm();
 
   // Location-first live data: explicit in-app explanation + native browser permission.
   const weatherText={0:['☀️','Clear sky'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Rime fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌧️','Heavy drizzle'],61:['🌦️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],80:['🌦️','Rain showers'],81:['🌧️','Rain showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm + hail'],99:['⛈️','Thunderstorm + hail']};
